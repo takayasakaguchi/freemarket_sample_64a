@@ -104,3 +104,12 @@ Things you may want to cover:
 - has_many :messages
 - has_many :groups_users
 - has_many :users,  through:  :groups_users
+
+# products_categoriesテーブル
+|Column       |Type    |Options                       |
+|-------------|--------|------------------------------|
+|product_id   |integer |null: false, foreign_key: true|
+|category_id  |integer |null: false, foreign_key: true|
+### Association
+- belongs_to :product
+- belongs_to :category
