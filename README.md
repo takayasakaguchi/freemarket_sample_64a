@@ -54,3 +54,21 @@ Things you may want to cover:
 |user_id        |integer |null: false, foreign_key: true|
 ### Association
 - belongs_to :user
+
+
+# adressテーブル
+|Column           |Type    |Options                       |
+|-----------------|--------|------------------------------|
+|first_name       |string  |null: false                   |
+|last_name        |string  |null: false                   |
+|first_name_f     |string  |null: false                   |
+|last_name_f      |string  |null: false                   |
+|post_mun         |integer |null: false                   |
+|prefecture       |string  |null: false                   |
+|city             |string  |null: false                   |
+|house_num        |string  |null: false                   |
+|building_name    |string  |                              |
+|phone_num        |string  |                              |
+|user_id          |integer |null: false, foreign_key: true|
+### Association
+- belongs_to :user
