@@ -93,3 +93,14 @@ Things you may want to cover:
 - has_many   :categories,  through:  :products_categories
 - has_many   :likes
 - has_many   :liked_users, through: :likes
+
+## categoriesテーブル
+|Column       |Type    |Options    |
+|-------------|--------|-----------|
+|major        |sting   |null: false|
+|middle       |sting   |null: false|
+|minor        |sting   |null: false|
+### Association
+- has_many :messages
+- has_many :groups_users
+- has_many :users,  through:  :groups_users
