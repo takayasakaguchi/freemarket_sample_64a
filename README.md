@@ -122,3 +122,12 @@ Things you may want to cover:
 |product_id   |integer |null: false, foreign_key: true|
 ### Association
 - belongs_to :user
+
+# likesテーブル
+|Column       |Type    |Options                       |
+|-------------|--------|------------------------------|
+|product_id   |integer |null: false, foreign_key: true|
+|user_id      |integer |null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- belongs_to :product
