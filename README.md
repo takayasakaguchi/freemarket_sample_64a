@@ -39,9 +39,8 @@ Things you may want to cover:
 - has_many :products
 - has_many :comments
 - has_many :likes
-- has_many :liked_products,  through:  :likes
 - has_one  :credit_card
-- has_one  :Adress
+- has_one  :adress
 
 
 # credit_cardテーブル
@@ -73,7 +72,6 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 
-
 ## productsテーブル
 |Column       |Type    |Options                       |
 |-------------|--------|------------------------------|
@@ -93,8 +91,6 @@ Things you may want to cover:
 - has_many   :products_categories
 - has_many   :categories,  through:  :products_categories
 - has_many   :likes
-- has_many   :liked_users, through: :likes
-
 
 ## categoriesテーブル
 |Column       |Type    |Options    |
@@ -107,7 +103,6 @@ Things you may want to cover:
 - has_many :groups_users
 - has_many :users,  through:  :groups_users
 
-
 # products_categoriesテーブル
 |Column       |Type    |Options                       |
 |-------------|--------|------------------------------|
@@ -116,7 +111,6 @@ Things you may want to cover:
 ### Association
 - belongs_to :product
 - belongs_to :category
-
 
 # commentsテーブル
 |Column       |Type    |Options                       |
@@ -127,8 +121,16 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 
-
 # likesテーブル
+|Column       |Type    |Options                       |
+|-------------|--------|------------------------------|
+|product_id   |integer |null: false, foreign_key: true|
+|user_id      |integer |null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- belongs_to :product
+
+# purchaseテーブル
 |Column       |Type    |Options                       |
 |-------------|--------|------------------------------|
 |product_id   |integer |null: false, foreign_key: true|
