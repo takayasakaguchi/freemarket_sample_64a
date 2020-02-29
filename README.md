@@ -70,3 +70,24 @@ Things you may want to cover:
 |user_id          |integer |null: false, foreign_key: true|
 ### Association
 - belongs_to :user
+
+
+## productsテーブル
+|Column       |Type    |Options                       |
+|-------------|--------|------------------------------|
+|image        |sting   |null: false                   |
+|name         |sting   |null: false                   |
+|description  |text    |null: false                   |
+|bland        |string  |                              |
+|status       |string  |null: false                   |
+|postage      |string  |null: false                   |
+|destination  |string  |null: false                   |
+|lead_time    |integer |null: false                   |
+|price        |integer |null: false                   | 
+|size         |string  |                              |
+|user_id      |integer |null: false, foreign_key: true|
+### Association
+- belongs_to :user  
+- has_many   :products_categories
+- has_many   :categories,  through:  :products_categories
+- has_many   :likes
