@@ -41,3 +41,15 @@ Things you may want to cover:
 - has_many :likes
 - has_one  :credit_card
 - has_one  :adress
+
+
+# credit_cardテーブル
+|Column         |Type    |Options                       |
+|---------------|--------|------------------------------|
+|card_num       |integer |null: false                   |
+|due_year       |integer |null: false                   |
+|due_month      |integer |null: false                   |
+|security_code  |integer |null: false                   |
+|user_id        |integer |null: false, foreign_key: true|
+### Association
+- belongs_to :user
