@@ -61,7 +61,7 @@ Things you may want to cover:
 |last_name        |string  |null: false                   |
 |first_name_f     |string  |null: false                   |
 |last_name_f      |string  |null: false                   |
-|post_mun         |integer |null: false                   |
+|postal_code      |integer |null: false                   |
 |prefecture       |string  |null: false                   |
 |city             |string  |null: false                   |
 |house_num        |string  |null: false                   |
