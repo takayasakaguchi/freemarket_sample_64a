@@ -54,7 +54,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 
-# adressテーブル
+## addressテーブル
 |Column           |Type    |Options                       |
 |-----------------|--------|------------------------------|
 |first_name       |string  |null: false                   |
