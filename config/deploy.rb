@@ -6,6 +6,9 @@ lock '3.12.0'
 set :application, 'freemarket_sample_64a'
 set :linked_files, %w{ config/secrets.yml }
 
+set :rails_env, "production"
+set :unicorn_rack_env, "production"
+
 # どのリポジトリからアプリをpullするかを指定する
 set :repo_url,  'git@github.com:takayasakaguchi/freemarket_sample_64a.git'
 
