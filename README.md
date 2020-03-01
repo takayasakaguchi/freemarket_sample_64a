@@ -23,7 +23,7 @@ Things you may want to cover:
 
 * ...
 
-# メルカリ DB設計
+# freemarket_sample_64a DB設計
 ## usersテーブル
 |Column       |Type    |Options    |
 |-------------|--------|-----------|
