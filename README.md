@@ -43,10 +43,10 @@ Things you may want to cover:
 - has_one  :address
 
 
-# credit_cardテーブル
+## credit_cardテーブル
 |Column         |Type    |Options                       |
 |---------------|--------|------------------------------|
-|card_num       |integer |null: false                   |
+|card_number    |integer |null: false                   |
 |due_year       |integer |null: false                   |
 |due_month      |integer |null: false                   |
 |security_code  |integer |null: false                   |
