@@ -40,7 +40,7 @@ Things you may want to cover:
 - has_many :comments
 - has_many :likes
 - has_one  :credit_card
-- has_one  :adress
+- has_one  :address
 
 
 # credit_cardテーブル
