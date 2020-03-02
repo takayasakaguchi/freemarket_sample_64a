@@ -39,6 +39,7 @@ Things you may want to cover:
 - has_many :products
 - has_many :comments
 - has_many :likes
+- has_many  :purchases
 - has_one  :credit_card
 - has_one  :address
 
@@ -92,6 +93,8 @@ Things you may want to cover:
 - belongs_to :user  
 - has_one    :category
 - has_many   :likes
+- has_many  :purchases
+- has_many :comments
 
 
 ## categoriesテーブル
@@ -101,7 +104,7 @@ Things you may want to cover:
 |ancestry     |varchar(255)   |                              |
 |product_id   |integer        |null: false, foreign_key: true|
 ### Association
-- belongs_to :product
+- belongs_to :product   
 
 
 ## commentsテーブル
@@ -112,6 +115,7 @@ Things you may want to cover:
 |product_id   |integer |null: false, foreign_key: true|
 ### Association
 - belongs_to :user
+- belongs_to :product
 
 
 ## likesテーブル
