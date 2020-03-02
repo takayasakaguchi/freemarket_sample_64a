@@ -87,30 +87,21 @@ Things you may want to cover:
 |price        |integer |null: false                   | 
 |size         |string  |                              |
 |user_id      |integer |null: false, foreign_key: true|
+|category_id  |integer |null: false, foreign_key: true|
 ### Association
 - belongs_to :user  
-- has_many   :products_categories
-- has_many   :categories,  through:  :products_categories
+- has_one    :category
 - has_many   :likes
 
 
 ## categoriesテーブル
-|Column       |Type           |Options    |
-|-------------|---------------|-----------|
-|name         |sting          |null: false|
-|ancestry     |varchar(255)   |           |
-### Association
-- has_many :produncts
-
-
-## produncts_categoriesテーブル
-|Column       |Type    |Options                       |
-|-------------|--------|------------------------------|
-|product_id   |integer |null: false, foreign_key: true|
-|category_id  |integer |null: false, foreign_key: true|
+|Column       |Type           |Options                       |
+|-------------|---------------|------------------------------|
+|name         |sting          |null: false                   |
+|ancestry     |varchar(255)   |                              |
+|product_id   |integer        |null: false, foreign_key: true|
 ### Association
 - belongs_to :product
-- belongs_to :category
 
 
 ## commentsテーブル
