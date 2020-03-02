@@ -55,19 +55,19 @@ Things you may want to cover:
 - belongs_to :user
 
 ## addressテーブル
-|Column           |Type    |Options                       |
-|-----------------|--------|------------------------------|
-|first_name       |string  |null: false                   |
-|last_name        |string  |null: false                   |
-|first_name_f     |string  |null: false                   |
-|last_name_f      |string  |null: false                   |
-|postal_code      |integer |null: false                   |
-|prefecture       |string  |null: false                   |
-|city             |string  |null: false                   |
-|house_number     |string  |null: false                   |
-|building_name    |string  |                              |
-|phone_number     |string  |                              |
-|user_id          |integer |null: false, foreign_key: true|
+|Column                 |Type    |Options                       |
+|-----------------------|--------|------------------------------|
+|first_name             |string  |null: false                   |
+|last_name              |string  |null: false                   |
+|first_name_reading     |string  |null: false                   |
+|last_name_reading      |string  |null: false                   |
+|postal_code            |integer |null: false                   |
+|prefecture             |string  |null: false                   |
+|city                   |string  |null: false                   |
+|house_number           |string  |null: false                   |
+|building_name          |string  |                              |
+|phone_number           |string  |                              |
+|user_id                |integer |null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 
