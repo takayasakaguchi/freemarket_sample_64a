@@ -95,15 +95,12 @@ Things you may want to cover:
 
 
 ## categoriesテーブル
-|Column       |Type    |Options    |
-|-------------|--------|-----------|
-|major        |sting   |null: false|
-|middle       |sting   |null: false|
-|minor        |sting   |null: false|
+|Column       |Type           |Options    |
+|-------------|---------------|-----------|
+|name         |sting          |null: false|
+|ancestry     |varchar(255)   |           |
 ### Association
-- has_many :messages
-- has_many :groups_users
-- has_many :users,  through:  :groups_users
+- has_many :produncts
 
 
 ## produncts_categoriesテーブル
