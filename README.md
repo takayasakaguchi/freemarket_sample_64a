@@ -54,6 +54,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 
+
 ## addressテーブル
 |Column                 |Type    |Options                       |
 |-----------------------|--------|------------------------------|
@@ -105,7 +106,7 @@ Things you may want to cover:
 - has_many :users,  through:  :groups_users
 
 
-# commentsテーブル
+## commentsテーブル
 |Column       |Type    |Options                       |
 |-------------|--------|------------------------------|
 |text         |text    |null: false                   |
@@ -115,7 +116,7 @@ Things you may want to cover:
 - belongs_to :user
 
 
-# likesテーブル
+## likesテーブル
 |Column       |Type    |Options                       |
 |-------------|--------|------------------------------|
 |product_id   |integer |null: false, foreign_key: true|
@@ -124,7 +125,8 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :product
 
-# purchaseテーブル
+
+## purchaseテーブル
 |Column       |Type    |Options                       |
 |-------------|--------|------------------------------|
 |product_id   |integer |null: false, foreign_key: true|
