@@ -104,7 +104,7 @@ Things you may want to cover:
 |ancestry     |varchar(255)   |                              |
 |product_id   |integer        |null: false, foreign_key: true|
 ### Association
-- belongs_to :product   
+- has_many :product   
 
 
 ## commentsテーブル
