@@ -91,7 +91,7 @@ Things you may want to cover:
 |category_id  |integer |null: false, foreign_key: true|
 ### Association
 - belongs_to :user  
-- has_one    :category
+- belongs_to :category
 - has_many   :likes
 - has_many  :purchases
 - has_many :comments
