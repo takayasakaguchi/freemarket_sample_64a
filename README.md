@@ -39,7 +39,7 @@ Things you may want to cover:
 - has_many :products
 - has_many :comments
 - has_many :likes
-- has_many  :purchases
+- has_many :purchases
 - has_one  :credit_card
 - has_one  :address
 
