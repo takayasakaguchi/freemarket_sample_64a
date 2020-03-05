@@ -77,7 +77,6 @@ Things you may want to cover:
 ## productsテーブル
 |Column       |Type    |Options                       |
 |-------------|--------|------------------------------|
-|image        |sting   |null: false                   |
 |name         |sting   |null: false                   |
 |description  |text    |null: false                   |
 |bland        |string  |                              |
@@ -88,13 +87,24 @@ Things you may want to cover:
 |price        |integer |null: false                   | 
 |size         |string  |                              |
 |user_id      |integer |null: false, foreign_key: true|
+|image_id     |integer |null: false, foreign_key: true|
 |category_id  |integer |null: false, foreign_key: true|
-### Association
+### Association 
 - belongs_to :user  
 - belongs_to :category
+- has_many   :images
 - has_many   :likes
-- has_many  :purchases
-- has_many :comments
+- has_many   :purchases
+- has_many   :comments
+
+
+## imagesテーブル
+|Column       |Type           |Options                       |
+|-------------|---------------|------------------------------|
+|image        |sting          |null: false                   |
+|product_id   |integer        |null: false, foreign_key: true|
+### Association
+- belongs_to :product   
 
 
 ## categoriesテーブル
