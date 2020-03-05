@@ -79,7 +79,7 @@ Things you may want to cover:
 |-------------|--------|------------------------------|
 |name         |sting   |null: false                   |
 |description  |text    |null: false                   |
-|bland        |string  |                              |
+|brand        |string  |                              |
 |status       |string  |null: false                   |
 |postage      |string  |null: false                   |
 |destination  |string  |null: false                   |
@@ -87,7 +87,6 @@ Things you may want to cover:
 |price        |integer |null: false                   | 
 |size         |string  |                              |
 |user_id      |integer |null: false, foreign_key: true|
-|image_id     |integer |null: false, foreign_key: true|
 |category_id  |integer |null: false, foreign_key: true|
 ### Association 
 - belongs_to :user  
