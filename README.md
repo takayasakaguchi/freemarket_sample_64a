@@ -111,7 +111,6 @@ Things you may want to cover:
 |-------------|---------------|------------------------------|
 |name         |sting          |null: false                   |
 |ancestry     |varchar(255)   |                              |
-|product_id   |integer        |null: false, foreign_key: true|
 ### Association
 - has_many :product   
 
