@@ -1,6 +1,25 @@
 .wrapper
   = render partial: 'login/header'
 
+  .main
+    .main__center
+
+          -# 1段目（購入内容の確認）
+      .main__center__title
+        .main__center__title__character
+          購入内容の確認
+
+          -# 2段目（購入内容の確認）
+      .main__center__product
+        .main__center__product__detail
+          .main__center__product__detail__image
+          .main__center__product__detail__info
+            .main__center__product__detail__info__name
+              腕時計
+            .main__center__product__detail__info__price
+              ¥6,000 （税込）送料込み
+  
+
 
 
   = render partial: 'login/footer'
