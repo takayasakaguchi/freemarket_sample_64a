@@ -40,7 +40,7 @@
             .main__center__purchase__form__pay__registration
               .main__center__purchase__form__pay__registration--plus-mark
                 %i.fas.fa-plus-circle
-              .main__center__purchase__form__pay__registration--text
+              = link_to credit_card_index_path, class: "main__center__purchase__form__pay__registration--text" do
                 登録してください
 
           .main__center__purchase__form__destination

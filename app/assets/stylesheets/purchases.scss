@@ -103,6 +103,10 @@
           &__registration{
             color: #0099E8;
             display: flex;
+            &--text{
+              text-decoration: none;
+              color: #0099E8;
+            }
             &--plus-mark{
               margin-right: 5px;
             }
