@@ -79,11 +79,17 @@
         }
         &__point{
           display: flex;
-          justify-content: space-between;
           padding: 10px 0 18px;
           border-bottom: 1px solid #f5f5f5;
           color: #888;
           font-size: 14px;
+          &--plus-mark{
+            font-size: 24px;
+          }
+          &--text{
+            margin-left: 10px;
+            line-height: 39px;
+          }
         }
 
         // 支払い方法
@@ -91,11 +97,15 @@
           padding: 28px 0;
           border-bottom: 1px solid #f5f5f5;
           font-size: 14px;
-          &--title{
+          &__title{
             font-weight: bold;
           }
-          &--registration{
+          &__registration{
             color: #0099E8;
+            display: flex;
+            &--plus-mark{
+              margin-right: 5px;
+            }
           }
         }
 
@@ -114,15 +124,18 @@
               color: #0099E8;
             }
           }
-          &--registration{
+          &__registration{
             font-size: 14px;
             color: #0099E8;
+            display: flex;
+            &--plus-mark{
+              margin-right: 5px;
+            }
           }
         }
 
         // 購入ボタン
         &__btn{
-          background-color: red;
           display: flex;
           justify-content: center;
           margin: 50px auto 0;
