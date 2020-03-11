@@ -1,3 +1,172 @@
-// Place all the styles related to the credit_card controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.wrapper{
+  background-color: rgb(245, 245, 245);
+  // height: 100vh;
+  // width:   100vw;
+  overflow: scroll;
+
+  .main{
+    &__center{
+      background-color: #fff;
+      width: 700px;
+      margin: auto;
+      padding-bottom: 14px;
+
+      // 1段目（購入内容の確認）
+      &__upper{
+        border-bottom: 1px solid #f5f5f5;
+        display: flex;
+        justify-content: space-around;
+        &__character{
+          font-weight: bold;
+          font-size: 24px;
+          padding: 8px 0;
+        }
+      }
+      &__bottom{
+        border-top: 1px solid #f5f5f5;
+        padding: 20px 0;
+        width: 50%;
+        margin: auto;
+
+        // 2段目（フォームグループ）
+        &__form{
+          width: 100%;
+          margin: auto;
+
+          // カード番号部分（フォーム部は共通として下に記載）
+          .card-logos{
+            margin: 8px 0 10px 0;
+          }
+
+          // カード有効期限部分
+          &__due_date{
+            margin-bottom: 20px;
+            .select-box{
+              display: flex;
+              &__left{
+                width: 50%;
+                display: flex;
+                &__form{
+                  border-radius: 5px;
+                  border: 1px solid #ccc;
+                  position: relative;
+                  width: 100%;
+                  #due_month{
+                    background-color: #fff;
+                    border-style: none;
+                    height: 100%;
+                    width: 100%;
+                    padding: 15px 0 15px 14px;
+                    font-size: 14px;
+                    cursor: pointer;
+                    -webkit-appearance: none;
+                  }
+                  .fa-chevron-down{
+                    color: #888;
+                    position: absolute;
+                    bottom: 18px;
+                    right: 10px;
+                    pointer-events: none;
+                    font-size: 18px;
+                  }
+                }
+                .month{
+                  margin: auto;
+                  font-size: 14px;
+                  padding: 0 15px;
+                }
+              }
+              &__right{
+                width: 50%;
+                display: flex;
+                &__form{
+                  border-radius: 5px;
+                  border: 1px solid #ccc;
+                  position: relative;
+                  width: 100%;
+                  #due_year{
+                    background-color: #fff;
+                    border-style: none;
+                    height: 100%;
+                    width: 100%;
+                    padding: 15px 0 15px 14px;
+                    font-size: 14px;
+                    cursor: pointer;
+                    -webkit-appearance: none;
+                  }
+                  .fa-chevron-down{
+                    color: #888;
+                    position: absolute;
+                    bottom: 18px;
+                    right: 10px;
+                    pointer-events: none;
+                    font-size: 18px;
+                  }
+                }
+                .month{
+                  margin: auto;
+                  font-size: 14px;
+                  padding: 0 15px;
+                }
+              }
+            }
+          }
+
+          // セキュリティコード部分
+          &__security_code{
+            &--help{
+              display: flex;
+              justify-content: flex-end;
+              color: #0099E8;
+              font-size: 14px;
+              margin-top: 5px;
+              .fa-question-circle{
+                padding-top: 4px;
+              }
+            }
+          }
+
+          // ラベル部分（全項目共通）
+          label{
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 5px;
+            display: inline-block;
+          }
+          // フォーム部分（カード番号/セキュリティコード共通）
+          .form-require{
+            font-size: 12px;
+            color: #fff;
+            background-color: #EA352D;
+            padding: 1px 4px;
+            border-radius: 2px;
+            margin-left: 8px;
+            display: inline-block;
+            vertical-align: top;
+          }
+          .input-box{
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            .input-text{
+              width: 95%;
+              padding: 10px 0 10px 15px;
+              border: 0px;
+              border-radius: 5px;
+            }
+          }
+          
+          // 登録ボタン
+          &__btn{
+            display: flex;
+            justify-content: center;
+            margin: 20px auto 0;
+            padding: 14px 0;
+            background-color: #EA352D;
+            color: #fff;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
