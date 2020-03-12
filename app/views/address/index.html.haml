@@ -8,5 +8,20 @@
       .main__center__upper
         .main__center__upper__character
           発送元・お届け先住所入力
+        
+      -# 2段目以降
+      .main__center__bottom
+        .main__center__bottom__form
+          %form.credit_card
+
+            -# カード番号部分
+            .main__center__bottom__form__number
+              %label{:for => "address"} お名前
+              %span.form-require 
+                必須
+              .input-box
+                %input.input-text{:placeholder => "例) 山田", :type => "text"}
+              .input-box
+                %input.input-text{:placeholder => "例) 彩", :type => "text"}
 
   = render partial: 'login/footer'
