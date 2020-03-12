@@ -33,6 +33,36 @@
           &__lower{
             margin-top: 20px;
           }
+          .select-box{
+            display: flex;
+            &__form{
+              display: flex;
+              border-radius: 5px;
+              border: 1px solid #ccc;
+              position: relative;
+              width: 100%;
+              #prefecture{
+                background-color: #fff;
+                border-style: none;
+                // height: 100%;
+                width: 100%;
+                padding: 12px 0 12px 14px;
+                font-size: 15px;
+                cursor: pointer;
+                -webkit-appearance: none;
+              }
+              .fa-chevron-down{
+                color: #888;
+                position: absolute;
+                bottom: 14px;
+                right: 10px;
+                pointer-events: none;
+                font-size: 18px;
+              }
+            }
+            
+            
+          }
 
           
 
