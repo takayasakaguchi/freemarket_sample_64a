@@ -122,15 +122,20 @@
                 font-weight: bold;
               }
               &--change{
+                text-decoration: none;
                 color: #0099E8;
               }
             }
             &__registration{
               font-size: 14px;
-              color: #0099E8;
               display: flex;
+              &--text{
+                text-decoration: none;
+                color: #0099E8;
+              }
               &--plus-mark{
                 margin-right: 5px;
+                color: #0099E8;
               }
             }
           }

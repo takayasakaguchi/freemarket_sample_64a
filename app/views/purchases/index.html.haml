@@ -47,12 +47,12 @@
             .main__center__purchase__form__destination__title
               .main__center__purchase__form__destination__title--character
                 配送先
-              .main__center__purchase__form__destination__title--change
+              = link_to address_index_path, class: "main__center__purchase__form__destination__title--change" do
                 変更する
             .main__center__purchase__form__destination__registration
               .main__center__purchase__form__destination__registration--plus-mark
                 %i.fas.fa-plus-circle
-              .main__center__purchase__form__destination__registration--text
+              = link_to address_index_path, class: "main__center__purchase__form__destination__registration--text" do
                 登録してください
     
           .main__center__purchase__form__btn
