@@ -111,6 +111,23 @@
               .input-box
                 %input.input-text{:placeholder => "例) 青山1-1-1", :type => "text"}
 
+            .main__center__bottom__form__lower
+              %label{:for => "address"} 建物名
+              %span.form-arbitrary
+                任意
+              .input-box
+                %input.input-text{:placeholder => "例) 柳ビル103", :type => "text"}
+
+            .main__center__bottom__form__lower
+              %label{:for => "address"} 電話
+              %span.form-arbitrary
+                任意
+              .input-box
+                %input.input-text{:placeholder => "例) 09012345678", :type => "text"}
+            
+            .main__center__bottom__form__btn
+              登録する
+
             
 
   = render partial: 'login/footer'
