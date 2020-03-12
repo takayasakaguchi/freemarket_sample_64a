@@ -15,7 +15,7 @@
           %form.credit_card
 
             -# カード番号部分
-            .main__center__bottom__form__number
+            .main__center__bottom__form__name
               %label{:for => "address"} お名前
               %span.form-require 
                 必須
@@ -23,5 +23,14 @@
                 %input.input-text{:placeholder => "例) 山田", :type => "text"}
               .input-box
                 %input.input-text{:placeholder => "例) 彩", :type => "text"}
+
+            .main__center__bottom__form__number
+              %label{:for => "address"} お名前カナ
+              %span.form-require 
+                必須
+              .input-box
+                %input.input-text{:placeholder => "例) ヤマダ", :type => "text"}
+              .input-box
+                %input.input-text{:placeholder => "例) アヤ", :type => "text"}
 
   = render partial: 'login/footer'
