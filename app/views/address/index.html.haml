@@ -59,8 +59,8 @@
                   %option{:value => "群馬県"} 群馬県
                   %option{:value => "埼玉県"} 埼玉県
                   %option{:value => "千葉県"} 千葉県
-                  %option{:selected => "selected", :value => "東京都"} 東京都
-                  %option{:value => "神奈川県"} 神奈川県
+                  %option{:value => "東京都"} 東京都
+                  %option{:selected => "selected", :value => "神奈川県"} 神奈川県
                   %option{:value => "新潟県"} 新潟県
                   %option{:value => "富山県"} 富山県
                   %option{:value => "石川県"} 石川県
@@ -96,6 +96,20 @@
                   %option{:value => "沖縄県"} 沖縄県
                   %option{:value => "未定"} 未定
                 %i.fas.fa-chevron-down
+
+            .main__center__bottom__form__lower
+              %label{:for => "address"} 市町村
+              %span.form-require 
+                必須
+              .input-box
+                %input.input-text{:placeholder => "例) 横浜市緑区", :type => "text"}
+
+            .main__center__bottom__form__lower
+              %label{:for => "address"} 番地
+              %span.form-require 
+                必須
+              .input-box
+                %input.input-text{:placeholder => "例) 青山1-1-1", :type => "text"}
 
             
 
