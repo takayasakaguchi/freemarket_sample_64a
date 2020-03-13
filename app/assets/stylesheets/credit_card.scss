@@ -1,20 +1,68 @@
+// ラベル部分
+@mixin label{
+  font-weight: bold;
+  font-size: 14px;
+}
+// マーク部分
+@mixin form-mark{
+  font-size: 12px;
+  color: #fff;
+  padding: 0 3px 0 3px;
+  border-radius: 2px;
+  margin-left: 8px;
+  display: inline-block;
+  vertical-align: top;
+}
+// カード番号部分
+@mixin input-box{
+  margin-top: 6px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+@mixin input-text{
+  width: 95%;
+  padding: 10px 0 10px 15px;
+  border: 0px;
+  border-radius: 5px;
+}
+
+// カード有効期限フォーム部分
+@mixin form-scroll{
+  background-color: #fff;
+  border-style: none;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+// カード有効期限スクロールマーク部分
+@mixin scroll-mark{
+  color: #888;
+  position: absolute;
+  
+  pointer-events: none;
+  font-size: 18px;
+}
+
+// カード有効期限文字部分
+@mixin text{
+  margin: auto;
+  font-size: 14px;
+  padding: 0 15px;
+}
+
 .wrapper{
-  background-color: rgb(245, 245, 245);
-  overflow: scroll;
-  color: #333;
+  @include wrapper;
   .main{
     &__center{
-      background-color: #fff;
-      width: 700px;
-      margin: auto;
+      @include wrapper_center;
       padding-bottom: 14px;
 
       // 1段目（購入内容の確認）
       &__upper{
-        border-bottom: 1px solid #f5f5f5;
-        display: flex;
-        justify-content: space-around;
-        &__character{
+        @include upper;
+        &--character{
           font-weight: bold;
           font-size: 24px;
           padding: 8px 0;
@@ -28,10 +76,19 @@
 
         // 2段目（フォームグループ）
         &__form{
-          width: 100%;
-          margin: auto;
-
-          // カード番号部分（フォーム部は共通として下に記載）
+          label{
+            @include label;
+          }
+          .form-require{
+            @include form-mark;
+            background-color: #EA352D;
+          }
+          .input-box{
+            @include input-box;
+            .input-text{
+              @include input-text;
+            }
+          }
           .card-logos{
             margin: 8px 0 10px 0;
           }
@@ -50,28 +107,18 @@
                   position: relative;
                   width: 100%;
                   #due_month{
-                    background-color: #fff;
-                    border-style: none;
-                    height: 100%;
-                    width: 100%;
+                    @include form-scroll;
                     padding: 15px 0 15px 14px;
                     font-size: 14px;
-                    cursor: pointer;
-                    -webkit-appearance: none;
                   }
                   .fa-chevron-down{
-                    color: #888;
-                    position: absolute;
-                    bottom: 18px;
+                    @include scroll-mark;
+                    bottom: 15px;
                     right: 10px;
-                    pointer-events: none;
-                    font-size: 18px;
                   }
                 }
                 .month{
-                  margin: auto;
-                  font-size: 14px;
-                  padding: 0 15px;
+                  @include text;
                 }
               }
               &__right{
@@ -83,28 +130,18 @@
                   position: relative;
                   width: 100%;
                   #due_year{
-                    background-color: #fff;
-                    border-style: none;
-                    height: 100%;
-                    width: 100%;
+                    @include form-scroll;
                     padding: 15px 0 15px 14px;
                     font-size: 14px;
-                    cursor: pointer;
-                    -webkit-appearance: none;
                   }
                   .fa-chevron-down{
-                    color: #888;
-                    position: absolute;
-                    bottom: 18px;
+                    @include scroll-mark;
+                    bottom: 15px;
                     right: 10px;
-                    pointer-events: none;
-                    font-size: 18px;
                   }
                 }
-                .month{
-                  margin: auto;
-                  font-size: 14px;
-                  padding: 0 15px;
+                .year{
+                  @include text;
                 }
               }
             }
@@ -112,6 +149,25 @@
 
           // セキュリティコード部分
           &__security_code{
+            // label{
+            //   @include label;
+            // }
+            // .form-require{
+            //   @include form-mark;
+            //   background-color: #EA352D;
+            // }
+            // .input-box{
+            //   @include input-box;
+            //   .input-text{
+            //     @include input-text;
+            //   }
+            // }
+            // .input-box{
+            //   @include input-box;
+            //   .input-text{
+            //     @include input-text;
+            //   }
+            // }
             &--help{
               display: flex;
               justify-content: flex-end;
@@ -123,45 +179,12 @@
               }
             }
           }
-
-          // ラベル部分（全項目共通）
-          label{
-            font-weight: bold;
-            font-size: 14px;
-            display: inline-block;
-          }
-          // フォーム部分（カード番号/セキュリティコード共通）
-          .form-require{
-            font-size: 12px;
-            color: #fff;
-            background-color: #EA352D;
-            padding: 0 3px 0 3px;
-            border-radius: 2px;
-            margin-left: 8px;
-            display: inline-block;
-            vertical-align: top;
-          }
-          .input-box{
-            margin-top: 6px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            .input-text{
-              width: 95%;
-              padding: 10px 0 10px 15px;
-              border: 0px;
-              border-radius: 5px;
-            }
-          }
-          
           // 登録ボタン
           &__btn{
-            display: flex;
-            justify-content: center;
-            margin: 20px auto 0;
-            padding: 14px 0;
+            @include btn;
             background-color: #EA352D;
             color: #fff;
-            font-size: 14px;
+            margin: 20px auto 0;
           }
         }
       }
