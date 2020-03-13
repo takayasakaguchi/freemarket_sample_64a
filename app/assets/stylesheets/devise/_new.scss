@@ -1,0 +1,58 @@
+.l-single-content{
+  width: 700px;
+  margin: 0 auto;
+  background-color: antiquewhite;
+
+  .l-single-header__registration{
+    font-size: 22px;
+    padding: 32px;
+    text-align: center;
+  }
+
+  .l-single-content{
+    max-width: 343px;
+    &__nickname{
+      margin: 0;
+    }
+    &__email{
+      margin: 24px 0 0;
+    }
+    &__password{
+      margin: 24px 0 0;
+    }
+    &__password__toggle{
+      margin: 16px 0 0;
+    }
+    &__verification{
+      margin: 24px 0 0;
+    }
+    &__name-kanji{
+      margin: 24px 0 0;
+    }
+    &__name-kana{
+      margin: 24px 0 0;
+    }
+    &__last{
+      margin: 40px 0 0;
+    }
+    &__last_btn{
+      margin: 24px 0 0;
+    }
+  }
+
+
+  .form-info-text{
+    color: #888;
+  }
+  .l-single-content__require{
+    background: #ea352d;
+    margin: 0 0 0 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    vertical-align: top;
+  }
+
+
+}
