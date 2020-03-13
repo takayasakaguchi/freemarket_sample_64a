@@ -2,6 +2,7 @@
   background-color: rgb(245, 245, 245);
   overflow: scroll;
   color: #333;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
   .main{
     &__center{
       background-color: #fff;
@@ -66,7 +67,7 @@
             font-size: 12px;
             color: #fff;
             background-color: #ccc;
-            padding: 1px 4px;
+            padding: 0 3px 0 3px;
             border-radius: 2px;
             margin-left: 8px;
             display: inline-block;
