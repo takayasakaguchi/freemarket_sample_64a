@@ -25,14 +25,15 @@
           &__lower{
             margin-top: 20px;
           }
+          .form-arbitrary{
+            background-color: #ccc;
+            @include form-mark;
+          }
           .select-box{
             display: flex;
             &__form{
-              display: flex;
-              border-radius: 5px;
-              border: 1px solid #ccc;
-              position: relative;
-              width: 100%;
+              display: flex;   
+              @include form-style;
               #prefecture{
                 @include form-scroll;
                 padding: 10px 0 10px 14px;
@@ -46,10 +47,6 @@
               }
             }           
           }   
-          .form-arbitrary{
-            background-color: #ccc;
-            @include form-mark;
-          }
         }
       }
     }

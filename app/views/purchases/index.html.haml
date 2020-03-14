@@ -37,22 +37,22 @@
           .main__center__purchase__form__pay
             .main__center__purchase__form__pay__title
               支払い方法
-            .main__center__purchase__form__pay__registration
-              .main__center__purchase__form__pay__registration--plus-mark
+            .registration
+              .registration--plus-mark
                 %i.fas.fa-plus-circle
-              = link_to credit_card_index_path, class: "main__center__purchase__form__pay__registration--text" do
+              = link_to credit_card_index_path, class: "registration--text" do
                 登録してください
 
           .main__center__purchase__form__destination
             .main__center__purchase__form__destination__title
               .main__center__purchase__form__destination__title--character
                 配送先
-              = link_to address_index_path, class: "main__center__purchase__form__destination__title--change" do
+              = link_to address_index_path, class: "change-text" do
                 変更する
-            .main__center__purchase__form__destination__registration
-              .main__center__purchase__form__destination__registration--plus-mark
+            .registration
+              .registration--plus-mark
                 %i.fas.fa-plus-circle
-              = link_to address_index_path, class: "main__center__purchase__form__destination__registration--text" do
+              = link_to address_index_path, class: "registration--text" do
                 登録してください
     
           .main__center__purchase__form__btn

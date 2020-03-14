@@ -1,18 +1,18 @@
-// 背景
+// mixin
+/// 背景
 @mixin wrapper{
   background-color: rgb(245, 245, 245);
   overflow: scroll;
   color: #333;
 }
-
-// 背景（内側）
+/// 背景（内側）
 @mixin wrapper_center{
   background-color: #fff;
   width: 700px;
   margin: auto;
 }
 
-// ボタン
+/// ボタン
 @mixin btn{
   display: flex;
   justify-content: center;
@@ -20,8 +20,7 @@
   padding: 14px 0;
   font-size: 14px;
 }
-
-// 1段目
+/// 背景（内側1段目)
 @mixin upper{
   border-bottom: 1px solid #f5f5f5;
   display: flex;
@@ -103,8 +102,8 @@
               font-size: 24px;
             }
             &--text{
+              margin: auto;
               margin-left: 10px;
-              line-height: 26px;
             }
           }
   
@@ -116,16 +115,19 @@
             &__title{
               font-weight: bold;
             }
-            &__registration{
+          }
+          // 「登録してください」コメント
+          .registration{
+            display: flex;
+            margin-top: 5px;
+            font-size: 14px;
+            &--text{
+              text-decoration: none;
               color: #0099E8;
-              display: flex;
-              &--text{
-                text-decoration: none;
-                color: #0099E8;
-              }
-              &--plus-mark{
-                margin: 2px 5px 0 0;
-              }
+            }
+            &--plus-mark{
+              margin-right: 5px;
+              color: #0099E8;
             }
           }
   
@@ -140,20 +142,8 @@
               &--character{
                 font-weight: bold;
               }
-              &--change{
+              .change-text{
                 text-decoration: none;
-                color: #0099E8;
-              }
-            }
-            &__registration{
-              font-size: 14px;
-              display: flex;
-              &--text{
-                text-decoration: none;
-                color: #0099E8;
-              }
-              &--plus-mark{
-                margin: 2px 5px 0 0;
                 color: #0099E8;
               }
             }

@@ -1,9 +1,10 @@
-// ラベル部分
+// mixin
+/// ラベル部分
 @mixin label{
   font-weight: bold;
   font-size: 14px;
 }
-// マーク部分
+/// マーク部分（必須/任意）
 @mixin form-mark{
   font-size: 12px;
   color: #fff;
@@ -13,20 +14,29 @@
   display: inline-block;
   vertical-align: top;
 }
-// カード番号部分
+/// フォーム部分共通スタイル
+@mixin form-style{
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  position: relative;
+  width: 100%;
+}
+/// カード番号部分
+//// フォーム部分（中身）
 @mixin input-box{
   margin-top: 6px;
   border-radius: 5px;
   border: 1px solid #ccc;
 }
+//// フォーム文字入力部分
 @mixin input-text{
   width: 95%;
   padding: 10px 0 10px 15px;
   border: 0px;
   border-radius: 5px;
 }
-
-// カード有効期限フォーム部分
+/// カード有効期限
+//// カード有効期限フォーム部分
 @mixin form-scroll{
   background-color: #fff;
   border-style: none;
@@ -35,22 +45,20 @@
   cursor: pointer;
   -webkit-appearance: none;
 }
-
-// カード有効期限スクロールマーク部分
+//// カード有効期限スクロールマーク部分
 @mixin scroll-mark{
   color: #888;
   position: absolute;
-  
   pointer-events: none;
   font-size: 18px;
 }
-
-// カード有効期限文字部分
+//// カード有効期限文字部分
 @mixin text{
   margin: auto;
   font-size: 14px;
   padding: 0 15px;
 }
+
 
 .wrapper{
   @include wrapper;
@@ -102,10 +110,7 @@
                 width: 50%;
                 display: flex;
                 &__form{
-                  border-radius: 5px;
-                  border: 1px solid #ccc;
-                  position: relative;
-                  width: 100%;
+                  @include form-style;
                   #due_month{
                     @include form-scroll;
                     padding: 15px 0 15px 14px;
@@ -125,10 +130,7 @@
                 width: 50%;
                 display: flex;
                 &__form{
-                  border-radius: 5px;
-                  border: 1px solid #ccc;
-                  position: relative;
-                  width: 100%;
+                  @include form-style;
                   #due_year{
                     @include form-scroll;
                     padding: 15px 0 15px 14px;
@@ -149,25 +151,6 @@
 
           // セキュリティコード部分
           &__security_code{
-            // label{
-            //   @include label;
-            // }
-            // .form-require{
-            //   @include form-mark;
-            //   background-color: #EA352D;
-            // }
-            // .input-box{
-            //   @include input-box;
-            //   .input-text{
-            //     @include input-text;
-            //   }
-            // }
-            // .input-box{
-            //   @include input-box;
-            //   .input-text{
-            //     @include input-text;
-            //   }
-            // }
             &--help{
               display: flex;
               justify-content: flex-end;
