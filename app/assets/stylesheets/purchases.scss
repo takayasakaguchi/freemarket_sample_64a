@@ -1,9 +1,11 @@
 // mixin
 /// 背景
 @mixin wrapper{
+  // position: relative;
   background-color: rgb(245, 245, 245);
   overflow: scroll;
   color: #333;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
 }
 /// 背景（内側）
 @mixin wrapper_center{
@@ -26,6 +28,7 @@
   display: flex;
   justify-content: space-around;
 }
+
 
 .wrapper{
   @include wrapper;

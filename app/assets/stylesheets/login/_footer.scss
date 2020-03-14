@@ -1,5 +1,32 @@
 .single_footer{
   width: auto;
   height: 220px;
-  background-color: burlywood;
-} 
+  background-color: rgb(245, 245, 245);
+  &__links{
+    display: flex;
+    justify-content: space-between;
+    width: 35%;
+    font-size: 12px;
+    margin: auto;
+    padding-top: 35px;
+  }
+  &--logo{
+    @include logo;
+    padding-top: 30px;
+  }
+  &__copy_right{
+    width: 50%;
+    margin: auto;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  } 
+}
+.single_footer img{
+  width: 185px;
+  height: 49px;
+  background-color: #666;
+  padding: 5px;
+  border-radius: 5px;
+}
