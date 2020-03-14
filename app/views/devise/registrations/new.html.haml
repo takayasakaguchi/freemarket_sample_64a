@@ -1,6 +1,6 @@
 .single_wrapper
   .single-header
-    = render "login/header"
+    = render "layouts/header"
 
   .single-main
     .l-single-content
@@ -12,19 +12,19 @@
             = render "devise/shared/error_messages", resource: resource
             .l-single-content__nickname
               = f.label:nickname, 'ニックネーム'
-              %span.l-single-content__require　必須
+              %span.l-single-content__require 必須
               %br
-              = f.email_field :email, autofocus: true, autocomplete: "nickname", placeholder: "例）メルカリ太郎"
+              = f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "例）メルカリ太郎"
             .l-single-content__email
               = f.label :email, 'メールアドレス'
-              %span.l-single-content__require　必須
+              %span.l-single-content__require 必須
               %br/
               = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可"
             .l-single-content__password
               = f.label :password, "パスワード"
-              %span.l-single-content__require　必須
+              %span.l-single-content__require 必須
               %br/
-              = f.password_field :password, autocomplete: "new-password", placeholder: "7文字以上の半角英数字"
+              = f.password_field :password, autocomplete: "new-password",  placeholder: "7文字以上の半角英数字"
               %p.form-info-text
                 ※ 英字と数字の両方を含めて設定してください
               .l-single-content__password__toggle
@@ -38,19 +38,21 @@
                 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
             .l-single-content__name-kanji
               = f.label:nickname, 'お名前（全角）'
-              %span.l-single-content__require　必須
+              %span.l-single-content__require 必須
               %br/
-              %input{:name => "fname", :type => "text",  placeholder: "例）山田"}
-              %input{:name => "lname", :type => "text",  placeholder: "例）彩"}
+              .l-single-content__name-kanji__f
+                = f.text_field :nickname, autofocus: true, autocomplete: "first_name", placeholder: "例）山田"
+                = f.text_field :nickname, autofocus: true, autocomplete: "last_name", placeholder: "例）彩"
             .l-single-content__name-kana
               = f.label:nickname, 'お名前カナ（全角）'
-              %span.l-single-content__require　必須
+              %span.l-single-content__require 必須
               %br/
-              %input{:name => "fkname", :type => "text",  placeholder: "例）ヤマダ"}
-              %input{:name => "lkname", :type => "text",  placeholder: "例）アヤ"}
+              .l-single-content__name-kana__f
+                = f.text_field :nickname, autofocus: true, autocomplete: "first_name_reading", placeholder: "例）ヤマダ"
+                = f.text_field :nickname, autofocus: true, autocomplete: "last_name_reading", placeholder: "例）アヤ"
             .l-single-content__birthday
               生年月日
-              %span.l-single-content__require　必須
+              %span.l-single-content__require 必須
               .l-single-content__birthday__select-wrap
                 .l-single-content__birthday__select-wrap__year
                   %select#select_year{:name => "year"}
@@ -67,13 +69,18 @@
             .l-single-content__last
               .l-single-content__last_message
                 「次へ進む」のボタンを押すことにより、
-                -# = link to '利用規約', '#'
+                %span{:style => "color:red"}> 利用規約
                 に同意したものとみなします
               .l-single-content__last_btn
               = f.submit "次へ進む" ,class:"btn btn-next"
               .l-single-content__last_btn_right
-                -# = linl to '本人登録について', class: "icon right"
-
+                %span 本人登録について
+              .l-single-content__last__last
+                This site is protected by reCAPTCHA and the Google 
+                %span{:style => "color:red"}> Privacy Policy
+                and 
+                %span{:style => "color:red"}>Terms of Service
+                apply.
 .single_wrapper
   .single-footer
-    = render "login/footer"
+    = render "layouts/footer"
