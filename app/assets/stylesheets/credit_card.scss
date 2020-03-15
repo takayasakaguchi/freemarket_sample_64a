@@ -31,7 +31,7 @@
 //// フォーム文字入力部分
 @mixin input-text{
   width: 95%;
-  padding: 10px 0 10px 15px;
+  padding: 16px 0 12px 15px;
   border: 0px;
   border-radius: 5px;
 }
@@ -98,13 +98,14 @@
             }
           }
           .card-logos{
-            margin: 8px 0 10px 0;
+            margin: 8px 0 16px 0;
           }
 
           // カード有効期限部分
           &__due_date{
             margin-bottom: 20px;
             .select-box{
+              margin-top: 4px;
               display: flex;
               &__left{
                 width: 50%;
@@ -168,6 +169,7 @@
             background-color: $color-furima;
             color: #fff;
             margin: 20px auto 0;
+            cursor: pointer;  
           }
         }
       }

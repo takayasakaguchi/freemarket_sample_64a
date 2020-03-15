@@ -57,12 +57,11 @@
           &__image{
             height: 80px;
             width: 80px;
-            background-color: green;
           }
           &__info{
             margin-top: 5px;
             margin-left: 16px;
-            font-size: 12px;
+            font-size: 14px;
             &--mame{
               margin-top: 10px;
             }
@@ -89,10 +88,11 @@
             font-weight: bold;
             &--character{
               font-size: 18px;
-              line-height: 42px;
+              margin-top: 3px;
+
             }
             &--confirmation{
-              font-size: 24px;
+              font-size: 26px;
             }
           }
           &__point{
@@ -129,8 +129,8 @@
               color: #0099E8;
             }
             &--plus-mark{
-              margin-right: 5px;
               color: #0099E8;
+              margin: 2px 5px 0 0
             }
           }
   
@@ -149,6 +149,10 @@
                 text-decoration: none;
                 color: #0099E8;
               }
+              .change-text:hover {
+                text-decoration: underline;
+                opacity: 0.5;
+              }
             }
           }
   
@@ -159,6 +163,7 @@
             color: #fff;
             font-weight: bold;
             margin: 50px auto 0;
+            cursor: not-allowed;
           }
         }
       }

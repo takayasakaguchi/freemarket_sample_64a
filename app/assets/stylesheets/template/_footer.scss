@@ -9,7 +9,11 @@
     font-size: 12px;
     margin: auto;
     padding-top: 35px;
+    cursor: pointer;
   }
+  .single_footer__links span:hover {
+    text-decoration: underline;
+    }
   &--logo{
     @include logo;
     padding-top: 30px;
@@ -29,4 +33,7 @@
   background-color: $color-furima;
   padding: 5px;
   border-radius: 5px;
+}
+.single_footer img:hover {
+  opacity: 0.5;
 }
