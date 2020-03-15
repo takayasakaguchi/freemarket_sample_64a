@@ -89,7 +89,7 @@
           }
           .form-require{
             @include form-mark;
-            background-color: #EA352D;
+            background-color: $color-furima;
           }
           .input-box{
             @include input-box;
@@ -165,7 +165,7 @@
           // 登録ボタン
           &__btn{
             @include btn;
-            background-color: #EA352D;
+            background-color: $color-furima;
             color: #fff;
             margin: 20px auto 0;
           }
