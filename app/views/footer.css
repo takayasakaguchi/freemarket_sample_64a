@@ -1,0 +1,180 @@
+body{
+  margin: 0;
+}
+
+li {
+  line-height: 1.4em;
+  margin: 16px 0px 0px;
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: rgb(255,255,255);
+  opacity: 0.7;
+  
+}
+
+h2{
+  font-size: 16px;
+}
+
+.footer2{
+  position: relative;
+}
+
+.main-footer1{
+  width: 1159px;
+  height: 411px;
+}
+
+.footer2-1{
+  margin-top: 18px;
+  padding-right: 40px;
+}
+
+.twitter-icon{
+  margin-top: 30px;
+  margin-right: 20px;
+}
+
+.footer-help{
+  margin-top: 18px;
+  padding-right: 40px;
+  width: 272px;
+  height: 370px;
+}
+
+.footer2-3{
+  margin-top: 18px;
+  padding-right: 40px;
+  
+}
+
+.footer2-3-3{
+  width: 128px;
+}
+
+.footer2-3-2{
+  width: 128px;
+}
+
+.footer2-4{
+  margin-top: 18px;
+  padding-right: 40px;
+  width: 70px;
+
+}
+
+
+.main-footer1{
+  background-color: rgb(34,34,34);
+  color: rgb(255,255,255);
+  font-size: 12px;
+  padding: 0px 20px 10px;
+  height: 100%;
+  
+}
+
+.footer2{
+  width: 1020px;
+  height: 330px;
+  margin: 0 auto;
+  display: flex;
+  /* position: relative; */
+}
+
+/* .footer-title2-3-1{
+  display: flex;
+} */
+
+.puraibasy{
+  display: flex;
+}
+
+
+.footer-bottom{
+  width: 700px;
+  margin: 55px auto 10px;
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  /* position: absolute;
+  top: 380px; */
+}
+
+.footer3-1{
+  text-align: center;
+
+}
+
+.footer3-2{
+  text-align: center;
+  padding-left: 15px;
+  width: 75%;
+}
+
+
+
+
+
+
+
+/* .footer2-2{
+  position: relative;
+} */
+
+/* .footer2-2-1{
+  position: relative;
+  position: absolute;
+  top:1px ;
+} */
+
+
+/* .footer2-1{
+  margin-top: 18px;
+  vertical-align: top;
+  width: 50%;
+  padding: 0px 10px;
+  width: 1020px;
+  height: 330px;
+}
+
+.footer2-1-1{
+  line-height: 24px;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+
+.footer2-3{
+  vertical-align: top;
+  margin-top: 35px;
+  width: 100%;
+  padding: 0px;
+}
+
+.footer2-4{
+  vertical-align: top;
+  margin-top: 35px ;
+  width: 100%;
+  padding: 0px;
+}
+
+.footer3{
+  width: 700px;
+  margin: 55px auto 10px;
+  display: flex;
+} */
+
+/* .merukari-footer{
+  height: 31px;
+  width: 124px;
+}
+
+.footer3-2{
+  text-align: center;
+  padding-left: 15px;
+  width: 75%;
+  height: 100%;
+} */
