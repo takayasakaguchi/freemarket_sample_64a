@@ -1,0 +1,20 @@
+.single_wrapper
+  .single-header
+    = render "layouts/header"
+
+  .mainform
+    .mainform__one
+      .mainform__one__header
+        新規会員登録
+      .mainform__one__form1
+        %button.btn-default.btn-red{:type => "submit"} メールアドレスで登録する
+        %i.far.fa-envelope
+
+        %button.btn-default.btn-blue{:type => "submit"} Facebookで登録する
+        %ii.fab.fa-facebook-square
+
+        %button.google{:type => "submit"} Googleで登録する
+        %iii.fab.fa-google
+
+.single-footer
+  = render "layouts/footer"
