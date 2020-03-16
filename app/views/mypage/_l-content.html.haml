@@ -1,0 +1,135 @@
+.user-menu
+  %section.user-menu__user-icon
+    = link_to '#' do
+      %figure
+        = image_tag 'panda.jpeg',size: '60x60'
+      %h2.user-menu__user-name.bold
+      .user-menu__status
+        .user-menu__reviews
+          評価
+          %span.user-menu__reviews.bold<>
+            2
+        .user-menu__sell
+          出品数
+          %span.user-menu__sell.bold<>
+  %section.user-menu__main-tab-container
+    %ul.user-menu__tabs
+      %li.user-menu__tab.user-menu__tab--active
+        %h3
+          = link_to '#', id:'user-menu__tab-notification' do
+            お知らせ
+      %li.user-menu__tab
+        %h3
+          = link_to '#', id:'user-menu__todo' do
+            やることリスト
+    .user-menu__tab-content
+      %ul.user-menu__item-list.user-menu__item-list--active{id:'user-menu__item-list-notification'}
+        %li
+          = link_to '#', class:'user-menu__item-link' do
+            %figure
+              = image_tag 'panda.jpeg', size: '48x48'
+            .user-menu__item-body
+              .user-menu__item-text
+                事務局から個別メッセージ「500円分のポイントが必ずもらえる友達招待でお知らせ」
+              %time
+                = icon 'far', 'clock'
+                %span
+                  2時間前
+            = icon 'fas', 'chevron-right'
+        %li
+          = link_to '#', class: 'user-menu__item-link' do
+            %figure
+              = image_tag 'panda.jpeg', size: '48x48'
+            .user-menu__item-body
+              .user-menu__item-text
+                「900円分のクーポン（ポイントバック」を付与しました。
+              %time
+                = icon 'far', 'clock'
+                %span
+                  7時間前
+            = icon 'fas', 'chevron-right'
+        %li
+          = link_to '#', class: 'user-menu__item-link' do
+            %figure
+              = image_tag 'panda.jpeg', size: '48x48'
+            .user-menu__item-body
+              .user-menu__item-text
+                《もうP1,000はゲットしましたか？》友達・家族を招待すると1人の招待につき必ずP1,000がもらえる
+              %time
+                = icon 'far', 'clock'
+                %span
+                  2 日前
+            = icon 'fas', 'chevron-right'
+        %li
+          = link_to '#', class: 'user-menu__item-link' do
+            %figure
+              = image_tag 'panda.jpeg', size: '48x48'
+            .user-menu__item-body
+              .user-menu__item-text
+                《増税前のまとめ買いラストチャンス！あと払いで半額ポイント還元》6,000円分のお買い物が実質3,000円に！
+                %time
+                  = icon 'far', 'clock'
+                  %span
+                    3 日前
+            = icon 'fas', 'chevron-right'
+        %li
+          = link_to '#', class: 'user-menu__item-link' do
+            %figure
+              = image_tag 'panda.jpeg', size: '48x48'
+            .user-menu__item-body
+              .user-menu__item-text
+                《3連休最終日！すすメルペイでP1,000ゲット》10人招待したらP10,000もらえる！詳しくはこちらから
+                %time
+                  = icon 'far', 'clock'
+                  %span
+                    5 日前
+            = icon 'fas', 'chevron-right'
+        %li.user-menu__go-list
+          = link_to '#' do
+            一覧を見る
+      %ul.user-menu__item-list{ id: 'user-menu__item-list-todo' }
+        %li.user-menu__item-not-found
+          現在、やることリストはありません
+  %section.user-menu__secondary-tab-container
+    %h2.user-menu__tab-head
+      購入した商品
+    %ul.user-menu__tabs
+      %li.user-menu__tab.user-menu__tab--active
+        %h3
+          = link_to '#', id: 'user-menu__tab-transaction-now' do
+            取引中
+      %li.user-menu__tab
+        %h3
+          = link_to '#', id: 'user-menu__tab-transaction-old' do
+            過去の取引
+    .user-menu__tab-content
+      %ul.user-menu__item-list.user-menu__item-list--active{ id: 'user-menu__item-list-transaction-now' }
+        %li.user-menu__item-not-found
+          取引中の商品がありません
+      %ul.user-menu__item-list{ id: 'user-menu__item-list-transaction-old' }
+        %li
+          = link_to '#', class: 'user-menu__item-link' do
+            %figure
+              = image_tag 'panda.jpeg', size: '48x48'
+            .user-menu__item-body
+              .user-menu__item-text
+                「SONY ワイヤレスイヤホン WF-1000XM3 新品・未開封品」 を購入しました。
+                %span
+                  取引が完了しました
+              .user-menu__item-status.user-menu__item-status--done
+                取引完了
+            = icon 'fas', 'chevron-right'
+          = link_to '#', class: 'user-menu__item-link' do
+            %figure
+              = image_tag 'panda.jpeg', size: '48x48'
+            .user-menu__item-body
+              .user-menu__item-text
+                「iPhone充電ケーブル3本セット」 を購入しました。
+                %span
+                  取引が完了しました
+              .user-menu__item-status.user-menu__item-status--done
+                取引完了
+            = icon 'fas', 'chevron-right'
+          %li.user-menu__go-list
+            = link_to '#' do
+              一覧を見る
