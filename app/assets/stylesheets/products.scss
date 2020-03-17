@@ -1,10 +1,7 @@
 // mixin
 /// 背景
 @mixin wrapper{
-  // position: relative;
-  background-color: red;
-  height: 100vh;
-  width: 100vw;
+  background-color: rgb(245, 245, 245);
   overflow: scroll;
   color: #000;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
