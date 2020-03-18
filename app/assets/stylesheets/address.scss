@@ -34,7 +34,7 @@
             &__form{
               display: flex;   
               @include form-style;
-              #prefecture{
+              #prefecture_id{
                 @include form-scroll;
                 padding: 10px 0 10px 14px;
                 font-size: 15px;
