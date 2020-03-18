@@ -29,12 +29,15 @@
         }
         &__info_box{
           display: flex;
+          justify-content: space-around;
           &__left{
-            
+            height: 100px;
+            width: 50px;
+            background-color: #fafafa;
           }
           &__right{
           .item-detail-table{
-            padding: 8px;
+            font-size: 14px;
             th{
               background-color: #fafafa;
               border: 1px solid #f5f5f5;
@@ -42,7 +45,7 @@
             }
             td{
               border: 1px solid #f5f5f5;
-              padding: 8px;
+              padding: 8px 30px 8px 8px;
             }
             .fa-laugh{
               color: #f5f;
@@ -55,7 +58,7 @@
             }
             .category_2{
               font-weight: normal;
-              
+
               .fa-chevron-right{
                 font-weight: bold;
               }
