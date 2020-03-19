@@ -6,10 +6,48 @@
 
       -# 1段目（購入内容の確認）
       .main__products_center__upper
-        .main__products_center__upper--character
+        .main__products_center__upper--product_name
           adidas アディダス スニーカー
         .main__products_center__upper__info_box
           .main__products_center__upper__info_box__left
+            .main__products_center__upper__info_box__left__img_main
+              .main__products_center__upper__info_box__left__img_main--image
+                = image_tag src="猫1.jpeg", class: "main_image"
+            .main__products_center__upper__info_box__left__img_sub
+              .main__products_center__upper__info_box__left__img_sub__first
+                .main__products_center__upper__info_box__left__img_sub__first__outer
+                  .main__products_center__upper__info_box__left__img_sub__first__outer--image
+                    = image_tag src="猫1.jpeg", size: "300x225", class: "image"
+                .main__products_center__upper__info_box__left__img_sub__first__outer
+                  .main__products_center__upper__info_box__left__img_sub__first__outer--image
+                    = image_tag src="猫1.jpeg", size: "300x225", class: "image"
+                .main__products_center__upper__info_box__left__img_sub__first__outer
+                  .main__products_center__upper__info_box__left__img_sub__first__outer--image
+                    = image_tag src="猫1.jpeg", size: "300x225", class: "image"
+                .main__products_center__upper__info_box__left__img_sub__first__outer
+                  .main__products_center__upper__info_box__left__img_sub__first__outer--image
+                    = image_tag src="猫1.jpeg", size: "300x225", class: "image"
+                .main__products_center__upper__info_box__left__img_sub__first__outer
+                  .main__products_center__upper__info_box__left__img_sub__first__outer--image
+                    = image_tag src="猫1.jpeg", size: "300x225", class: "image"
+              
+              .main__products_center__upper__info_box__left__img_sub__second
+                .main__products_center__upper__info_box__left__img_sub__second__outer
+                  .main__products_center__upper__info_box__left__img_sub__second__outer--image
+                    = image_tag src="猫1.jpeg", size: "300x225", class: "image"
+                .main__products_center__upper__info_box__left__img_sub__second__outer
+                  .main__products_center__upper__info_box__left__img_sub__second__outer--image
+                    = image_tag src="猫1.jpeg", size: "300x225", class: "image"
+                .main__products_center__upper__info_box__left__img_sub__second__outer
+                  .main__products_center__upper__info_box__left__img_sub__second__outer--image
+                    = image_tag src="猫1.jpeg", size: "300x225", class: "image"
+                .main__products_center__upper__info_box__left__img_sub__second__outer
+                  .main__products_center__upper__info_box__left__img_sub__second__outer--image
+                    = image_tag src="猫1.jpeg", size: "300x225", class: "image"
+                .main__products_center__upper__info_box__left__img_sub__second__outer
+                  .main__products_center__upper__info_box__left__img_sub__second__outer--image
+                    = image_tag src="猫1.jpeg", size: "300x225", class: "image"
+              
           .main__products_center__upper__info_box__right
             
             %table.item-detail-table
@@ -56,5 +94,14 @@
                 %th 配送本地域
                 %td
                   千葉県
+
+        .main__products_center__upper--price_info
+          %span.price ¥4,999
+          %span.tax (税込)
+          %span.shipping_fee 送料込み
+        
+        .main__products_center__upper__btn
+          購入画面に進む
+
 
   = render partial: 'template/footer'
