@@ -1,0 +1,171 @@
+// mixin
+/// 背景
+@mixin wrapper{
+  background-color: rgb(245, 245, 245);
+  overflow: scroll;
+  color: #000;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+}
+/// 背景（内側）
+@mixin wrapper_center{
+  background-color: #fff;
+  width: 700px;
+  margin: auto;
+}
+
+/// ボタン
+@mixin btn{
+  display: flex;
+  justify-content: center;
+  margin: 20px auto 0;
+  padding: 14px 0;
+  font-size: 14px;
+}
+/// 背景（内側1段目)
+@mixin upper{
+  border-bottom: 1px solid #f5f5f5;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.wrapper{
+  @include wrapper;
+  .main{
+    &__center{
+      @include wrapper_center;
+  
+      // 1段目（購入内容の確認）
+      &__title{
+        @include upper;
+        &--character{
+          font-weight: bold;
+          font-size: 22px;
+          padding: 32px 0;
+        }
+      }
+  
+      // 2段目（購入内容の確認）
+      &__product{
+        width: 50%;
+        margin: auto;
+        display: flex;
+        &__detail{
+          display: flex;
+          padding: 32px 0; 
+          &__image{
+            height: 80px;
+            width: 80px;
+          }
+          &__info{
+            margin-top: 5px;
+            margin-left: 16px;
+            font-size: 14px;
+            &--mame{
+              margin-top: 10px;
+            }
+            &--price{
+              padding-top: 10px;
+              font-weight: bold;
+            }
+          }
+        } 
+      }
+  
+      // 3段目以降
+      &__purchase{
+        border-top: 1px solid #f5f5f5;
+        padding: 28px 0;
+        &__form{
+          width: 50%;
+          margin: auto;
+  
+          // 価格・ポイント使用
+          &__price{
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            &--character{
+              font-size: 18px;
+              margin-top: 3px;
+
+            }
+            &--confirmation{
+              font-size: 26px;
+            }
+          }
+          &__point{
+            display: flex;
+            padding: 10px 0 18px;
+            border-bottom: 1px solid #f5f5f5;
+            color: $color-ineffective;
+            font-size: 14px;
+            &--plus-mark{
+              font-size: 24px;
+            }
+            &--text{
+              margin: auto;
+              margin-left: 10px;
+            }
+          }
+  
+          // 支払い方法
+          &__pay{
+            padding: 28px 0;
+            border-bottom: 1px solid #f5f5f5;
+            font-size: 14px;
+            &__title{
+              font-weight: bold;
+            }
+          }
+          // 「登録してください」コメント
+          .registration{
+            display: flex;
+            margin-top: 5px;
+            font-size: 14px;
+            &--text{
+              text-decoration: none;
+              color: #0099E8;
+            }
+            &--plus-mark{
+              color: #0099E8;
+              margin: 2px 5px 0 0
+            }
+          }
+  
+          // 配送先
+          &__destination{
+            padding: 28px 0;
+            border-bottom: 1px solid #f5f5f5;
+            &__title{
+              display: flex;
+              justify-content: space-between;
+              font-size: 14px;
+              &--character{
+                font-weight: bold;
+              }
+              .change-text{
+                text-decoration: none;
+                color: #0099E8;
+              }
+              .change-text:hover {
+                text-decoration: underline;
+                opacity: 0.5;
+              }
+            }
+          }
+  
+          // 購入ボタン
+          &__btn{
+            @include btn;
+            background-color: $color-ineffective;
+            color: #fff;
+            font-weight: bold;
+            margin: 50px auto 0;
+            cursor: not-allowed;
+          }
+        }
+      }
+    }
+  }
+}

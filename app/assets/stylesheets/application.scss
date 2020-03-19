@@ -1,3 +1,12 @@
+@import "template/reset";
+@import "template/color";
+@import "template/header";
+@import "template/footer";
+@import "purchases";
+@import "credit_card";
+@import "address";
+@import "font-awesome-sprockets";
+@import "./font-awesome";
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

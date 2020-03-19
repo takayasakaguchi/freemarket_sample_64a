@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root "purchases#index"
+  resources :credit_card, only: [:index] do
+  end
+  resources :address, only: [:index, :edit] do
+  end
 end
