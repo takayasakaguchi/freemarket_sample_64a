@@ -16,6 +16,13 @@
   font-size: 14px;
 }
 
+/// ホバー時オプション
+@mixin hover{
+  cursor: pointer; 
+  text-decoration: underline;
+  opacity: 0.5;
+}
+
 .wrapper{
   @include wrapper;
   .main{
@@ -54,7 +61,6 @@
                   width: 60px;
                   position: relative;
                   overflow: auto;
-                  background-color: green;
                   &--image{
                     position: static;
                     width: auto;
@@ -116,25 +122,19 @@
                 color: #0099e8
               }
               .category_1:hover{
-                cursor: pointer; 
-                text-decoration: underline;
-                opacity: 0.5;
+                @include hover;
               }
               .category_2{
                 color: #0099e8
               }
               .category_2:hover{
-                cursor: pointer; 
-                text-decoration: underline;
-                opacity: 0.5;
+                @include hover;
               }
               .category_3{
                 color: #0099e8
               }
               .category_3:hover{
-                cursor: pointer; 
-                text-decoration: underline;
-                opacity: 0.5;
+                @include hover;
               }
               .bland_name{
                 color: #0099e8
@@ -212,9 +212,7 @@
                 color: #0099e8
               }
               .main__products_center__upper__small_btns__right__safety:hover{
-                cursor: pointer; 
-                text-decoration: underline;
-                opacity: 0.5;
+                @include hover;
               }
           }
         }
@@ -254,14 +252,10 @@
         color: #0099e8;
       }
       .main__products_center__paging--bofore:hover{
-        cursor: pointer; 
-        text-decoration: underline;
-        opacity: 0.5;
+        @include hover;
       }
       .main__products_center__paging--next:hover{
-        cursor: pointer; 
-        text-decoration: underline;
-        opacity: 0.5;
+        @include hover;
       }
       &__categoried_by_owner{
         margin-top: 20px;
@@ -274,12 +268,9 @@
         font-size: 24px;
         font-weight: bold;
         color: #0099e8;
-        cursor: pointer; 
       }
       a:hover{
-        cursor: pointer; 
-        text-decoration: underline;
-        opacity: 0.5;
+        @include hover;
       }
     }
   }
