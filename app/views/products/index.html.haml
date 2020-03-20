@@ -4,52 +4,75 @@
   .main
     .main__products_center
 
-      -# 1段目（購入内容の確認）
+      -# 1段目（商品情報など）
       .main__products_center__upper
+
+        -## 商品名表示
         .main__products_center__upper--product_name
           adidas アディダス スニーカー
+
+        -## 商品名情報表示 
         .main__products_center__upper__info_box
+
+          -### 商品写真表示
           .main__products_center__upper__info_box__left
+            -#### メイン画像
             .main__products_center__upper__info_box__left__img_main
               .main__products_center__upper__info_box__left__img_main--image
                 = image_tag src="猫1.jpeg", class: "main_image"
+
+            -#### サブ画像（複数投稿時）
             .main__products_center__upper__info_box__left__img_sub
+
+              -##### サブ画像表示1段目
+                     2段に分けないとビューが崩れてしまうのでとりあえず2段に分けて表示しています。
               .main__products_center__upper__info_box__left__img_sub__first
+
                 .main__products_center__upper__info_box__left__img_sub__first__outer
                   .main__products_center__upper__info_box__left__img_sub__first__outer--image
                     = image_tag src="猫1.jpeg", size: "300x225", class: "image"
+
                 .main__products_center__upper__info_box__left__img_sub__first__outer{id: "hidden"}
                   .main__products_center__upper__info_box__left__img_sub__first__outer--image
                     = image_tag src="猫1.jpeg", size: "300x225", class: "image"
+
                 .main__products_center__upper__info_box__left__img_sub__first__outer{id: "hidden"}
                   .main__products_center__upper__info_box__left__img_sub__first__outer--image
                     = image_tag src="猫1.jpeg", size: "300x225", class: "image"
+
                 .main__products_center__upper__info_box__left__img_sub__first__outer{id: "hidden"}
                   .main__products_center__upper__info_box__left__img_sub__first__outer--image
                     = image_tag src="猫1.jpeg", size: "300x225", class: "image"
+
                 .main__products_center__upper__info_box__left__img_sub__first__outer{id: "hidden"}
                   .main__products_center__upper__info_box__left__img_sub__first__outer--image
                     = image_tag src="猫1.jpeg", size: "300x225", class: "image"
               
+              -##### サブ画像表示2段目
               .main__products_center__upper__info_box__left__img_sub__second
+
                 .main__products_center__upper__info_box__left__img_sub__second__outer{id: "hidden"}
                   .main__products_center__upper__info_box__left__img_sub__second__outer--image
                     = image_tag src="猫1.jpeg", size: "300x225", class: "image"
+
                 .main__products_center__upper__info_box__left__img_sub__second__outer{id: "hidden"}
                   .main__products_center__upper__info_box__left__img_sub__second__outer--image
                     = image_tag src="猫1.jpeg", size: "300x225", class: "image"
+
                 .main__products_center__upper__info_box__left__img_sub__second__outer{id: "hidden"}
                   .main__products_center__upper__info_box__left__img_sub__second__outer--image
                     = image_tag src="猫1.jpeg", size: "300x225", class: "image"
+
                 .main__products_center__upper__info_box__left__img_sub__second__outer{id: "hidden"}
                   .main__products_center__upper__info_box__left__img_sub__second__outer--image
                     = image_tag src="猫1.jpeg", size: "300x225", class: "image"
+
                 .main__products_center__upper__info_box__left__img_sub__second__outer{id: "hidden"}
                   .main__products_center__upper__info_box__left__img_sub__second__outer--image
                     = image_tag src="猫1.jpeg", size: "300x225", class: "image"
-              
+
+          -### 商品情報表示テーブル 
           .main__products_center__upper__info_box__right
-            
             %table.item-detail-table
               %tr
                 %th 出品者
@@ -89,14 +112,17 @@
                 %td
                   千葉県
 
+        -## 値段表示
         .main__products_center__upper--price_info
           %span.price ¥4,999
           %span.tax (税込)
           %span.shipping_fee 送料込み
         
+        -## 購入画面に進むボタン
         .main__products_center__upper__btn
           購入画面に進む
 
+        -## 商品説明
         .main__products_center__upper--description
           色は、グレー、ブルー
           %br
@@ -109,6 +135,7 @@
           %br
           中古品なので神経質の方は購入を避けた方がいいと思います。
 
+          -## いいねボタンなど
           .main__products_center__upper__small_btns
             .main__products_center__upper__small_btns__left
               .main__products_center__upper__small_btns__left__like
@@ -118,12 +145,12 @@
               .main__products_center__upper__small_btns__left__accusation
                 %i.far.fa-flag
                 %span 不適切な商品の報告
-            
             .main__products_center__upper__small_btns__right
               .main__products_center__upper__small_btns__right__safety
                 %i.fas.fa-lock
                 %span あんしん・あんぜんへの取り組み
 
+      -# 2段目（コメントなど）
       .main__products_center__bottom
         .main__products_center__bottom__comment
           %textarea.comment_box{cols: "60", rows: "6"}
@@ -134,6 +161,8 @@
         .main__products_center__bottom__comment_btn
           %i.fas.fa-comment
           %span コメントする
+
+      -# 他の商品ページへのリンクなど
       .main__products_center__paging
         .main__products_center__paging--bofore
           %i.fas.fa-chevron-left
@@ -141,9 +170,9 @@
         .main__products_center__paging--next
           次の商品
           %i.fas.fa-chevron-right 
-      .main__products_center__categoried_by_owner
+      .main__products_center__categoried_product
         %a hataさんのその他の出品を見る
-      .main__products_center__categoried_by_product
+      .main__products_center__categoried_product
         %a メンズ/スニーカーのその他の出品を見る
 
   = render partial: 'template/footer'
