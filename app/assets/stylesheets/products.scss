@@ -20,14 +20,17 @@
   @include wrapper;
   .main{
     &__products_center{
-      background-color: #fff;
+      // border-bottom: 1px solid #f5f5f5;
+      // background-color: #fff;
       width: 700px;
       margin: auto;
+      padding-bottom: 20px;
 
       // 1段目（購入内容の確認）
       &__upper{
-        border-bottom: 1px solid #f5f5f5;
-        margin: 40px 35px 20px;
+        background-color: #fff;
+        padding: 40px 35px 20px;
+        // padding-bottom: 20px;
         &--product_name{
           font-weight: bold;
           font-size: 22px;
@@ -162,6 +165,87 @@
           font-size: 24px; 
           font-weight: bold;
         }
+        &--description{
+          padding-top: 50px;
+          font-size: 18px;
+        }
+        &__small_btns{
+          display: flex;
+          justify-content: space-between;
+          margin-top: 20px;
+          &__left{
+            display: flex;
+            &__like{
+              font-size: 14px;
+              border-radius: 20px;
+              background-color: #f5f5f5;
+              border: 1px solid #f5f5f5;
+              padding: 4px 20px;
+              margin-right: 20px;
+            }
+            &__accusation{
+              font-size: 14px;
+              border-radius: 20px;
+              background-color: #f5f5f5;
+              border: 1px solid #f5f5f5;
+              padding: 4px 20px;
+            }
+          }
+          &__right{
+            display: flex;
+              &__safety{
+                font-size: 14px;
+                padding: 4px 20px;
+                
+              }
+          }
+        }
+      }
+      &__bottom{
+        background-color: #fff;
+        margin-top: 10px;
+        padding: 25px 35px 20px;
+        .comment_box{
+          width: 100%;
+        }
+        &__message{
+          background-color: #f5f5f5;
+          border: 1px solid #f5f5f5;
+          font-size: 14px;
+          margin-top: 10px;
+        }
+        &__comment_btn{
+          @include btn;
+          background-color: $color-furima;
+          color: #fff;
+          margin: 20px auto 0;
+          cursor: pointer; 
+          font-size: 20px;
+          width: 70%; 
+          border-radius: 30px;
+          // font-weight: bold;
+          .fa-comment{
+            margin-top: 8px;
+          }
+        }
+      }
+      &__paging{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        color: $color-furima;
+      }
+      &__categoried_by_owner{
+        margin-top: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        color: $color-furima;
+      }
+      &__categoried_by_product{
+        margin-top: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        color: $color-furima;
       }
     }
   }
