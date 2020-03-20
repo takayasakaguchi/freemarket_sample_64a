@@ -8,7 +8,7 @@
     width: 456px;
     margin: 0 auto;
     background: #fff;
-    height: 780px;
+    height: 677px;
     &__header{
       padding: 40px 64px;
       text-align: center;
@@ -86,13 +86,12 @@
       border: 1px solid #d3d3d3;
       margin: 28px 7px;
       border-radius: 4px;
-      // display: table-cell;
       vertical-align: middle;
     }
-      &__login__check___box{
-        display: table-cell;
-        height: 100%;
-      }
+      // &__login__check___box{
+      //   display: table-cell;
+      //   height: 100%;
+      // }
       .btn-red{
         margin: 24px 0 0;
         display: block;
