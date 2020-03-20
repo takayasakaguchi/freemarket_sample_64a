@@ -1,17 +1,45 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.single_wrapper
+  .single-header
+    = render "layouts/header"
+
+  .single-main1
+    .login-panel
+      .login-panel__header
+        .login-panel__header__text
+          アカウントをお持ちでない方はこちら
+        = link_to "new_registration_path", class: "login-panel_header--btn" do
+          .login-panel_header__font
+            新規会員登録
+
+
+
+      .login-panel__inner__input
+        %button.btn-default.btn-blue{type: "submit"} 
+          Facebookでログイン
+          .fab.fa-facebook-square
+
+        %button.google{type: "submit"} 
+          Googleでログインする
+          .fab.fa-google
+      
+      .login-panel__login
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .login-panel__login__email
+            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス"
+          .login-panel__login__password
+            = f.password_field :password, autocomplete: "new-password",  placeholder: "パスワード"
+          - if devise_mapping.rememberable?
+            .login-panel__login__check
+              .login-panel__login__check___box
+                = f.check_box :remember_me
+              .login-panel__login__check___box__text
+              私はロボットではありません
+          %button.btn-red{type: "submit"} ログイン
+          .remember
+            = link_to "パスワードお忘れの方","#"
+            -# = f.label :パスワードお忘れの方
+    -# = render "devise/shared/links"
+
+.single_wrapper
+  .single-footer
+    = render "layouts/footer"
