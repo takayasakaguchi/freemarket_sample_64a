@@ -118,6 +118,36 @@
             td{
               border: 1px solid #f5f5f5;
               padding: 8px 30px 8px 8px;
+              .owner_name{
+                color: #0099e8
+              }
+              .category_1{
+                color: #0099e8
+              }
+              .category_1:hover{
+                cursor: pointer; 
+                text-decoration: underline;
+                opacity: 0.5;
+              }
+              .category_2{
+                color: #0099e8
+              }
+              .category_2:hover{
+                cursor: pointer; 
+                text-decoration: underline;
+                opacity: 0.5;
+              }
+              .category_3{
+                color: #0099e8
+              }
+              .category_3:hover{
+                cursor: pointer; 
+                text-decoration: underline;
+                opacity: 0.5;
+              }
+              .bland_name{
+                color: #0099e8
+              }
             }
             .fa-laugh{
               color: #f5f;
@@ -182,6 +212,7 @@
               border: 1px solid #f5f5f5;
               padding: 4px 20px;
               margin-right: 20px;
+              cursor: pointer; 
             }
             &__accusation{
               font-size: 14px;
@@ -189,6 +220,7 @@
               background-color: #f5f5f5;
               border: 1px solid #f5f5f5;
               padding: 4px 20px;
+              cursor: pointer; 
             }
           }
           &__right{
@@ -196,7 +228,13 @@
               &__safety{
                 font-size: 14px;
                 padding: 4px 20px;
-                
+                cursor: pointer; 
+                color: #0099e8
+              }
+              .main__products_center__upper__small_btns__right__safety:hover{
+                cursor: pointer; 
+                text-decoration: underline;
+                opacity: 0.5;
               }
           }
         }
@@ -233,19 +271,36 @@
         display: flex;
         justify-content: space-between;
         margin-top: 10px;
-        color: $color-furima;
+        color: #0099e8;
+        // cursor: pointer; 
+      }
+      .main__products_center__paging--bofore:hover{
+        cursor: pointer; 
+        text-decoration: underline;
+        opacity: 0.5;
+      }
+      .main__products_center__paging--next:hover{
+        cursor: pointer; 
+        text-decoration: underline;
+        opacity: 0.5;
       }
       &__categoried_by_owner{
         margin-top: 20px;
         font-size: 24px;
         font-weight: bold;
-        color: $color-furima;
+        color: #0099e8;
       }
       &__categoried_by_product{
         margin-top: 20px;
         font-size: 24px;
         font-weight: bold;
-        color: $color-furima;
+        color: #0099e8;
+        cursor: pointer; 
+      }
+      a:hover{
+        cursor: pointer; 
+        text-decoration: underline;
+        opacity: 0.5;
       }
     }
   }

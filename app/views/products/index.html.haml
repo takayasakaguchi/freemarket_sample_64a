@@ -55,14 +55,14 @@
                 %th 出品者
                 %td
                   .owner_name
-                    hata
-                  .main__products_center__upper__info_box__right__owner__contents__marks
-                    %i.fas.fa-laugh
-                    537
-                    %i.fas.fa-meh
-                    537
-                    %i.fas.fa-frown-open
-                    537
+                    %a hata
+                  -# .main__products_center__upper__info_box__right__owner__contents__marks
+                  -#   %i.fas.fa-laugh
+                  -#   537
+                  -#   %i.fas.fa-meh
+                  -#   537
+                  -#   %i.fas.fa-frown-open
+                  -#   537
               %tr
                 %th カテゴリー
                 %td
@@ -77,7 +77,8 @@
               %tr
                 %th ブランド
                 %td
-                  アディダス
+                  .bland_name
+                    %a アディダス
               %tr
                 %th 商品のサイズ
                 %td
@@ -148,8 +149,8 @@
           次の商品
           %i.fas.fa-chevron-right 
       .main__products_center__categoried_by_owner
-        hataさんのその他の出品を見る
+        %a hataさんのその他の出品を見る
       .main__products_center__categoried_by_product
-        メンズ/スニーカーのその他の出品を見る
+        %a メンズ/スニーカーのその他の出品を見る
 
   = render partial: 'template/footer'
