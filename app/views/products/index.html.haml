@@ -13,13 +13,14 @@
       .single-main__form__text__sentence__input
         .l-single-content__image
           %label.l-single-content__image__icon
-            .fas.fa-camera
+            .fas.fa-camera 
+              .l-single-content__image__icon__text
+                ドラッグアンドドロップ
+                %br
+                またはクリックしてファイルをダウンロード
             %input.file{type: "file"}
-          .l-single-content__image__icon__text
-            ドラッグアンドドロップ
-            %br
-            またはクリックしてファイルをダウンロード
-      -# 商品名・説明
+
+        -# 商品名・説明
     .single-main__form1
       .single-main__form1__text1
         商品名
@@ -161,16 +162,16 @@
                 %option{:value => "1日〜2日で発送"} 1日〜2日で発送
                 %option{:value => "2日〜3日で発送"} 2日〜3日で発送
                 %option{:value => "4日〜7日で発送"} 4日〜7日で発送
-      -# 価格
-      .single-main__form1__text4
-        .single-main__form1__text4__left
-          価格（¥300〜9,999,999）
-        .single-main__form1__text4__price
-          販売価格
-          %span.l-single-content__require 必須
-          .single-main__form1__text4__price__number
-            %input.number{:name => "sample", :type => "number", :style => "text-align: right", :placeholder => "0"}/
-            .fas.fa-yen-sign
+      
+        .single-main__form1__text4
+          .single-main__form1__text4__left
+            価格（¥300〜9,999,999）
+          .single-main__form1__text4__price
+            販売価格
+            %span.l-single-content__require2 必須
+            .single-main__form1__text4__price__number
+              %input.number{:name => "sample", :type => "number", :style => "text-align: right", :placeholder => "0"}/
+              .fas.fa-yen-sign
 
         .single-main__form1__text4__commission
           .single-main__form1__text4__commission__from1

@@ -160,13 +160,17 @@
     // 価格
     &__text4{
       padding-top: 40px;
-      padding-right: 40px;
-      padding-left: 40px;
+      padding-right: 13px;
+      padding-left: 0px;
       border-top: 1px solid #f5f5f5;
       &__left{
         font-size: 13px;
         margin-bottom: 24px;
         color: darkgrey;
+      }
+      &__price{
+        display: flex;
+        justify-content: space-between;
       }
       &__price__number{
         text-align: right;
@@ -216,7 +220,7 @@
       padding-top: 70px;
     }
   }
-
+  // 画像選択の中身
   .l-single-content__image{
     height: 145px;
     width: 600px;
@@ -226,14 +230,24 @@
     text-align: center;
       &__icon{
         margin: 12px;
+        &__text{
+          font-size: 12px;
+          font-family: sans-serif;
+          margin-top: 11px;
+        }
       }
     .file{
       display: none;
     }
   }
+  .fas.fa-camera{
+    width: 600px;
+    height: 145px;
+    cursor: pointer;
+    margin-top: 44px;
+  }
 
   
-
   .l-single-content__require{
     background: $color-furima;
     margin: 0 0 0 8px;
@@ -252,6 +266,16 @@
     font-size: 12px;
     vertical-align: top;;
     margin: 0 0 0 8px;
+    padding: 3px 4px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    vertical-align: top;
+  }
+  .l-single-content__require2{
+    margin-right: 237px;
+    height: 17px;
+    background: $color-furima;
     padding: 3px 4px;
     border-radius: 2px;
     color: #fff;
