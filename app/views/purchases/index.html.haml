@@ -1,0 +1,63 @@
+.wrapper
+  = render partial: 'layouts/header'
+
+  .main
+    .main__center
+
+      -# 1段目（購入内容の確認）
+      .main__center__title
+        .main__center__title--character
+          購入内容の確認
+
+      -# 2段目（購入内容の確認）
+      .main__center__product
+        .main__center__product__detail
+          .main__center__product__detail__image
+            = image_tag src="猫1.jpeg", size: "80x80"
+          .main__center__product__detail__info
+            .main__center__product__detail__info--name
+              腕時計
+            .main__center__product__detail__info--price
+              ¥6,000 （税込）送料込み
+
+      -# 3段目以降
+      .main__center__purchase
+        .main__center__purchase__form
+          .main__center__purchase__form__price
+            .main__center__purchase__form__price--character
+              支払い金額
+            .main__center__purchase__form__price--confirmation
+              ¥6,000
+
+          .main__center__purchase__form__point
+            .main__center__purchase__form__point--plus-mark
+              %i.fas.fa-square
+            .main__center__purchase__form__point--text
+              ポイントを使用（所持ポイント：P0）
+
+          .main__center__purchase__form__pay
+            .main__center__purchase__form__pay__title
+              支払い方法
+            .registration
+              .registration--plus-mark
+                %i.fas.fa-plus-circle
+              = link_to credit_card_index_path, class: "registration--text" do
+                登録してください
+
+          .main__center__purchase__form__destination
+            .main__center__purchase__form__destination__title
+              .main__center__purchase__form__destination__title--character
+                配送先
+              = link_to address_index_path, class: "change-text" do
+                変更する
+            .registration
+              .registration--plus-mark
+                %i.fas.fa-plus-circle
+              = link_to address_index_path, class: "registration--text" do
+                登録してください
+    
+          .main__center__purchase__form__btn
+            購入する
+
+
+  = render partial: 'layouts/footer'
