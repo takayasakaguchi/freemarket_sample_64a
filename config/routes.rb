@@ -4,8 +4,9 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'   
   } 
 
-  get "signup/signup"
   root "purchases#index"
+  resources :signup, only: [:index] do
+  end
   resources :credit_card, only: [:index] do
   end
   resources :address, only: [:index, :edit] do
