@@ -15,12 +15,14 @@
       .nav
         %ul.listsLeft
           %li.listLeft__item.listsLeft__item--first
-            %a#catBtn{href: "#"} カテゴリー
+            #catBtn 
+            = link_to 'カテゴリー'
             .tree.displayNone
               .tree.displayNone
                 %ul.categoryTree
           %li.listLeft__item
-            %a#brandBtn{href: "#"} ブランド
+            #brandBtn
+            = link_to 'ブランド'
             %ul.brandsPulldown.displayNone
         %ul.listsRight
           %li.listsRight__item.listsRight__item--login
@@ -38,9 +40,9 @@
           %br/
           フリマアプリです
         .content__btn
-          .aBtn{href: "#"}
+          .aBtn
             = link_to image_tag("http://furima.tokyo/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg")
-          .gBtn{href: "#"}
+          .gBtn
             = link_to image_tag("http://furima.tokyo/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg")
       .picture
     %section.topIntroduction
@@ -83,9 +85,9 @@
           %br/
           ほしかったあの商品に出会えるかもしれません。
         .btn
-          .aBtn{href: "#"}
+          .aBtn
             = link_to image_tag("http://furima.tokyo/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg")
-          .gBtn{href: "#"}
+          .gBtn
             = link_to image_tag("http://furima.tokyo/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg")
     %section.topKeyFeatures
       %h2.head FURIMAの特徴
@@ -156,14 +158,14 @@
               .productList--body
                 %h3.name 商品
                 .details 3000円
-  %aside.appBanner
+  .side.appBanner
     .inner
       %h2.inner__title だれでもかんたん、人生を変えるフリマアプリ
       %p.inner_text 今すぐ無料ダウンロード！
       .inner__icon
-        .aBtn{href: "#"}
+        .aBtn
           = link_to image_tag("http://furima.tokyo/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg")
-        .gBtn{href: "#"}
+        .gBtn
           = link_to image_tag("http://furima.tokyo/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg")
   .footer
     %ul.contents
