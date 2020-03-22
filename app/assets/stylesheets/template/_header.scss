@@ -13,7 +13,6 @@
   &--logo{
     @include logo;
     padding-top: 40px;
-    
   }
 } 
 .single_header img{
@@ -23,3 +22,4 @@
 .single_header img:hover {
   opacity: 0.5;
 }
+

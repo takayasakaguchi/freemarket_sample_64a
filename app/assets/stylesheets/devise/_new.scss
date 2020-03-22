@@ -1,0 +1,191 @@
+.single_wrapper{
+  background-color: #f5f5f5;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+}
+
+  .l-single-content{
+    width: 700px;
+    margin: 0 auto;
+    background-color: white;
+    
+  
+    .l-single-header__registration{
+      font-size: 22px;
+      padding: 32px;
+      text-align: center;
+      &__form{
+        border-top: 1px solid #f5f5f5;
+        padding: 24px 16px 40px;
+      }
+    }
+
+    .l-single-content{
+      max-width: 343px;
+      &__nickname{
+        margin: 0;
+      }
+      &__email{
+        margin: 24px 0 0;
+      }
+      &__password{
+        margin: 24px 0 0;
+      }
+      &__password__toggle{
+        margin: 16px 0 0;
+      }
+      &__verification{
+        margin: 24px 0 0;
+        &__text{
+          font-size: 14px;
+        }
+      }
+      &__name-kanji{
+        margin: 24px 0 0;
+        width: 100%;
+        &__f{
+          display: flex;
+        }
+      }
+      &__name-kana{
+        margin: 24px 0 0;
+        &__f{
+          display: flex;
+        }
+      }
+      &__birthday{
+        margin: 40px 0 0;
+        &__select-wrap{
+          display: flex;
+        }
+        &__select-wrap__year{
+          margin-right: 4px;
+          position: relative;
+        }
+        &__select-wrap__month{
+          position: relative;
+        }
+        &__select-wrap__day{
+          position: relative;
+        }
+        .fas.fa-chevron-down{
+          position: absolute;
+          top: 18px;
+          left: 51px;
+          color: #888;
+          pointer-events: none;
+        }
+      }
+      &__last{
+        margin: 40px 0 0;
+        &__btn{
+          margin: 24px 0 0;
+          height: 48px;
+          font-size:14px;
+          background: $color-furima;
+          border: 1px solid #ea352d;
+          color: #fff;
+          text-align: center;
+          line-height: 3.5;
+        }
+        &__btn__right{
+          margin: 24px 0 0;
+          text-align: right;
+        }
+        i{
+          color: #0099E8;
+        }
+        &__last{
+          background-color: #f5f5f5;
+          font-size: 11px;
+          padding: 8px 16px;
+          color: #888888;
+          margin: 24px 0 0;
+        }
+        .btn-red{
+          margin: 24px 0 0;
+          display: block;
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+          cursor: pointer;
+          text-align: center;
+          background: $color-furima;
+          color: #fff;
+        }
+      }
+
+      #user_nickname{
+        height: 30px;
+        width: 88%;
+        padding: 10px 16px 8px;
+        margin-right: 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        line-height: 1.5;
+      }
+      #user_email{
+        height: 30px;
+        width: 301px;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        line-height: 1.5;
+        font-size: 16px;
+      }
+      #user_password{
+        height: 30px;
+        width: 301px;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        line-height: 1.5;
+        font-size: 16px;
+      }
+      
+      select{
+        height: 48px;
+        width: 76px;
+        -webkit-appearance: none;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        line-height: 1.5;
+        background: #fff;
+        margin-right: 4px;
+        cursor: pointer;
+      }
+      h4{
+        line-height: 3;
+      }
+      
+      &__text{
+        color: #ccc;
+        font-size: 14px;
+      }
+
+      a{
+        color: #0099E8;
+        cursor: pointer;
+        text-decoration: none;
+
+      }
+    }
+
+    .form-info-text{
+      color: #888;
+      font-size: 12px;
+    }
+    .l-single-content__require{
+      background: $color-furima;
+      margin: 0 0 0 8px;
+      padding: 2px 4px;
+      border-radius: 2px;
+      color: #fff;
+      font-size: 12px;
+      vertical-align: top;
+    }
+
+
+  }

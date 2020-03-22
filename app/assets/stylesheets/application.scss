@@ -3,5 +3,10 @@
 @import "template/header";
 @import "template/footer";
 @import "font-awesome-sprockets";
-@import "./font-awesome";
-@import "products";
+@import "font-awesome";
+@import "devise/new";
+@import "sessions/new";
+@import "signup";
+@import "purchases";
+@import "credit_card";
+@import "address";
