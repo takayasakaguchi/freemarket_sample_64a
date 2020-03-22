@@ -82,16 +82,20 @@ button {
 .content__btn {
   display: flex;
   margin: 24px 0 0 0;
+  width: 100%;
+  height: 53px;
 }
 
-.aBtn {
-  width: 180px;
-  margin-right: 10px;
-}
+// a aBtn {
+//   // width: 180px;
+//   // margin-right: 10px;
+// }
 
-.gBtn {
-  width: 180px;
-}
+
+
+// a gBtn {
+//   width: 180px;
+// }
 
 .resultLists {
   display: flex;
@@ -566,7 +570,14 @@ h2 {
   right: 32px;
   position: fixed;
   padding: 15px;
+
+  a {
+    text-decoration: none;
+  }
+
 }
+
+
 
 .purchaseBtn__text {
   color: #fff;
