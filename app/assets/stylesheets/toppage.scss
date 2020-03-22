@@ -1,13 +1,13 @@
-body{
+body {
   margin: 0;
   width: 100%;
 }
 
-.pcHeader{
+.pcHeader {
   padding: 0 60px;
 }
 
-.headerInner{
+.headerInner {
   max-width: 1040px;
   width: 100%;
   min-height: 82px;
@@ -15,70 +15,85 @@ body{
   padding: 15px 0 0;
 }
 
-.mainHeader{
+.mainHeader {
   position: relative;
   display: flex;
   align-items: center;
   height: 50px;
 }
 
-ul{
+ul {
   list-style: none;
   margin: 0;
-  padding: 0 ;
+  padding: 0;
 }
 
-p{
+p {
   margin: 0;
   font-size: 14px;
   height: 16px;
 }
 
-.icon{
+.icon {
   padding-bottom: 10px;
   margin-right: 30px;
   border-radius: 4px;
+
+  a {
+    width: 140px;
+    height: 40px;
+    display: block;
+  }
 }
 
-.icon a{
-  width: 140px;
-  height: 40px;
-  display: block;
-}
-
-img{
+img {
   width: 100%;
+
   /* vertical-align: bottom; */
 }
 
-.searchBox{
+.searchBox {
   margin-left: auto;
   width: 100%;
 }
 
-form{
+form {
   width: 100%;
   display: flex;
   margin-bottom: 5px;
 }
 
-input{
+input {
   width: calc(100% - 26px);
   height: 36px;
-  padding:0 0 0 5px ;
+  padding: 0 0 0 5px;
   font-size: inherit;
   font-family: inherit;
 }
 
-button{
+button {
   width: 36px;
   border: 0;
   cursor: pointer;
   background-color: #3ccace;
-  padding: 8px ;
+  padding: 8px;
 }
 
-.resultLists{
+.content__btn {
+  display: flex;
+  margin: 24px 0 0 0;
+}
+
+.aBtn {
+  width: 180px;
+  margin-right: 10px;
+}
+
+.gBtn {
+  width: 180px;
+}
+
+.resultLists {
   display: flex;
   position: absolute;
   right: 0;
@@ -86,7 +101,7 @@ button{
   z-index: 2;
 }
 
-.nav{
+.nav {
   font-size: 14px;
   margin-bottom: 10px;
   position: relative;
@@ -94,63 +109,64 @@ button{
   text-decoration: none;
 }
 
-.listsLeft__item--first{
+.listsLeft__item--first {
   text-decoration: none;
   padding: 0;
   text-decoration: none;
+
+  a {
+    width: 69px;
+    height: 32px;
+  }
 }
 
-.listsLeft__item--first a{
-  width: 69px;
-  height: 32px;
-}
-
-.listsLeft{
+.listsLeft {
   position: relative;
   display: flex;
   padding: 0 0 0 16px;
   padding-left: 0;
 }
-.listsLeft__item{
+
+.listsLeft__item {
   display: flex;
   line-height: 38px;
   padding: 0 0 0 16px;
 }
 
-.listLeft__item a{
+.listLeft__item a {
   color: #333;
   text-decoration: none;
-  line-height: 32px ;
+  line-height: 32px;
   background-position: center right;
   background-size: 18px;
   padding-right: 30px;
 }
 
-.listsRight{
+.listsRight {
   margin-left: auto;
   display: flex;
 }
 
-.listsRight__item{
+.listsRight__item {
   color: #333;
   line-height: 38px;
   padding: 0 0 0 16px;
+
+  a {
+    display: flex;
+    align-items: center;
+    color: #333;
+    text-decoration: none;
+    line-height: 32px;
+  }
 }
 
-.listsRight__item a{
-  display: flex;
-  align-items: center;
-  color: #333;
-  text-decoration: none;
-  line-height: 32px;
-}
-
-.topIntroduction .main{
+.topIntroduction .main {
   padding: 60px 20px;
   width: 100%;
 }
 
-.subtitle{
+.subtitle {
   text-align: center;
   font-size: 26px;
   line-height: 1.4;
@@ -160,71 +176,71 @@ button{
   position: relative;
 }
 
-.lists{
+.lists {
   text-align: center;
   display: flex;
   max-width: 1500px;
+
   /* width: 100%; */
   margin: 0 auto;
-  margin-top:16px ;
+  margin-top: 16px;
   margin-right: 50px;
   padding-left: 40px;
 }
 
-.number{
+.number {
   display: inline-block;
   position: absolute;
   top: 0;
   left: 0;
-  border-radius: 4% ;
+  border-radius: 4%;
   font-size: 30px;
   text-align: center;
   margin: 0 5px 0 0;
   padding: 10px 20px;
   background-color: #3ccace;
   color: #fff;
-}
 
-.number img{
-  width: 306px;
-  height: 306px;
-  padding-right: 51px;
+  img {
+    width: 306px;
+    height: 306px;
+    padding-right: 51px;
+  }
 }
 
 .list {
- width: 30%;
- margin: 16px 5% 0 0;
- text-align: left;
- display: flex;
- flex-direction: column;
- align-items: center;
+  width: 30%;
+  margin: 16px 5% 0 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.list__pict{
+.list__pict {
   position: relative;
   margin-bottom: 20px;
 }
 
-.list__text{
+.list__text {
   font-weight: bold;
   font-size: 24px;
   line-height: 50px;
   margin: 0 0 0 2px;
+
+  span {
+    color: #3ccace;
+  }
 }
 
-.list__text span{
-  color: #3ccace;
-}
-
-
-.list__description{
+.list__description {
   font-size: 18px;
   line-height: 1.5;
   margin: 16px 0 0;
 }
 
-.topMiddleDl{
-  background-image: url(///Users/TOSHIMASA/Desktop/material/pict/bg-topMiddleDl-pict.jpg);
+.topMiddleDl {
+  background-image: url(http://furima.tokyo/assets/bg-topMiddleDl-pict-5042a3aa7eef6dd93330080028e3a781daf47c390c00a4fb5d7e7b06caae68c9.jpg);
   background-position: bottom right;
   height: 400px;
   background-size: cover;
@@ -233,37 +249,38 @@ button{
   width: 100%;
 }
 
-.topMiddleDl__inner{
+.topMiddleDl__inner {
   color: #fff;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
   text-align: left;
   max-width: 1040px;
   width: 100%;
-  margin: 0 auto ;
+  margin: 0 auto;
 }
 
-.innersubtitle{
+.innersubtitle {
   font-size: 27px;
   font-weight: bold;
   line-height: 1.4;
 }
 
-.text{
+.text {
   font-size: 18px;
   margin: 20px 0 30px;
   line-height: 1.5;
+  height: 81px;
 }
 
-.btn{
+.btn {
   display: flex;
 }
 
-.topKeyFeatures{
+.topKeyFeatures {
   padding: 60px 100px;
   background-color: #fff;
 }
 
-.items{
+.items {
   max-width: calc(1040px + 20px);
   width: 100%;
   margin: 0 auto;
@@ -271,28 +288,29 @@ button{
   flex-wrap: wrap;
 }
 
-.item{
+.item {
   display: flex;
   flex-direction: column;
   width: calc(1 / 3 * 100%);
   text-align: center;
+
   /* padding: 0 20px; */
   /* height: 464px; */
 }
 
-.item__img{
+.item__img {
   width: 70%;
   margin: 0 auto;
   line-height: 120px;
 }
 
-.item__subtitle{
+.item__subtitle {
   margin: 38px 0 10px;
   font-size: 19px;
   font-weight: bold;
 }
 
-.item__detail{
+.item__detail {
   margin: 0 0 40px;
   padding: 0 20px;
   font-size: 17px;
@@ -300,20 +318,20 @@ button{
   text-align: center;
 }
 
-.item__img{
- width: 70%;
- margin: 0 auto;
- line-height: 120px;
+.item__img {
+  width: 70%;
+  margin: 0 auto;
+  line-height: 120px;
 }
 
-.main{
+.main {
   background-color: #f8f8f8;
 }
 
-.mainVisual{
+.mainVisual {
   /* width: 100%; */
   height: 560px;
-  background-image: url(///Users/TOSHIMASA/Desktop/material/pict/bg-mainVisual-pict_pc.jpg);
+  background-image: url(http://furima.tokyo/assets/bg-mainVisual-pict_pc-a1a4be0d864c29338b03d163957f9fd26b20f7c1fa0d05c17b603ec54d249ebe.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -323,8 +341,8 @@ button{
   align-items: center;
 }
 
-.content__subtitle{
-  text-shadow: 0 0 5px rgb(0,0,0,0.4 );
+.content__subtitle {
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
   font-size: 60px;
   line-height: 1.2;
   color: #fff;
@@ -332,22 +350,21 @@ button{
   margin: 0;
 }
 
-.content{
+.content {
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
   padding: 35px 0 0 0;
+
+  li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 32px;
+  }
 }
 
-.content li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 12px;
-  line-height: 32px;
-
-}
-
-h2{
+h2 {
   font-weight: normal;
   display: block;
   margin-block-start: 0.83em;
@@ -356,145 +373,149 @@ h2{
   margin-inline-end: 0px;
 }
 
-.content__text{
-  text-shadow: 0 0 5px rgba(0,0,0,0.4);
+.content__text {
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
   font-size: 18px;
   color: #fff;
   line-height: 1.77778;
   margin: 16px 0 0 0;
   width: 926px;
+  height: 64px;
 }
 
-.picture{
+.picture {
   position: absolute;
   top: 0;
   right: 210px;
 }
 
-.topIntroduction{
+.topIntroduction {
   padding: 60px 20px;
+
   /* width: 100%; */
 }
 
-.pickupContainer{
+.pickupContainer {
   padding: 80px 0 0;
   background-color: #f8f8f8;
   height: 100%;
 }
 
-.head{
+.head {
   text-align: center;
   font-size: 28px;
   line-height: 1.4;
   font-weight: bold;
 }
 
-.productHead{
+.productHead {
   text-align: center;
+
+  a {
+    font-size: 24px;
+    text-decoration: none;
+    color: #3ccace;
+  }
 }
 
-.productHead a{
-  font-size: 24px;
-  text-decoration: none;
-  color: #3ccace;
-}
-
-.productLists{
+.productLists {
   width: 780px;
   margin: 26px auto;
   display: flex;
   justify-content: space-around;
 }
 
-.productList{
+.productList {
   width: 220px;
   display: inline-block;
+
   /* display: flex; */
   /* float: left; */
 }
 
-.listsLeft__item a{
+.listsLeft__item a {
   color: #333;
 }
 
-.productList--img{
+.productList--img {
   width: 220px;
   height: 150px;
   position: relative;
   overflow: hidden;
   margin: 0;
   z-index: auto;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: auto;
+    height: 150px;
+    object-fit: cover;
+  }
 }
 
-.productList--img img{
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  z-index: auto;
-  height: 150px;
-  object-fit: cover;
-}
-
-.productList--body{
+.productList--body {
   background-color: white;
   color: #333;
   padding: 16px;
 }
 
-.name{
+.name {
   overflow: hidden;
   line-height: 1.5;
   font-size: 16px;
   text-align: left;
 }
 
-.details{
+.details {
   font-size: 16px;
 }
 
-.pickupContainer:last-child{
+.pickupContainer:last-child {
   padding-bottom: 80px;
 }
 
-.appBanner{
-  background-image: url(///Users/TOSHIMASA/Desktop/material/pict/bg-appBanner-pict.jpg);
+.appBanner {
+  background-image: url(http://furima.tokyo/assets/bg-appBanner-pict-ce684a4c4d5fa2da43c30a3839923591af75a642a3a906ad975065771ef3d72f.jpg);
   padding: 100px 40px;
   position: relative;
   background-size: cover;
   background-position: center;
+  height: 159px;
 }
 
-.inner{
+.inner {
   color: #fff;
   text-align: center;
 }
 
-.inner_text{
+.inner_text {
   font-size: 35px;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  height: 53px;
 }
 
-.appBanner .inner__title{
+.appBanner .inner__title {
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
   font-size: 24px;
   font-weight: bold;
   line-height: 1.4;
 }
 
-.footer{
+.footer {
   padding: 60px 0;
   color: #fff;
   background-color: #272727;
   text-align: center;
   height: 234px;
   margin: 0 auto;
-
 }
 
-.footer__logo{
+.footer__logo {
   max-width: 160px;
   height: 46px;
   width: 100%;
@@ -503,27 +524,57 @@ h2{
   text-align: center;
 }
 
-.contents{
+.inner__icon {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px auto 0;
+}
+
+.contents {
   max-width: 840px;
   margin: 0 auto;
   display: flex;
   padding-left: 0;
   height: 172px;
   position: relative;
+
   /* margin-bottom: 30px; */
 }
 
-.content{
+.content {
   display: flex;
   flex-direction: column;
   width: calc(1/3 * 100%);
   margin: 0 2% 0 0;
   padding-top: 0;
-  
 }
 
-.content__head{
+.content__head {
   margin: 0 0 20px;
   font-size: 16px;
   font-weight: bold;
+}
+
+.purchaseBtn {
+  width: 120px;
+  background: #3ccace;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+}
+
+.purchaseBtn__text {
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.purchaseBtn__icon {
+  width: 60%;
 }
