@@ -1,7 +1,6 @@
 // mixin
 /// 背景
 @mixin wrapper{
-  background-color: rgb(245, 245, 245);
   overflow: scroll;
   color: #000;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
@@ -36,6 +35,7 @@
 .wrapper{
   @include wrapper;
   .main{
+    padding-top: 50px;
     &__products_center{
       width: 700px;
       margin: auto;
