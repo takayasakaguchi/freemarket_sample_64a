@@ -1,4 +1,24 @@
+/// ロゴ部分
+@mixin logo{
+  width: 50%;
+    margin: auto;
+    vertical-align: center;
+    display: flex;
+    justify-content: center;
+}
+
 .single_header{
   height: 128px;
-  background-color: green;
-}  
+  background-color: rgb(245, 245, 245);
+  &--logo{
+    @include logo;
+    padding-top: 40px;
+  }
+} 
+.single_header img{
+  width: 185px;
+  height: 49px;
+}
+.single_header img:hover {
+  opacity: 0.5;
+} 
