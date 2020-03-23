@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'posts#toppage'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions'   
@@ -10,5 +11,5 @@ Rails.application.routes.draw do
   end
   resources :address, only: [:index, :edit] do
   end
-end
 
+end
