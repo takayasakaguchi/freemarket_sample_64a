@@ -33,7 +33,6 @@
           = link_to '新規会員登録' , '#'
   .nav_bottom
     .nav_bottom__category
-      -# %ul
       %span.title
         = link_to 'FURIMA' , '#'
       %i.fas.fa-chevron-right
@@ -183,27 +182,20 @@
                 %th 発送日の目安
                 %td
                   4-7日で発送
-
-        
-          -## いいねボタンなど
+     
+          -### いいねボタンなど
           .main__products_center__upper__info_box__small_btns
-            .main__products_center__upper__info_box__small_btns__left
-              .main__products_center__upper__info_box__small_btns__left__like
-                %i.far.fa-star
-                %span お気に入り
-                5
-            .main__products_center__upper__info_box__small_btns__right
-              .main__products_center__upper__info_box__small_btns__right__accusation
-                %i.far.fa-flag
-                %span 不適切な商品の報告
+            .main__products_center__upper__info_box__small_btns__like
+              %i.far.fa-star
+              %span お気に入り
+              5
+            .main__products_center__upper__info_box__small_btns__accusation
+              %i.far.fa-flag
+              %span 不適切な商品の報告
               
-        
-          -## 購入画面に進むボタン
+          -### 購入画面に進むボタン
           .main__products_center__upper__info_box__btn
             購入画面に進む
-
-        
-
 
       -# 2段目（コメントなど）
       .main__products_center__bottom

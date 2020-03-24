@@ -102,7 +102,7 @@
             }
           }
 
-          /// 価格情報表示など
+          /// 価格情報表示
           &--price_info{
             font-size: 22px;
             padding-top: 20px;
@@ -119,6 +119,8 @@
               font-size: 16px;
             }
           }
+
+          /// 商品説明
           &--description{
             padding: 50px 0 30px 0;
             font-size: 18px;
@@ -126,54 +128,55 @@
 
           /// 商品情報表示テーブル
           &__table{
-          .item-detail-table{
-            font-size: 14px;
-            width: 100%;
-            th{
-              background-color: #eee;
-              border: 1px solid #dedede;
-              padding: 8px;
-              text-align: center;
-              width: 25%;
-            }
-            td{
-              border: 1px solid #dedede;
-              padding: 8px;
-              .owner_name{
-                color: $color-furima;
+            .item-detail-table{
+              font-size: 14px;
+              width: 100%;
+              th{
+                background-color: #eee;
+                border: 1px solid #dedede;
+                padding: 8px;
+                text-align: center;
+                width: 25%;
               }
-              .category_1{
-                color: $color-furima;
-              }
-              .category_1:hover{
-                @include hover;
+              td{
+                border: 1px solid #dedede;
+                padding: 8px;
+                .owner_name{
+                  color: $color-furima;
+                }
+                .category_1{
+                  color: $color-furima;
+                }
+                .category_1:hover{
+                  @include hover;
+                }
+                .category_2{
+                  color: $color-furima;
+                }
+                .category_2:hover{
+                  @include hover;
+                }
+                .category_3{
+                  color: $color-furima;
+                }
+                .category_3:hover{
+                  @include hover;
+                }
+                .bland_name{
+                  color: $color-furima;
+                }
               }
               .category_2{
-                color: $color-furima;
-              }
-              .category_2:hover{
-                @include hover;
-              }
-              .category_3{
-                color: $color-furima;
-              }
-              .category_3:hover{
-                @include hover;
-              }
-              .bland_name{
-                color: $color-furima;
-              }
-            }
-            .category_2{
-              font-weight: normal;
+                font-weight: normal;
 
-              .fa-chevron-right{
-                font-weight: bold;
+                .fa-chevron-right{
+                  font-weight: bold;
+                }
               }
-            }
+            }      
           }
-               
-          }
+
+          /// 購入確認ページ遷移ボタン
           &__btn{
             @include btn;
             background-color: $color-furima;
@@ -184,31 +187,26 @@
             font-weight: bold;
           }
   
+          /// お気に入り/不適切報告ボタン
           &__small_btns{
             display: flex;
             justify-content: space-between;
             margin: 30px 0 40px 0;
-            &__left{
-              display: flex;
-              &__like{
-                border-radius: 20px;
-                padding: 4px 20px;
-                cursor: pointer;
-                margin-right: 20px; 
-                color: $color-furima;
-                border: 1px solid #ffb340;
-                font-size: 16px;
-              }
+            &__like{
+              border-radius: 20px;
+              padding: 4px 20px;
+              cursor: pointer;
+              margin-right: 20px; 
+              color: $color-furima;
+              border: 1px solid #ffb340;
+              font-size: 16px;
             }
-            &__right{
-              display: flex;
-              &__accusation{
-                border-radius: 5px;
-                padding: 4px 20px;
-                cursor: pointer;
-                font-size: 14px;
-                border: 1px solid #333;
-              }
+            &__accusation{
+              border-radius: 5px;
+              padding: 4px 20px;
+              cursor: pointer;
+              font-size: 14px;
+              border: 1px solid #333;
               .main__products_center__upper__small_btns__right__safety:hover{
                 @include hover;
               }
@@ -217,9 +215,6 @@
         }
       }
 
-        
-
-      
       // 2段目（コメントなど）
       &__bottom{
         background-color: #fff;
