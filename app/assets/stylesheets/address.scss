@@ -1,0 +1,54 @@
+.wrapper{
+  @include wrapper;
+  .main{
+    &__center{
+      @include wrapper_center;
+      padding-bottom: 14px;
+
+      // 1段目（購入内容の確認）
+      &__upper{
+        @include upper;
+        &--character{
+          font-weight: bold;
+          font-size: 24px;
+          padding: 8px 0;
+        }
+      }
+      &__bottom{
+        border-top: 1px solid #f5f5f5;
+        padding: 20px 0;
+        width: 50%;
+        margin: auto;
+
+        // 2段目（フォームグループ）
+        &__form{
+          &__lower{
+            margin-top: 20px;
+          }
+          .form-arbitrary{
+            background-color: #ccc;
+            @include form-mark;
+          }
+          .select-box{
+            display: flex;
+            &__form{
+              display: flex;   
+              @include form-style;
+              #prefecture_id{
+                @include form-scroll;
+                padding: 10px 0 10px 14px;
+                font-size: 15px;
+                color: #333;
+              }
+              .fa-chevron-down{
+                @include scroll-mark;
+                bottom: 14px;
+                right: 16px;
+              }
+            }           
+          }   
+        }
+      }
+    }
+  }
+}
