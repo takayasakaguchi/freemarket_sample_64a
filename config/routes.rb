@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  root to: 'products#index'
-  resources :products, only: [:index]
+  # 動作確認用URL（サーバーサイド情報がまだないため仮ルート設定）
+  get "/pruducts/1", to: 'products#show'
 end
