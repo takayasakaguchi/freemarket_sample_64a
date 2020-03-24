@@ -42,14 +42,11 @@
           text-align: center;
         }
         &__info_box{
-          // display: flex;
-          // justify-content: space-between;
-
+         
           /// 商品写真表示
           &__image{
-            background-color: #fafafa;
             &__img_main{
-              text-align: center;;
+              text-align: center;
               .main_image{
                 vertical-align: bottom;
               }
