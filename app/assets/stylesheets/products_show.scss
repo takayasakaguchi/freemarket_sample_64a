@@ -141,7 +141,7 @@
               td{
                 border: 1px solid #dedede;
                 padding: 8px;
-                .owner_name{
+                .owner_name a{
                   color: $color-furima;
                 }
                 .category_1{
@@ -162,7 +162,7 @@
                 .category_3:hover{
                   @include hover;
                 }
-                .bland_name{
+                .bland_name a{
                   color: $color-furima;
                 }
               }
@@ -262,7 +262,9 @@
         margin-top: 20px;
         font-size: 24px;
         font-weight: bold;
-        color: $color-furima;
+        a{
+          color: $color-furima;
+        }
       }
       a:hover{
         @include hover;
