@@ -56,8 +56,9 @@
               = link_to address_index_path, class: "registration--text" do
                 登録してください
     
-          .main__center__purchase__form__btn
-            購入する
+          = form_for 'purchase_item_path' do |f|
+            :plain
+              <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="公開鍵" data-text="購入する"></script>
 
 
   = render partial: 'layouts/footer'
