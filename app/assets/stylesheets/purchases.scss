@@ -125,10 +125,10 @@
             font-size: 14px;
             &--text{
               text-decoration: none;
-              color: #0099E8;
+              color: $color-furima;
             }
             &--plus-mark{
-              color: #0099E8;
+              color: $color-furima;
               margin: 2px 5px 0 0
             }
           }
@@ -146,7 +146,7 @@
               }
               .change-text{
                 text-decoration: none;
-                color: #0099E8;
+                color: $color-furima;
               }
               .change-text:hover {
                 text-decoration: underline;
@@ -168,7 +168,7 @@
               background-color: $color-furima;
               font-weight: bold;
               border: none;
-              
+              border-radius: 0;
             }
           }
         }
