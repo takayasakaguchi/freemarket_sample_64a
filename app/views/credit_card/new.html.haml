@@ -11,16 +11,18 @@
 
       -# 2段目以降
       .main__center__bottom
+        <script type="text/javascript" src="https://js.pay.jp/"></script>
+        <script type="text/javascript">Payjp.setPublicKey('pk_test_0184a51888153a807ac3fd3f');</script>
         .main__center__bottom__form
-          = form_for '' do |f|
+          %form#credit_card{:action => "/pay", :method => "POST"}
 
             -# カード番号部分
             .main__center__bottom__form__number
-              = f.label:card_number, 'カード番号'
+              %label{for: "card_number"} カード番号
               %span.form-require 
                 必須
               .input-box
-                = f.text_field :card_number, class: 'input-text', placeholder: '半角数字のみ'
+                %input.input-text{maxlength: "16", name: "number", placeholder: "半角数字のみ", type: "text"}
               .card-logos
                 = image_tag src="visa.png", size: "49x30", class: "card_logo"
                 = image_tag src="master-card.png", size: "38x30", class: "card_logo"
@@ -32,34 +34,57 @@
 
             -# カード有効期限部分
             .main__center__bottom__form__due_date
-              = f.label:due_date, '有効期限'
+              %label{for: "due_date"} 有効期限
               %span.form-require 
                 必須
               .select-box
                 .select-box__left
                   .select-box__left__form
-                    = f.select :due_month, [["01", 1],["02", 2],["03", 3],["04", 4],["05", 5],["06", 6],["07", 7],["08", 8],["09", 9],["10", 10],["11", 11],["12", 12]], id: 'due_month'
+                    %select#due_month{name: "due_month"}
+                      %option{value: "01"} 01
+                      %option{value: "02"} 02
+                      %option{value: "03"} 03
+                      %option{value: "04"} 04
+                      %option{value: "05"} 05
+                      %option{value: "06"} 06
+                      %option{value: "07"} 07
+                      %option{value: "08"} 08
+                      %option{value: "09"} 09
+                      %option{value: "10"} 10
+                      %option{value: "11"} 11
+                      %option{value: "12"} 12
                     %i.fas.fa-chevron-down
                   %span.month
                     月
                 .select-box__right
                   .select-box__right__form
-                    = f.select :due_year, [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30], id: 'due_year'
+                    %select#due_year{name: "due_year"}
+                      %option{value: "20"} 20
+                      %option{value: "21"} 21
+                      %option{value: "22"} 22
+                      %option{value: "23"} 23
+                      %option{value: "24"} 24
+                      %option{value: "25"} 25
+                      %option{value: "26"} 26
+                      %option{value: "27"} 27
+                      %option{value: "28"} 28
+                      %option{value: "29"} 29
+                      %option{value: "30"} 30
                     %i.fas.fa-chevron-down
                   %span.year
                     年
 
             -# セキュリティコード部分
             .main__center__bottom__form__security_code
-              = f.label:security_code, 'セキュリティコード'
+              %label{for: "security_code"} セキュリティコード
               %span.form-require 
                 必須
               .input-box
-                = f.text_field :security_code, class: 'input-text', placeholder: 'カード背面4桁もしくは3桁の番号'
+                %input.input-text{maxlength: "3", name: "security_code", placeholder: "カード背面4桁もしくは3桁の番号", type: "text"}
               .main__center__bottom__form__security_code--help
                 %i.fas.fa-question-circle
                 %span カード裏面の番号とは？
       
-            = f.submit '登録する', class: 'main__center__bottom__form__btn'
-              
+            %button.main__center__bottom__form__btn{:type => "submit"} 登録する              
+            
   = render partial: 'layouts/footer'
