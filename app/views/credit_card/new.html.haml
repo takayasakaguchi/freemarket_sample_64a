@@ -12,15 +12,17 @@
       -# 2段目以降
       .main__center__bottom
         .main__center__bottom__form
-          = form_for '' do |f|
+          = form_tag(registration_credit_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
 
             -# カード番号部分
             .main__center__bottom__form__number
-              = f.label:card_number, 'カード番号'
+              %label{for: "card_number"} カード番号
+              -# = f.label:card_number, 'カード番号'
               %span.form-require 
                 必須
               .input-box
-                = f.text_field :card_number, class: 'input-text', id: 'card_number', placeholder: '半角数字のみ'
+                %input.input-text{placeholder: "半角数字のみ", type: "text", id: 'card_number'}
+                -# = f.text_field :card_number, class: 'input-text', id: 'card_number', placeholder: '半角数字のみ'
                 -## jsで値を取得するためにid名'card_number'を追加
               .card-logos
                 = image_tag src="visa.png", size: "49x30", class: "card_logo"
@@ -33,20 +35,46 @@
 
             -# カード有効期限部分
             .main__center__bottom__form__due_date
-              = f.label:due_date, '有効期限'
+              %label{for: "due_date"} 有効期限
+              -# = f.label:due_date, '有効期限'
               %span.form-require 
                 必須
               .select-box
                 .select-box__left
                   .select-box__left__form
-                    = f.select :card_month, [["01", 1],["02", 2],["03", 3],["04", 4],["05", 5],["06", 6],["07", 7],["08", 8],["09", 9],["10", 10],["11", 11],["12", 12]]
+                    %select#card_month
+                      %option{value: "01"} 01
+                      %option{value: "02"} 02
+                      %option{value: "03"} 03
+                      %option{value: "04"} 04
+                      %option{value: "05"} 05
+                      %option{value: "06"} 06
+                      %option{value: "07"} 07
+                      %option{value: "08"} 08
+                      %option{value: "09"} 09
+                      %option{value: "10"} 10
+                      %option{value: "11"} 11
+                      %option{value: "12"} 12
+                    -# = f.select :card_month, [["01", 1],["02", 2],["03", 3],["04", 4],["05", 5],["06", 6],["07", 7],["08", 8],["09", 9],["10", 10],["11", 11],["12", 12]]
                     -## jsで値を取得するためにid名変更（payjp.jsの内容に統一）
                     %i.fas.fa-chevron-down
                   %span.month
                     月
                 .select-box__right
                   .select-box__right__form
-                    = f.select :card_year, [["20", 2020],["21", 2021],["22", 2022],["23", 2023],["24", 2024],["25", 2025],["26", 2026],["27", 2027],["28", 2028],["29", 2029],["30", 2030]]
+                    %select#card_year
+                      %option{value: "2020"} 20
+                      %option{value: "2021"} 21
+                      %option{value: "2022"} 22
+                      %option{value: "2023"} 23
+                      %option{value: "2024"} 24
+                      %option{value: "2025"} 25
+                      %option{value: "2026"} 26
+                      %option{value: "2027"} 27
+                      %option{value: "2028"} 28
+                      %option{value: "2029"} 29
+                      %option{value: "2030"} 30
+                    -# = f.select :card_year, [["20", 2020],["21", 2021],["22", 2022],["23", 2023],["24", 2024],["25", 2025],["26", 2026],["27", 2027],["28", 2028],["29", 2029],["30", 2030]]
                     -## jsで値を取得するためにid名変更（payjp.jsの内容に統一）
                     %i.fas.fa-chevron-down
                   %span.year
@@ -54,11 +82,13 @@
 
             -# セキュリティコード部分
             .main__center__bottom__form__security_code
-              = f.label:security_code, 'セキュリティコード'
+              %label{for: "security_code"} セキュリティコード
+              -# = f.label:security_code, 'セキュリティコード'
               %span.form-require 
                 必須
               .input-box
-                = f.text_field :card_cvc, class: 'input-text', id: 'card_cvc', placeholder: 'カード背面4桁もしくは3桁の番号'
+                %input.input-text{placeholder: "カード背面4桁もしくは3桁の番号", type: "text", id: 'card_cvc'}
+                -# = f.text_field :card_cvc, class: 'input-text', id: 'card_cvc', placeholder: 'カード背面4桁もしくは3桁の番号'
                 -## jsで値を取得するためにid名'card_cvc'を追加
 
               .main__center__bottom__form__security_code--help
@@ -66,7 +96,8 @@
                 %span カード裏面の番号とは？
       
             -# クレジットカード登録ボタン
-            = f.submit '登録する', class: 'main__center__bottom__form__btn', id: 'submit_btn'
+            = submit_tag "登録する", class: 'main__center__bottom__form__btn', id: 'submit_btn'
+            -# = f.submit '登録する', class: 'main__center__bottom__form__btn', id: 'submit_btn'
             -## jsで操作するためにid名を追加
               
   = render partial: 'layouts/footer'
