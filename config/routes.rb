@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   get "/pruducts/1", to: 'products#show'
   resources :signup, only: [:index]
   resources :credit_card, only: [:new] do
+    collection do
+      post 'registration'
+    end
   end
   resources :address, only: [:index, :edit] do
   end
