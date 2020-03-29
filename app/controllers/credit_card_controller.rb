@@ -12,6 +12,7 @@ class CreditCardController < ApplicationController
 
     Payjp.api_key = 'pk_test_0184a51888153a807ac3fd3f' #payjpの公開鍵をセット。
     if params['payjp-token'].blank?
+      # paramsの中にjsで作った'payjpTokenが存在するか確かめる
       redirect_to action: "new"
     else
       customer = Payjp::Customer.create(
