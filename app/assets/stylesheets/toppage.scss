@@ -55,21 +55,21 @@ img {
 .searchBox {
   margin-left: auto;
   width: 100%;
+  form {
+    width: 100%;
+    display: flex;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    width: calc(100% - 26px);
+    height: 36px;
+    padding: 0 0 0 5px;
+    font-size: inherit;
+    font-family: inherit;
+  }
 }
 
-form {
-  width: 100%;
-  display: flex;
-  margin-bottom: 5px;
-}
-
-input {
-  width: calc(100% - 26px);
-  height: 36px;
-  padding: 0 0 0 5px;
-  font-size: inherit;
-  font-family: inherit;
-}
 
 button {
   width: 36px;
