@@ -34,5 +34,40 @@ class CreditCardController < ApplicationController
       end
     end
   end
+
+  def buy #購入機能
+
+    if card.blank?
+      redirect_to action: "new"
+      flash[:alert] = '購入にはクレジットカード登録が必要です'
+    else
+      @product = Product.find(1)
+     # 購入した際の情報を元に引っ張ってくる
+     # ダミーデータを使用します
+
+      user = User.find(1) #ログイン/ログアウトできないのでダミーデータを作ります
+      card = user.credit_card
+     # テーブル紐付けてるのでログインユーザーのクレジットカードを引っ張ってくる
+
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+     # キーをセットする
+
+      Payjp::Charge.create(
+      amount: @product.price, #支払金額
+      customer: card.customer_id, #顧客ID
+      currency: 'jpy', #日本円
+      )
+     # ↑商品の金額をamountへ、cardの顧客idをcustomerへ、currencyをjpyへ入れる
+
+      if @product.update(status: 1, buyer_id: user.id)
+        flash[:notice] = '購入しました。'
+        redirect_to controller: "posts", action: 'toppage'
+      else
+        flash[:alert] = '購入に失敗しました。'
+        redirect_to controller: "purchase", action: 'index'
+      end
+     #↑この辺はこちら側のテーブル設計どうりに色々しています
+    end
+  end
   
 end
