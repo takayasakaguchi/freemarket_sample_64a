@@ -10,7 +10,7 @@ class CreditCardController < ApplicationController
     
     user = User.find(1) #ログイン/ログアウトできないのでダミーデータを作ります。
 
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"] #payjpの公開鍵をセット。
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"] #payjpの秘密鍵をセット。
     if params['payjpToken'].blank?
       # paramsの中にjsで作った'payjpTokenが存在するか確かめる
       redirect_to action: "new"
