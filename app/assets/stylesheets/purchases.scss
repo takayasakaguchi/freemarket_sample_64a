@@ -156,20 +156,14 @@
           }
   
           // 購入ボタン
-          #payjp_checkout_box{
-            margin: 50px auto 0;
+          &__btn{
+            @include btn;
+            background-color: $color-furima;
+            color: #fff;
+            margin: 20px auto 0;
+            cursor: pointer; 
             width: 100%;
-            input{
-              padding: 24px 0;
-              font-size: 14px;
-              line-height: 4px;
-              width: 100%;
-              background-image: none;
-              background-color: $color-furima;
-              font-weight: bold;
-              border: none;
-              border-radius: 0;
-            }
+            border: 0; 
           }
         }
       }

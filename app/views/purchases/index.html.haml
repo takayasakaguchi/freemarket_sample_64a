@@ -59,6 +59,7 @@
               = link_to address_index_path, class: "registration--text" do
                 登録してください
     
-          = submit_tag "購入する", class: 'main__center__bottom__form__btn', id: 'submit_btn'
+          = form_tag({controller: :credit_card, action: :buy},{ method: :post}) do
+            %button.main__center__purchase__form__btn 購入する
 
   = render partial: 'layouts/footer'

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :credit_card, only: [:new] do
     collection do
       post 'registration'
+      post 'buy'
     end
   end
   resources :address, only: [:index, :edit] do
