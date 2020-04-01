@@ -69,5 +69,24 @@ class CreditCardController < ApplicationController
       end
     end
   end
+
+  def delete #クレジットカード削除機能
+
+    user = User.find(1) 
+     #ログイン/ログアウトできないのでダミーデータを作ります
+    card = user.credit_cards.first
+     # テーブル紐付けてるのでログインユーザーのクレジットカードを引っ張ってくる（ダミーユーザーのカード）
+
+    if card.blank?
+      redirect_to action: "new"
+    else
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"] #payjpの秘密鍵をセット。
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      customer.delete
+     #ここでpay.jpの方を消している
+      card.delete
+     #ここでテーブルにあるcardデータを消している
+    end  
+end
   
 end

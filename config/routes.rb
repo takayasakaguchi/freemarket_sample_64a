@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     collection do
       post 'registration'
       post 'buy'
+      post 'delete'
     end
   end
   resources :address, only: [:index, :edit] do
