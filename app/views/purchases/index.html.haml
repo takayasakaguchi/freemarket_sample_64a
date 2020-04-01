@@ -38,17 +38,43 @@
             .main__center__purchase__form__point--text
               ポイントを使用（所持ポイント：P0）
 
-          .main__center__purchase__form__pay
-            .main__center__purchase__form__pay__title
-              .main__center__purchase__form__pay__title--character
-                支払い方法
-              = link_to delete_credit_card_index_path, class: "delete-card", method: :post do
-                削除する
+          
+
+          // クレジットカード情報が登録しているか否かで条件分岐
+          - if @customer_card.blank?
+            .main__center__purchase__form__pay
+              .main__center__purchase__form__pay__title
+                .main__center__purchase__form__pay__title--character
+                  支払い方法
             .registration
               .registration--plus-mark
                 %i.fas.fa-plus-circle
               = link_to new_credit_card_path, class: "registration--text" do
                 登録してください
+          - else
+            .main__center__purchase__form__pay
+              .main__center__purchase__form__pay__title
+                .main__center__purchase__form__pay__title--character
+                  支払い方法
+            .customer-card
+              .customer-card__title_box
+                %span
+                  クレジットカード情報
+                = link_to delete_credit_card_index_path, class: "delete-card", method: :post do
+                  削除する
+              .customer-card__content
+                .customer-card__content__card_logo
+                  = image_tag src="visa.png"
+                .customer-card__content__card_info
+                  .customer-card__content__card_info--number.form_space
+                    %span
+                      = "**** **** **** " + @customer_card.last4
+                    .customer-card__content__card_info--expired.form_space
+                      - exp_month = @customer_card.exp_month.to_s
+                      - exp_year = @customer_card.exp_year.to_s.slice(2,3)
+                      %span
+                        = exp_month + " / " + exp_year
+              
 
           .main__center__purchase__form__destination
             .main__center__purchase__form__destination__title

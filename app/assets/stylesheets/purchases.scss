@@ -111,8 +111,7 @@
   
           // 支払い方法
           &__pay{
-            padding: 28px 0;
-            border-bottom: 1px solid #f5f5f5;
+            padding-top: 28px;
             font-size: 14px;
             &__title{
               display: flex;
@@ -120,18 +119,12 @@
               &--character{
                 font-weight: bold;
               }
-              .delete-card{
-                text-decoration: none;
-                color: $color-furima;
-              }
-              .delete-card:hover {
-                text-decoration: underline;
-                opacity: 0.5;
-              }
             }
           }
-          // 「登録してください」コメント
+          // 「登録してください」コメント(未登録の場合)
           .registration{
+            padding-bottom: 28px;
+            border-bottom: 1px solid #f5f5f5;
             display: flex;
             margin-top: 5px;
             font-size: 14px;
@@ -144,11 +137,41 @@
               margin: 2px 5px 0 0
             }
           }
+
+          // クレジットカード情報（登録済みの場合）
+          .customer-card{
+            padding-bottom: 28px;
+            padding-top: 10px;
+            border-bottom: 1px solid #f5f5f5;
+            &__title_box{
+              font-size: 14px;
+              display: flex;
+              justify-content: space-between;
+              .delete-card{
+                text-decoration: none;
+                color: $color-furima;
+              }
+              .delete-card:hover {
+                text-decoration: underline;
+                opacity: 0.5;
+              }
+            }
+            &__content{
+              display: flex;
+              &__card_logo{
+                height: 30px;
+                width: 49px;
+                margin-right: 10px;
+              }
+              &__card_info{
+                font-size: 14px;
+              }
+            }
+          }
   
           // 配送先
           &__destination{
             padding: 28px 0;
-            border-bottom: 1px solid #f5f5f5;
             &__title{
               display: flex;
               justify-content: space-between;
