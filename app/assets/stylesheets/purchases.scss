@@ -115,7 +115,19 @@
             border-bottom: 1px solid #f5f5f5;
             font-size: 14px;
             &__title{
-              font-weight: bold;
+              display: flex;
+              justify-content: space-between;
+              &--character{
+                font-weight: bold;
+              }
+              .delete-card{
+                text-decoration: none;
+                color: $color-furima;
+              }
+              .delete-card:hover {
+                text-decoration: underline;
+                opacity: 0.5;
+              }
             }
           }
           // 「登録してください」コメント

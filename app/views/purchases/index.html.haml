@@ -40,7 +40,10 @@
 
           .main__center__purchase__form__pay
             .main__center__purchase__form__pay__title
-              支払い方法
+              .main__center__purchase__form__pay__title--character
+                支払い方法
+              = link_to delete_credit_card_index_path, class: "delete-card", method: :post do
+                削除する
             .registration
               .registration--plus-mark
                 %i.fas.fa-plus-circle
