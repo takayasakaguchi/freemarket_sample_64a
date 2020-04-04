@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
   root to: 'posts#toppage'
   devise_for :users, controllers: {
-    registrations: 'users/registrations',
-    sessions: 'users/sessions'   
+    # registrations: 'users/registrations',
+    sessions: 'users/sessions'
   } 
+  devise_scope :user do
+    post 'registration', to: 'users/registrations#new' 
+  end
+
 
   root "purchases#index"
   resources :products, only: [:new]
