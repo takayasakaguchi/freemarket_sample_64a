@@ -28,7 +28,8 @@ class CreditCardController < ApplicationController
       # ↑ ここでdbのCreditCardテーブルに「user_id」、「customer_id」、「card_id」を保存
 
       if @card.save
-        redirect_to action: "new"
+        redirect_to controller: "purchases", action: 'index'
+        flash[:notice] = 'クレジットカードを登録しました。'
       # else
       #   redirect_to action: "pay"
       end
@@ -65,7 +66,7 @@ class CreditCardController < ApplicationController
         redirect_to controller: "posts", action: 'toppage'
       else
         flash[:alert] = '購入に失敗しました。'
-        redirect_to controller: "purchase", action: 'index'
+        redirect_to controller: "purchases", action: 'index'
       end
     end
   end
@@ -84,8 +85,11 @@ class CreditCardController < ApplicationController
       customer = Payjp::Customer.retrieve(card.customer_id)
       customer.delete
      #ここでpay.jpの方を消している
-      card.delete
+      if card.delete
      #ここでテーブルにあるcardデータを消している
+        flash[:alert] = 'カード情報を削除しました。'
+        redirect_to controller: "purchases", action: 'index'
+      end
     end  
   end
   

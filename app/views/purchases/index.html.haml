@@ -64,7 +64,7 @@
                   削除する
               .customer-card__content
                 .customer-card__content__card_logo
-                  = image_tag src="visa.png"
+                  = image_tag "#{@card_src}", width: '50', height: '30', alt: @card_brand, id: "card_image"
                 .customer-card__content__card_info
                   .customer-card__content__card_info--number.form_space
                     %span
