@@ -24,7 +24,7 @@
 .wrapper{
   @include wrapper;
   .main{
-    padding-top: 50px;
+    // padding-top: 50px;
     &__products_center{
       width: 700px;
       margin: auto;
@@ -34,6 +34,7 @@
       &__upper{
         background-color: #fff;
         padding: 10px 35px 20px;
+        margin-top: 50px;
         &--product_name{
           font-weight: bold;
           font-size: 22px;
