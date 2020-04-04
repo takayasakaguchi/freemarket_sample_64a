@@ -9,10 +9,10 @@ $(function(){
     $("#submit_btn").on("click",function(e){
     //↑登録ボタンを押してイベント発火
       e.preventDefault();
-      
+      $("#charge-form").valid();
     //↑ここでrailsの処理を止めることでjsの処理を行う
       var card = {
-      //↑「card」という変数を設定する
+      // ↑「card」という変数を設定する
         number: $("#card_number").val(),
         //↑「card_number」の入力情報を取得
   
@@ -20,10 +20,10 @@ $(function(){
         //↑「card_cvc（セキュリティーコード）」の入力情報を取得
   
         exp_month: $("#card_month").val(),
-        //↑「card_cvc（セキュリティーコード）」の入力情報を取得
+        //↑「card_month（有効期限月）」の入力情報を取得
   
         exp_year: $("#card_year").val()
-        //↑「card_cvc（セキュリティーコード）」の入力情報を取得
+        //↑「card_year（有効期限年）」の入力情報を取得
       };
       console.log(card)
      //↑Pay.jpに登録するデータを準備する
@@ -45,10 +45,10 @@ $(function(){
           //formの真下にpayjphtmlを追加、``の情報がviewファイルセットされる。（type="hidden"なので見えない）
           
           document.inputForm.submit();
-         //↑そしてここでsubmit！！これでrailsのアクションにいく！もちろん上でトークンをセットしているのでparamsの中には{payjpToken="トークン"}という情報が入っている
-  
+          //↑そしてここでsubmit！！これでrailsのアクションにいく！もちろん上でトークンをセットしているのでparamsの中には{payjpToken="トークン"}という情報が入っている
+          
         }else{
-          alert("カード情報が正しくありません。");
+          alert("カード情報が正しくありません。\n入力必須項目をご確認ください。\nカード有効期限をご確認ください。 ");
         }
       });
     });

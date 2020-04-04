@@ -63,6 +63,7 @@
 .wrapper{
   @include wrapper;
   .main{
+    background-color: rgb(245, 245, 245);
     &__center{
       @include wrapper_center;
       padding-bottom: 14px;
@@ -97,6 +98,7 @@
               @include input-text;
             }
           }
+          
           .card-logos{
             margin: 8px 0 16px 0;
             .card_logo{
@@ -179,5 +181,9 @@
         }
       }
     }
+  }
+  // validationエラーメッセージ
+  form.cmxform label.error, label.error {
+    color: #F0F;
   }
 }
