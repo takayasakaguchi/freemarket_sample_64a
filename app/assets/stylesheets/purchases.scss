@@ -32,6 +32,7 @@
 .wrapper{
   @include wrapper;
   .main{
+    background-color: #f5f5f5;
     &__center{
       @include wrapper_center;
   

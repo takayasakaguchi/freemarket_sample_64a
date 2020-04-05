@@ -22,13 +22,14 @@
               .input-box
                 %input.input-text{placeholder: "半角数字のみ", type: "text"}
               .card-logos
-                = image_tag src="visa.png", size: "49x30"
-                = image_tag src="master-card.png", size: "38x30"
-                = image_tag src="saison-card.png", size: "40x30"
-                = image_tag src="jcb.png", size: "40x30"
-                = image_tag src="american_express.png", size: "30x30"
-                = image_tag src="dinersclub.png", size: "40x30"
-                = image_tag src="discover.png", size: "36x30"
+                = image_tag src="visa.png", size: "49x30", class: "card_logo"
+                = image_tag src="master-card.png", size: "38x30", class: "card_logo"
+                = image_tag src="saison-card.png", size: "40x30", class: "card_logo"
+                = image_tag src="jcb.png", size: "40x30", class: "card_logo"
+                = image_tag src="american_express.png", size: "30x30", class: "card_logo"
+                = image_tag src="dinersclub.png", size: "40x30", class: "card_logo"
+                = image_tag src="discover.png", size: "36x30", class: "card_logo"
+
 
             -# カード有効期限部分
             .main__center__bottom__form__due_date

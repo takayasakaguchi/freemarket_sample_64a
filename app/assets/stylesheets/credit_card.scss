@@ -63,6 +63,7 @@
 .wrapper{
   @include wrapper;
   .main{
+    background-color: #f5f5f5;
     &__center{
       @include wrapper_center;
       padding-bottom: 14px;
@@ -99,6 +100,9 @@
           }
           .card-logos{
             margin: 8px 0 16px 0;
+            .card_logo{
+              width: auto;
+            }
           }
 
           // カード有効期限部分

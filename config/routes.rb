@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
 
-  root "purchases#index"
+  resources :purchases, only: [:index]
   resources :products, only: [:new]
   # 動作確認用URL（サーバーサイド情報がまだないため仮ルート設定）
   get "/pruducts/1", to: 'products#show'
