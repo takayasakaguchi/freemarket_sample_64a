@@ -30,6 +30,9 @@
       &__password{
         margin: 24px 0 0;
       }
+      &__repassword{
+        margin: 24px 0 0;
+      }
       &__password__toggle{
         margin: 16px 0 0;
       }
@@ -136,6 +139,17 @@
         font-size: 16px;
       }
       #user_password{
+        height: 30px;
+        width: 301px;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        line-height: 1.5;
+        font-size: 16px;
+      }
+
+      #user_repassword{
         height: 30px;
         width: 301px;
         padding: 10px 16px 8px;
