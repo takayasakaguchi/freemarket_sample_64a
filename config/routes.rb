@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :signup, only: [:index]
   resources :credit_card, only: [:index] do
   end
-  resources :address, only: [:index, :edit] do
+  resources :address, only: [:index, :create, :edit] do
   end
 
 end
