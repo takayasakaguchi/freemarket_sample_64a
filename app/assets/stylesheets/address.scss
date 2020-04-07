@@ -35,7 +35,7 @@
             &__form{
               display: flex;   
               @include form-style;
-              #prefecture_id{
+              #address_prefecture_id{
                 @include form-scroll;
                 padding: 10px 0 10px 14px;
                 font-size: 15px;
@@ -62,5 +62,23 @@
         }
       }
     }
+  }
+}
+
+// エラーメッセージ関係
+.field_with_errors {
+  display: contents;
+}
+.alert.alert-warning {
+  color: #F0F;
+  margin-bottom: 20px;
+  background-color: #ff9;
+  .main_message{
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .error_list{
+    margin-left: 10px;
   }
 }

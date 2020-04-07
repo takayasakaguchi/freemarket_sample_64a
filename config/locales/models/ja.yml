@@ -1,0 +1,16 @@
+ja:
+  activerecord:
+    models:
+      address: "住所"
+    attributes:
+      address:
+        first_name: "お名前（姓）"
+        last_name: "お名前（名）"
+        first_name_reading: "お名前カナ（姓）"
+        last_name_reading: "お名前カナ（名）"
+        postal_code: "郵便番号"
+        city: "市町村"
+        house_number: "番地"
+        phone_number: "電話番号"
+
+# エラーメッセージに表示されるカラム名を日本語に変換
