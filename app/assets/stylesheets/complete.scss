@@ -1,0 +1,57 @@
+.single_wrapper{
+  background: #f5f5f5;
+}
+
+  .complete-main{
+    width: 700px;
+    height: 582px;
+    margin: 0 auto;
+    background-color: white;
+    &__header{
+      font-size: 22px;
+      padding: 32px;
+      text-align: center;
+    }
+    &__form{
+      padding: 40px 40px 64px;
+      height: 150px;
+      border-top: 1px solid #f5f5f5;
+      &__text{
+        height: 130px;
+        text-align: center;
+      }
+      .complete-btn{
+        background-color: #ea352d;
+        color: white;
+        font-size: 14px;
+        width: 343px;
+        height: 50px;
+        display: block;
+        margin-top: 32px;
+        margin-left: 136px;
+      }
+      &__logo{
+        background-image: url(http://furima.tokyo/assets/bg-appBanner-pict-ce684a4c4d5fa2da43c30a3839923591af75a642a3a906ad975065771ef3d72f.jpg);
+        padding: 100px 40px;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        height: 56px;
+        margin-top: 58px;
+        width: 100%;
+        margin-left: -41px;
+        .inner__title2{
+          color: white;
+          text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+          font-size: 24px;
+          text-align: center;
+        }
+        .inner_text2{
+          color: white;
+          font-size: 35px;
+          text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+          text-align: center;
+        }
+      }
+    }
+  }
