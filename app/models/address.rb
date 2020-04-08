@@ -11,25 +11,25 @@ class Address < ApplicationRecord
   # 姓（漢字）
   validates :first_name,
     presence: true,
-    length: { in: 1..5, message: "文字数オーバーです", allow_blank: true},
+    length: { maximum: 5, message: "文字数オーバーです", allow_blank: true},
     format: {with: VALID_NAME_KANJI_REGEX, message: "は漢字で入力してください", allow_blank: true}
 
   # 名（漢字）
   validates :last_name,
     presence: true,
-    length: { in: 1..5, message: "文字数オーバーです", allow_blank: true},
+    length: { maximum: 5, message: "文字数オーバーです", allow_blank: true},
     format: {with: VALID_NAME_KANJI_REGEX, message: "は漢字で入力してください", allow_blank: true}
 
   # 姓（カナ）
   validates :first_name_reading,
     presence: true,
-    length: { in: 1..8, message: "文字数オーバーです", allow_blank: true},
+    length: { maximum: 8, message: "文字数オーバーです", allow_blank: true},
     format: {with: VALID_NAME_KANA_REGEX, message: "は全角カタカナで入力してください", allow_blank: true}
 
   # 名（カナ）
   validates :last_name_reading,
     presence: true,
-    length: { in: 1..8, message: "文字数オーバーです", allow_blank: true},
+    length: { maximum: 8, message: "文字数オーバーです", allow_blank: true},
     format: {with: VALID_NAME_KANA_REGEX, message: "は全角カタカナで入力してください", allow_blank: true}
 
   # 郵便番号
@@ -40,7 +40,6 @@ class Address < ApplicationRecord
   # 市区町村
   validates :city, 
     presence: true,
-    length: { in: 1..6, message: "文字数オーバーです", allow_blank: true},
     format: {with: VALID_CITY_REGEX, message: "名が無効です"}
 
   # 番地
