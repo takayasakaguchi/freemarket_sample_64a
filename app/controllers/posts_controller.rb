@@ -3,6 +3,6 @@ class PostsController < ApplicationController
     @products = Product.all
     # @image = image.new
     # @images = @products.images
-    @images = Image.all
+    # @images = Image.all
   end
 end
