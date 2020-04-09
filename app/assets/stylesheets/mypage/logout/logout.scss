@@ -1,0 +1,46 @@
+.signup-main__content{
+  padding: 64px;
+  border-top: 1px solid #f5f5f5;
+}
+.signup-main__logput{
+  max-width: 320px;
+    margin: 0 auto;
+}
+.signup-main__btn-default {
+  margin: 0;
+  background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+    margin: 40px 0 0;
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+    border: 1px solid transparent;
+    -webkit-transition: all ease-out .3s;
+    transition: all ease-out .3s;
+    cursor: pointer;
+    text-align: center;
+}
+.user-menu-container{
+  margin: 24px auto 0;
+  padding-bottom: 40px;
+}
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+@media screen and (min-width: 768px){
+  .user-menu-container{
+    width: 700px;
+  }
+}
+
+@media screen and (min-width: 1068px){
+  .user-menu-container{
+    margin: 40px auto 0;
+    width: 1020px;
+  }
+}
