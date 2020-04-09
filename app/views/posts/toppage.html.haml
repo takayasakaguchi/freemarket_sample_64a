@@ -149,13 +149,13 @@
                     = product.price
                     %span.tax （税込）
                 
-
     %section.pickupContainer
       %h2.head ピックアップブランド
       .productBox
         .productHead
           %h3.subtitle アーカイバ
         .productLists
+
           - @products.each do |product|
             - if product.purchase.blank?
               .product_box
@@ -187,7 +187,8 @@
                       %span ¥
                       = product.price
                       %span.tax （税込）
-                      
+
+
   .side.appBanner
     .inner
       %h2.inner__title だれでもかんたん、人生を変えるフリマアプリ
