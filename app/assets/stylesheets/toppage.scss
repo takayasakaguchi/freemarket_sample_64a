@@ -48,8 +48,6 @@ p {
 
 img {
   width: 100%;
-
-  /* vertical-align: bottom; */
 }
 
 .searchBox {
@@ -86,17 +84,6 @@ button {
   width: 100%;
   height: 53px;
 }
-
-// a aBtn {
-//   // width: 180px;
-//   // margin-right: 10px;
-// }
-
-
-
-// a gBtn {
-//   width: 180px;
-// }
 
 .resultLists {
   display: flex;
@@ -185,8 +172,6 @@ button {
   text-align: center;
   display: flex;
   max-width: 1500px;
-
-  /* width: 100%; */
   margin: 0 auto;
   margin-top: 16px;
   margin-right: 50px;
@@ -298,9 +283,6 @@ button {
   flex-direction: column;
   width: calc(1 / 3 * 100%);
   text-align: center;
-
-  /* padding: 0 20px; */
-  /* height: 464px; */
 }
 
 .item__img {
@@ -334,7 +316,6 @@ button {
 }
 
 .mainVisual {
-  /* width: 100%; */
   height: 560px;
   background-image: url(http://furima.tokyo/assets/bg-mainVisual-pict_pc-a1a4be0d864c29338b03d163957f9fd26b20f7c1fa0d05c17b603ec54d249ebe.jpg);
   background-size: cover;
@@ -396,8 +377,6 @@ h2 {
 
 .topIntroduction {
   padding: 60px 20px;
-
-  /* width: 100%; */
 }
 
 .pickupContainer {
@@ -426,7 +405,6 @@ h2 {
 
 .product_box {
   margin: 20px 30px;
-  // border: 1px solid #333
   box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.4);
   position: relative;
   cursor: pointer;
@@ -439,9 +417,9 @@ h2 {
   opacity: 0.5;
 }
 
+// 購入済み商品の場合
 .product_box-sold_out{
   margin: 20px 30px;
-  // border: 1px solid #333
   box-shadow: 1px 1px 5px 1px #F8F;
   position: relative;
   cursor: not-allowed;
@@ -453,42 +431,20 @@ h2 {
     font-weight: bold;
     color: #fff;
     padding: 3px;
-    // opacity: 1;
-    // z-index: 2;
   }
 }
 
 
 .productLists {
-  // width: 780px;
-  // margin: 26px auto;
   margin: 26px 80px;
   display: flex;
   justify-content: flex-start;
   position: relative;
   flex-wrap: wrap;
-  
-}
-
-.productList {
-  // width: 220p
-  // display: inline-block;
-  // position: relative;
-  // margin: 0 auto;
-  // display: flex;
-  /* float: left; */
-  // margin: 0 auto;
 }
 
 .productList--body-main{
-  // width: 100%;
-  // height: 150px;
-  // background-color: blue;
-  // display: inline-block; 
-  // display: inline;
   display: flex;
-  // margin: 0 auto;
-  // margin: 0 auto;
 }
 
 .productList--body {
@@ -496,16 +452,9 @@ h2 {
   color: #333;
   padding: 30px 10px;
   width: 155px;
-  // display: flexbox;
   height: 60px;
   display: inline-block;
-  
-  // margin: 26px auto;
-  
-
-  // background-color: pink;
-  // display: flex;
-  
+    
   .name {
     overflow: hidden;
     line-height: 1.5;
@@ -526,15 +475,9 @@ h2 {
   color: #333;
   padding: 30px 10px;
   width: 155px;
-  // display: flexbox;
   height: 60px;
   display: inline-block;
   opacity: 0.6;
-  // margin: 26px auto;
-  
-
-  // background-color: pink;
-  // display: flex;
   
   .name {
     overflow: hidden;
@@ -557,7 +500,6 @@ h2 {
 }
 
 .productList--img {
-  // width: 100%;
   height: 150px;
   position: relative;
   overflow: hidden;
@@ -565,12 +507,10 @@ h2 {
   z-index: auto;
 
   img {
-    // position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    width: 100%;
     z-index: auto;
     height: 100%;
     width: 100%;
@@ -578,7 +518,6 @@ h2 {
   }
 }
 .productList--img_sold_out {
-  // width: 100%;
   height: 150px;
   position: relative;
   overflow: hidden;
@@ -586,7 +525,6 @@ h2 {
   z-index: auto;
   opacity: 0.6;
   img {
-    // position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -598,14 +536,6 @@ h2 {
     object-fit: cover;
   }
 }
-
-
-
-
-.productforder{
-  // display: flex;
-}
-
 
 .pickupContainer:last-child {
   padding-bottom: 80px;
@@ -671,8 +601,6 @@ h2 {
   padding-left: 0;
   height: 172px;
   position: relative;
-
-  /* margin-bottom: 30px; */
 }
 
 .content {
@@ -735,5 +663,4 @@ h2 {
 
 .purchaseBtn__icon {
   width: 60%;
-
 }
