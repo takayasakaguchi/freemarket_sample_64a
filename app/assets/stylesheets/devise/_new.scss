@@ -149,7 +149,7 @@
         font-size: 16px;
       }
 
-      #user_repassword{
+      #user_password_confirmation{
         height: 30px;
         width: 301px;
         padding: 10px 16px 8px;
@@ -246,5 +246,7 @@
       vertical-align: top;
     }
 
-
+    .field_with_errors {
+      display: contents;
+    }
   }
