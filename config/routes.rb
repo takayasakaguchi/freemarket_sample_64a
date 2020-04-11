@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
+
   root to: 'posts#toppage'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   } 
+
   devise_scope :user do
     
   end
 
-
+  resources :mypage, only: [:index]
+  resources :logout, only: [:index]
   resources :purchases, only: [:index]
   resources :products, only: [:new]
   # 動作確認用URL（サーバーサイド情報がまだないため仮ルート設定）
@@ -19,5 +22,4 @@ Rails.application.routes.draw do
   end
   resources :address, only: [:index, :edit] do
   end
-
 end
