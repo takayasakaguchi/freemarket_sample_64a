@@ -1,0 +1,182 @@
+// mixin
+/// ラベル部分
+@mixin label{
+  font-weight: bold;
+  font-size: 14px;
+}
+/// マーク部分（必須/任意）
+@mixin form-mark{
+  font-size: 12px;
+  color: #fff;
+  padding: 0 3px 0 3px;
+  border-radius: 2px;
+  margin-left: 8px;
+  display: inline-block;
+  vertical-align: top;
+}
+/// フォーム部分共通スタイル
+@mixin form-style{
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  position: relative;
+  width: 100%;
+}
+/// カード番号部分
+//// フォーム部分（中身）
+@mixin input-box{
+  margin-top: 6px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+//// フォーム文字入力部分
+@mixin input-text{
+  width: 95%;
+  padding: 16px 0 12px 15px;
+  border: 0px;
+  border-radius: 5px;
+}
+/// カード有効期限
+//// カード有効期限フォーム部分
+@mixin form-scroll{
+  background-color: #fff;
+  border-style: none;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+//// カード有効期限スクロールマーク部分
+@mixin scroll-mark{
+  color: #888;
+  position: absolute;
+  pointer-events: none;
+  font-size: 18px;
+}
+//// カード有効期限文字部分
+@mixin text{
+  margin: auto;
+  font-size: 14px;
+  padding: 0 15px;
+}
+
+
+.wrapper{
+  @include wrapper;
+  .main{
+    background-color: #f5f5f5;
+    &__center{
+      @include wrapper_center;
+      padding-bottom: 14px;
+
+      // 1段目（購入内容の確認）
+      &__upper{
+        @include upper;
+        &--character{
+          font-weight: bold;
+          font-size: 24px;
+          padding: 8px 0;
+        }
+      }
+      &__bottom{
+        border-top: 1px solid #f5f5f5;
+        padding: 20px 0;
+        width: 50%;
+        margin: auto;
+
+        // 2段目（フォームグループ）
+        &__form{
+          label{
+            @include label;
+          }
+          .form-require{
+            @include form-mark;
+            background-color: $color-furima;
+          }
+          .input-box{
+            @include input-box;
+            .input-text{
+              @include input-text;
+            }
+          }
+          .card-logos{
+            margin: 8px 0 16px 0;
+            .card_logo{
+              width: auto;
+            }
+          }
+
+          // カード有効期限部分
+          &__due_date{
+            margin-bottom: 20px;
+            .select-box{
+              margin-top: 4px;
+              display: flex;
+              &__left{
+                width: 50%;
+                display: flex;
+                &__form{
+                  @include form-style;
+                  #due_month{
+                    @include form-scroll;
+                    padding: 15px 0 15px 14px;
+                    font-size: 14px;
+                  }
+                  .fa-chevron-down{
+                    @include scroll-mark;
+                    bottom: 15px;
+                    right: 10px;
+                  }
+                }
+                .month{
+                  @include text;
+                }
+              }
+              &__right{
+                width: 50%;
+                display: flex;
+                &__form{
+                  @include form-style;
+                  #due_year{
+                    @include form-scroll;
+                    padding: 15px 0 15px 14px;
+                    font-size: 14px;
+                  }
+                  .fa-chevron-down{
+                    @include scroll-mark;
+                    bottom: 15px;
+                    right: 10px;
+                  }
+                }
+                .year{
+                  @include text;
+                }
+              }
+            }
+          }
+
+          // セキュリティコード部分
+          &__security_code{
+            &--help{
+              display: flex;
+              justify-content: flex-end;
+              color: #0099E8;
+              font-size: 14px;
+              margin-top: 5px;
+              .fa-question-circle{
+                padding-top: 4px;
+              }
+            }
+          }
+          // 登録ボタン
+          &__btn{
+            @include btn;
+            background-color: $color-furima;
+            color: #fff;
+            margin: 20px auto 0;
+            cursor: pointer;  
+          }
+        }
+      }
+    }
+  }
+}

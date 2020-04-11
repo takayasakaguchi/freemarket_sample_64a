@@ -1,0 +1,35 @@
+.single_wrapper
+  .single-header
+    = render "layouts/header"
+
+  .single-main1
+    .login-panel
+      .login-panel__header
+        .login-panel__header__text
+          アカウントをお持ちでない方はこちら
+        = link_to "new_registration_path", class: "login-panel_header--btn" do
+          .login-panel_header__font
+            新規会員登録
+
+      .login-panel__inner__input
+        %button.btn-default.btn-blue{type: "submit"} 
+          Facebookでログイン
+          .fab.fa-facebook-square
+
+        %button.google{type: "submit"} 
+          Googleでログインする
+          .fab.fa-google
+      
+      .login-panel__login
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .login-panel__login__email
+            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス"
+          .login-panel__login__password
+            = f.password_field :password, autocomplete: "new-password",  placeholder: "パスワード"
+          %button.btn-red{type: "submit"} ログイン
+          .remember
+            = link_to "パスワードお忘れの方","#"
+
+.single_wrapper
+  .single-footer
+    = render "layouts/footer"
