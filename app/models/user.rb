@@ -10,6 +10,8 @@ class User < ApplicationRecord
   has_one :credit_card
   has_one :address
 
+  # accepts_nested_attributes_for :address
+
   VALID_NAME_KANJI_REGEX = /\A[一-龥]+\z/
   VALID_NAME_KANA_REGEX = /\A([ァ-ン]|ー)+\z/
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -26,7 +28,6 @@ class User < ApplicationRecord
     uniqueness: true,
     format: {with: VALID_EMAIL_REGEX}
 
-
   # パスワード
   validates :password,
     presence: true,
@@ -34,8 +35,6 @@ class User < ApplicationRecord
     length: { maximum: 7, message: "文字数オーバーです", allow_blank: true},
     format: {with: VALID_PASSWORD_REGEX, message: "は半角英数字で入力してください", allow_blank: true}
   
-
-
   # 姓（漢字）
   validates :first_name,
     presence: true,
