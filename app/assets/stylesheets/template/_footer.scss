@@ -1,0 +1,39 @@
+.single_footer{
+  width: auto;
+  height: 220px;
+  background-color: rgb(245, 245, 245);
+  &__links{
+    display: flex;
+    justify-content: space-between;
+    width: 35%;
+    font-size: 12px;
+    margin: auto;
+    padding-top: 35px;
+    cursor: pointer;
+  }
+  .single_footer__links span:hover {
+    text-decoration: underline;
+    }
+  &--logo{
+    @include logo;
+    padding-top: 30px;
+  }
+  &__copy_right{
+    width: 50%;
+    margin: auto;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  } 
+}
+.single_footer img{
+  width: 185px;
+  height: 49px;
+  background-color: $color-furima;
+  padding: 5px;
+  border-radius: 5px;
+}
+.single_footer img:hover {
+  opacity: 0.5;
+}

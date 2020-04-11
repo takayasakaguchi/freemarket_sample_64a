@@ -1,0 +1,91 @@
+.wrapper
+  = render partial: 'layouts/header'
+
+  .main
+    .main__center
+
+      -# 1段目（購入内容の確認）
+      .main__center__upper
+        .main__center__upper--character
+          支払い方法
+
+      -# 2段目以降
+      .main__center__bottom
+        .main__center__bottom__form
+          %form.credit_card
+
+            -# カード番号部分
+            .main__center__bottom__form__number
+              %label{for: "card_number"} カード番号
+              %span.form-require 
+                必須
+              .input-box
+                %input.input-text{placeholder: "半角数字のみ", type: "text"}
+              .card-logos
+                = image_tag src="visa.png", size: "49x30", class: "card_logo"
+                = image_tag src="master-card.png", size: "38x30", class: "card_logo"
+                = image_tag src="saison-card.png", size: "40x30", class: "card_logo"
+                = image_tag src="jcb.png", size: "40x30", class: "card_logo"
+                = image_tag src="american_express.png", size: "30x30", class: "card_logo"
+                = image_tag src="dinersclub.png", size: "40x30", class: "card_logo"
+                = image_tag src="discover.png", size: "36x30", class: "card_logo"
+
+
+            -# カード有効期限部分
+            .main__center__bottom__form__due_date
+              %label{for: "due_date"} 有効期限
+              %span.form-require 
+                必須
+              .select-box
+                .select-box__left
+                  .select-box__left__form
+                    %select#due_month
+                      %option{value: "01"} 01
+                      %option{value: "02"} 02
+                      %option{value: "03"} 03
+                      %option{value: "04"} 04
+                      %option{value: "05"} 05
+                      %option{value: "06"} 06
+                      %option{value: "07"} 07
+                      %option{value: "08"} 08
+                      %option{value: "09"} 09
+                      %option{value: "10"} 10
+                      %option{value: "11"} 11
+                      %option{value: "12"} 12
+                    %i.fas.fa-chevron-down
+                  %span.month
+                    月
+                .select-box__right
+                  .select-box__right__form
+                    %select#due_year
+                      %option{value: "20"} 20
+                      %option{value: "21"} 21
+                      %option{value: "22"} 22
+                      %option{value: "23"} 23
+                      %option{value: "24"} 24
+                      %option{value: "25"} 25
+                      %option{value: "26"} 26
+                      %option{value: "27"} 27
+                      %option{value: "28"} 28
+                      %option{value: "29"} 29
+                      %option{value: "30"} 30
+                    %i.fas.fa-chevron-down
+                  %span.year
+                    年
+
+            -# セキュリティコード部分
+            .main__center__bottom__form__security_code
+              %label{for: "security_code"} セキュリティコード
+              %span.form-require 
+                必須
+              .input-box
+                %input.input-text{placeholder: "カード背面4桁もしくは3桁の番号", type: "text"}
+              .main__center__bottom__form__security_code--help
+                %i.fas.fa-question-circle
+                %span カード裏面の番号とは？
+      
+            .main__center__bottom__form__btn
+              登録する
+
+
+  = render partial: 'layouts/footer'
