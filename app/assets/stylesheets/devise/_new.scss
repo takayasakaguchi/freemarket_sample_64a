@@ -30,6 +30,9 @@
       &__password{
         margin: 24px 0 0;
       }
+      &__repassword{
+        margin: 24px 0 0;
+      }
       &__password__toggle{
         margin: 16px 0 0;
       }
@@ -56,6 +59,7 @@
         margin: 40px 0 0;
         &__select-wrap{
           display: flex;
+          position: relative;
         }
         &__select-wrap__year{
           margin-right: 4px;
@@ -70,7 +74,7 @@
         .fas.fa-chevron-down{
           position: absolute;
           top: 18px;
-          left: 51px;
+          left: 57px;
           color: #888;
           pointer-events: none;
         }
@@ -144,6 +148,61 @@
         line-height: 1.5;
         font-size: 16px;
       }
+
+      #user_password_confirmation{
+        height: 30px;
+        width: 301px;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        line-height: 1.5;
+        font-size: 16px;
+      }
+
+      #user_first_name{
+        height: 30px;
+        width: 88%;
+        padding: 10px 16px 8px;
+        margin-right: 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        line-height: 1.5;
+      }
+
+      #user_last_name{
+        height: 30px;
+        width: 88%;
+        padding: 10px 16px 8px;
+        margin-right: 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        line-height: 1.5;
+      }
+
+      #user_first_name_reading{
+        height: 30px;
+        width: 88%;
+        padding: 10px 16px 8px;
+        margin-right: 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        line-height: 1.5;
+      }
+
+      #user_last_name_reading{
+        height: 30px;
+        width: 88%;
+        padding: 10px 16px 8px;
+        margin-right: 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        line-height: 1.5;
+      }
       
       select{
         height: 48px;
@@ -187,5 +246,7 @@
       vertical-align: top;
     }
 
-
+    .field_with_errors {
+      display: contents;
+    }
   }
