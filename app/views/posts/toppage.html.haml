@@ -14,12 +14,23 @@
         %ul.resultLists
       .nav
         %ul.listsLeft
-          %li.listLeft__item.listsLeft__item--first
-            #catBtn 
+        
+          -# カテゴリー
+          %li.listLeft__item
             = link_to 'カテゴリー'
-            .tree.displayNone
-              .tree.displayNone
-                %ul.categoryTree
+            %ul.parent-wrap
+              - @parents.each do |parent|
+                %li.parent
+                  = link_to parent.name
+                  %ul.child-wrap
+                    - parent.children.each do |child|
+                      %li.child
+                        =link_to child.name
+                        %ul.grand-child-wrap
+                          - child.children.each do |grandchild|
+                            %li.grand-child
+                              = link_to grandchild.name
+
           %li.listLeft__item
             #brandBtn
             = link_to 'ブランド'
@@ -121,7 +132,7 @@
           - if product.purchase.blank?
             .product_box
               %figure.productList--img
-                = image_tag product.images.first.image
+                = image_tag product.images.first.image.url
 
               .productList--body
                 .productforder
@@ -136,7 +147,7 @@
           - else
             .product_box-sold_out
               %figure.productList--img_sold_out
-                = image_tag product.images.first.image
+                = image_tag product.images.first.image.url
               .sold_out SOLD OUT
 
               .productList--body_sold_out
@@ -160,7 +171,7 @@
             - if product.purchase.blank?
               .product_box
                 %figure.productList--img
-                  = image_tag product.images.first.image
+                  = image_tag product.images.first.image.url
 
                 .productList--body
                   .productforder
@@ -175,7 +186,7 @@
             - else
               .product_box-sold_out
                 %figure.productList--img_sold_out
-                  = image_tag product.images.first.image
+                  = image_tag product.images.first.image.url
                 .sold_out SOLD OUT
 
                 .productList--body_sold_out
