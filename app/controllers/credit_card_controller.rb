@@ -8,8 +8,6 @@ class CreditCardController < ApplicationController
 
   def registration #payjpとCardのデータベース作成を実施します。(カード登録)
     
-    user = User.find(1) #ログイン/ログアウトできないのでダミーデータを作ります。
-
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"] #payjpの秘密鍵をセット。
     if params['payjpToken'].blank?
       # paramsの中にjsで作った'payjpTokenが存在するか確かめる
@@ -20,11 +18,11 @@ class CreditCardController < ApplicationController
       # description: '登録テスト', #なくてもOK
       # email: user.email, #なくてもOK
       card: params['payjpToken'],
-      metadata: {user_id: user.id}
+      metadata: {user_id: current_user.id}
       ) #念の為metadataにuser_idを入れましたがなくてもOK?
       # ↑ここ(else以降)でjay.jpに保存
 
-      @card = CreditCard.new(user_id: user.id, customer_id: customer.id, card_id: customer.default_card)
+      @card = CreditCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       # ↑ ここでdbのCreditCardテーブルに「user_id」、「customer_id」、「card_id」を保存
 
       if @card.save
@@ -38,9 +36,7 @@ class CreditCardController < ApplicationController
 
   def buy #購入機能
 
-    user = User.find(1) 
-     #ログイン/ログアウトできないのでダミーデータを作ります
-    card = user.credit_cards.first
+    card = current_user.credit_cards.first
      # テーブル紐付けてるのでログインユーザーのクレジットカードを引っ張ってくる（ダミーユーザーのカード）
 
     if card.blank?
@@ -60,7 +56,7 @@ class CreditCardController < ApplicationController
       )
      # ↑商品の金額をamountへ、cardの顧客idをcustomerへ、currencyをjpyへ入れる
 
-      if @product.update(purchase: 1, buyer_id: user.id)
+      if @product.update(purchase: 1, buyer_id: current_user.id)
        # ↑購入が完了したら購入商品のレコードのpurchaseカラムに１を、buyer_idカラムに購入者idを入れる
         flash[:notice] = '購入しました。'
         redirect_to controller: "posts", action: 'toppage'
@@ -73,9 +69,7 @@ class CreditCardController < ApplicationController
 
   def delete #クレジットカード削除機能
 
-    user = User.find(1) 
-     #ログイン/ログアウトできないのでダミーデータを作ります
-    card = user.credit_cards.first
+    card = current_user.credit_cards.first
      # テーブル紐付けてるのでログインユーザーのクレジットカードを引っ張ってくる（ダミーユーザーのカード）
 
     if card.blank?

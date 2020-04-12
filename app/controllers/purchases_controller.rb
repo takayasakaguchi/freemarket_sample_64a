@@ -6,9 +6,8 @@ class PurchasesController < ApplicationController
     @product = Product.find(1)
 
     #クレジットカード登録済みの場合、登録内容を表示する
-    user = User.find(1) 
-      #ログイン/ログアウトできないのでダミーデータを作ります
-    card = user.credit_cards.first
+   
+    card = current_user.credit_cards.first
       # テーブル紐付けてるのでログインユーザーのクレジットカードを引っ張ってくる（ダミーユーザーのカード）
 
     if card.blank?
