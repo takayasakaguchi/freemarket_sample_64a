@@ -24,11 +24,11 @@
 .wrapper{
   @include wrapper;
   .main{
-    // padding-top: 50px;
     &__products_center{
       width: 700px;
       margin: auto;
       padding-bottom: 20px;
+      margin-top: 50px;
 
       // 1段目（商品情報など）
       &__upper{

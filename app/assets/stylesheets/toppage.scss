@@ -47,8 +47,6 @@ p {
 }
 img {
   width: 100%;
-
-  /* vertical-align: bottom; */
 }
 
 
@@ -83,17 +81,6 @@ button {
   width: 100%;
   height: 53px;
 }
-
-// a aBtn {
-//   // width: 180px;
-//   // margin-right: 10px;
-// }
-
-
-
-// a gBtn {
-//   width: 180px;
-// }
 
 .resultLists {
   display: flex;
@@ -211,8 +198,6 @@ button {
   text-align: center;
   display: flex;
   max-width: 1500px;
-
-  /* width: 100%; */
   margin: 0 auto;
   margin-top: 16px;
   margin-right: 50px;
@@ -324,9 +309,6 @@ button {
   flex-direction: column;
   width: calc(1 / 3 * 100%);
   text-align: center;
-
-  /* padding: 0 20px; */
-  /* height: 464px; */
 }
 
 .item__img {
@@ -360,7 +342,6 @@ button {
 }
 
 .mainVisual {
-  /* width: 100%; */
   height: 560px;
   background-image: url(http://furima.tokyo/assets/bg-mainVisual-pict_pc-a1a4be0d864c29338b03d163957f9fd26b20f7c1fa0d05c17b603ec54d249ebe.jpg);
   background-size: cover;
@@ -422,14 +403,13 @@ h2 {
 
 .topIntroduction {
   padding: 60px 20px;
-
-  /* width: 100%; */
 }
 
 .pickupContainer {
   padding: 80px 0 0;
   background-color: #f8f8f8;
   height: 100%;
+  
 }
 
 .head {
@@ -449,19 +429,96 @@ h2 {
   }
 }
 
-.productLists {
-  width: 780px;
-  margin: 26px auto;
-  display: flex;
-  justify-content: space-around;
+.product_box {
+  margin: 20px 30px;
+  box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.4);
+  position: relative;
+  cursor: pointer;
+}
+.subtitle{
+  color: #3ccace;
 }
 
-.productList {
-  width: 220px;
-  display: inline-block;
+.product_box:hover{
+  opacity: 0.5;
+}
 
-  /* display: flex; */
-  /* float: left; */
+// 購入済み商品の場合
+.product_box-sold_out{
+  margin: 20px 30px;
+  box-shadow: 1px 1px 5px 1px #F8F;
+  position: relative;
+  cursor: not-allowed;
+  
+  .sold_out{
+    position: absolute;
+    top: 0;
+    background-color: #F0F;;
+    font-weight: bold;
+    color: #fff;
+    padding: 3px;
+  }
+}
+
+
+.productLists {
+  margin: 26px 80px;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.productList--body-main{
+  display: flex;
+}
+
+.productList--body {
+  background-color: white;
+  color: #333;
+  padding: 30px 10px;
+  width: 155px;
+  height: 60px;
+  display: inline-block;
+    
+  .name {
+    overflow: hidden;
+    line-height: 1.5;
+    font-size: 16px;
+    text-align: left;
+  }
+  
+  .details {
+    font-size: 16px;
+    .tax{
+      font-size: 12px;
+    }
+  }
+
+}
+.productList--body_sold_out {
+  background-color: white;
+  color: #333;
+  padding: 30px 10px;
+  width: 155px;
+  height: 60px;
+  display: inline-block;
+  opacity: 0.6;
+  
+  .name {
+    overflow: hidden;
+    line-height: 1.5;
+    font-size: 16px;
+    text-align: left;
+  }
+  
+  .details {
+    font-size: 16px;
+    .tax{
+      font-size: 12px;
+    }
+  }
+
 }
 
 .listsLeft__item a {
@@ -469,41 +526,41 @@ h2 {
 }
 
 .productList--img {
-  width: 220px;
   height: 150px;
   position: relative;
   overflow: hidden;
-  margin: 0;
+  margin: auto ;
   z-index: auto;
 
   img {
-    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: auto;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+.productList--img_sold_out {
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+  margin: auto ;
+  z-index: auto;
+  opacity: 0.6;
+  img {
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     width: 100%;
     z-index: auto;
-    height: 150px;
+    height: 100%;
+    width: 100%;
     object-fit: cover;
   }
-}
-
-.productList--body {
-  background-color: white;
-  color: #333;
-  padding: 16px;
-}
-
-.name {
-  overflow: hidden;
-  line-height: 1.5;
-  font-size: 16px;
-  text-align: left;
-}
-
-.details {
-  font-size: 16px;
 }
 
 .pickupContainer:last-child {
@@ -570,8 +627,6 @@ h2 {
   padding-left: 0;
   height: 172px;
   position: relative;
-
-  /* margin-bottom: 30px; */
 }
 
 .content {
@@ -595,7 +650,7 @@ h2 {
 }
 
 .purchaseBtn {
-  width: 120px;
+  width: 90px;
   background: #3ccace;
   text-align: center;
   border-radius: 4%;
@@ -604,13 +659,24 @@ h2 {
   position: fixed;
   padding: 15px;
 
+  .purchaseBtn__text {
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    text-decoration: none;
+    margin-bottom: 5px;
+  }
+  
+  .purchaseBtn__icon {
+    width: 60%;
+    padding-left: 18px;
+  }
+
   a {
     text-decoration: none;
   }
 
 }
-
-
 
 .purchaseBtn__text {
   color: #fff;
