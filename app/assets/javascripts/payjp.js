@@ -25,7 +25,6 @@ $(function(){
         exp_year: $("#card_year").val()
         //↑「card_year（有効期限年）」の入力情報を取得
       };
-      console.log(card)
      //↑Pay.jpに登録するデータを準備する
       Payjp.createToken(card,function(status,response){
      //↑先ほどのcard情報がトークンという暗号化したものとして返ってくる
