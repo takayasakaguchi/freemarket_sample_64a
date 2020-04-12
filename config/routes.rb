@@ -23,6 +23,7 @@ Rails.application.routes.draw do
       post 'buy'
       post 'delete'
     end
+  end
 
   resources :complete, only: [:index]
   resources :credit_card, only: [:index] do
