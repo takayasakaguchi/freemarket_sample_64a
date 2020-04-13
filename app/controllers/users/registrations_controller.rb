@@ -7,13 +7,23 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   def new
-    super
+    @user = User.new
   end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    @user = User.new(user_params)
+    if @user.save
+      redirect_to complete_index_path
+    else
+      render :new
+    end
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(:nickname, :email, :password, :password_confirmation, :first_name, :last_name, :first_name_reading, :last_name_reading, :year, :month, :day)
+  end
 
   # GET /resource/edit
   # def edit
@@ -53,11 +63,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # The path used after sign up.
   # def after_sign_up_path_for(resource)
-  #   super(resource)
+  #   redirect_to complete_index_path
   # end
 
-  # The path used after sign up for inactive accounts.
+  # # # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
-  #   super(resource)
+  #   redirect_to complete_index_path
   # end
 end

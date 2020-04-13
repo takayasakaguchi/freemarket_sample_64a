@@ -13,7 +13,7 @@ module FreemarketSample64a
 
     # エラーメッセージを日本語に変換
     config.i18n.default_locale = :ja
-    # config/locals以下のymlファイルを読み込み
+    
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml').to_s]
 
     # Settings in config/environments/* take precedence over those specified here.
