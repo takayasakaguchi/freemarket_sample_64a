@@ -17,9 +17,13 @@ class AddressController < ApplicationController
   end
 
   def update
-    address = Address.includes(:user).find(params[:id])
-    address.update(address_params)
-    redirect_to purchases_path
+    @address = Address.includes(:user).find(params[:id])
+    @address.update(address_params)
+    if @address.update(address_params)
+      redirect_to purchases_path
+    else
+      render action: :edit
+    end
   end
 
 private
