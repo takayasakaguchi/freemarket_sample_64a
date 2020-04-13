@@ -60,7 +60,7 @@
               .main__center__purchase__form__destination__title
                 .main__center__purchase__form__destination__title--character
                   配送先
-                = link_to address_index_path, class: "change-text" do
+                = link_to edit_address_path(@address.id), class: "change-text" do
                   変更する
 
               .address-info
@@ -70,7 +70,7 @@
                   .address-info__content--address
                     = @address.prefecture.name + @address.city + @address.house_number + @address.building_name
                   .address-info__content--user-name
-                    = @user.first_name + @user.last_name
+                    = @address.first_name + @address.last_name
 
             
     
