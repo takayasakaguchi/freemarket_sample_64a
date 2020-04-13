@@ -69,7 +69,7 @@ class CreditCardController < ApplicationController
 
   def delete #クレジットカード削除機能
 
-    card = current_user.credit_cards.first
+    card = current_user.credit_card
      # テーブル紐付けてるのでログインユーザーのクレジットカードを引っ張ってくる（ダミーユーザーのカード）
 
     if card.blank?
