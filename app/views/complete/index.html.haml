@@ -1,0 +1,27 @@
+.single_wrapper
+  .single-header
+    = render "layouts/header"
+
+    .complete
+      .complete-main
+        .complete-main__header
+          会員登録完了
+        .complete-main__form
+          .complete-main__form__text
+            ありがとうございます。
+            %br
+            会員登録が完了しました。
+            %button.btn-default.complete-btn{type: "submit"}
+              = link_to root_path
+              メルカリをはじめる
+          .complete-main__form__logo
+            .inner__title2 だれでもかんたん、人生を変えるフリマアプリ
+            .inner_text2 今すぐ無料ダウンロード！
+            .inner__icon
+              .aBtn
+                = link_to image_tag("http://furima.tokyo/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg")
+              .gBtn
+                = link_to image_tag("http://furima.tokyo/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg")
+
+.single-footer
+  = render "layouts/footer"
