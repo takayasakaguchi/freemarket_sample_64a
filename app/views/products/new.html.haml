@@ -4,205 +4,184 @@
   -# 出品画像
   .single-main
     .single-main__form
-      .single-main__form__text
-        商品画像
-        %span.l-single-content__require 必須
-      .single-main__form__text__sentence
-        最大10枚までアップロードできます
-
-      .single-main__form__text__sentence__input
-        .l-single-content__image
-          %label.l-single-content__image__icon
-            .fas.fa-camera 
-              .l-single-content__image__icon__text
-                ドラッグアンドドロップ
-                %br
-                またはクリックしてファイルをダウンロード
-            %input.file{type: "file"}
-
-        -# 商品名・説明
-    .single-main__form1
-      .single-main__form1__text1
-        商品名
-        %span.l-single-content__require 必須
-        %br
-        .single-main__form1__text1__itemname
-        %input.product{name: "itemctname", type: "text", placeholder: "  40文字まで"}/
-
-      .single-main__form1__text1
-        商品の説明
-        %span.l-single-content__require 必須
-        .single-main__form1__text1__itemexplanation
-        %textarea.product1{cols: "60", rows: "7", placeholder:  " 商品の説明（必須1,000文字以内）\n  色、素材、重さ、定価、注意点など\n\n 例）2010年度に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n\n"}
-        .single-main__form1__text1__right
-          0/1000
-      -# 商品詳細
-      .single-main__form1__text2
-        商品詳細
-        .single-main__form1__text2__itme
-          カテゴリー
+      = form_for @product do |f|
+        .single-main__form__text
+          商品画像
           %span.l-single-content__require 必須
-          .single-main__form1__text2__itme__select
-            .single-main__form1__text2__itme__select__category
-              .fas.fa-chevron-down
-              %select{name: "category"}>
-                %option{value: ""}   選択してください
-                %option{value: "レディース"} レディース
-                %option{value: "メンズ"} メンズ
-                %option{value: "ベビー・キッズ"} ベビー・キッズ
-                %option{value: "インテリア・住まい・小物"} インテリア・住まい・小物
-                %option{value: "本・音楽・ゲーム"} 本・音楽・ゲーム
-                %option{value: "おもちゃ・ホビー・グッズ"} おもちゃ・ホビー・グッズ
-                %option{value: "コスメ・香水・美容"} コスメ・香水・美容
-                %option{value: "家電・スマホ・カメラ"} 家電・スマホ・カメラ
-                %option{value: "スポーツ・レジャー"} スポーツ・レジャー
-                %option{value: "ハンドメイド"} ハンドメイド
-                %option{value: "チケット"} チケット
-                %option{value: "自転車・オートバイ"} 自転車・オートバイ
-                %option{value: "その他"} その他
+        .single-main__form__text__sentence
+          最大10枚までアップロードできます
 
-        .single-main__form1__text2__brand
-          ブランド
-          %span.l-single-content__require1 必須
-          .single-main__form1__text2__brand__name
-          %input.brandname{:name => "brand", :type => "text", :placeholder => "例）シャネル"}/
+        .single-main__form__text__sentence__input
+          .l-single-content__image
+            %label.l-single-content__image__icon
+              .fas.fa-camera 
+                .l-single-content__image__icon__text
+                = f.fields_for :images do |i|
+                  = i.file_field :image, type: "file", multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
+                  ドラッグアンドドロップ
+                  %br
+                  またはクリックしてファイルをダウンロード
+                -# %input.file{type: "file"}
+                    
+                
 
-        .single-main__form1__text2__status
-          商品の状態
-          %span.l-single-content__require 必須
-          .single-main__form1__text2__itme__select
-            .single-main__form1__text2__itme__select__status
-              .fas.fa-chevron-down
-              %select{name: "status"}>
-                %option{value: ""}   選択してください
-                %option{value: "新品、未使用"} 新品、未使用
-                %option{value: "未使用に近い"} 未使用に近い
-                %option{value: "目立った汚れや傷なし"} 目立った汚れや傷なし
-                %option{value: "やや汚れや傷あり"} やや汚れや傷あり
-                %option{value: "汚れや傷あり"} 汚れや傷あり
-                %option{value: "全体的に状態が悪い"} 全体的に状態が悪い
-      -# 配送について
-      .single-main__form1__text3
-        配送について
-        .single-main__form1__text3__charge
-          配送料の負担
-          %span.l-single-content__require 必須
-          .single-main__form1__text3__itme__select
-            .single-main__form1__text3__itme__select__fee
-              .fas.fa-chevron-down
-              %select{name: "fee"}>
-                %option{value: ""}   選択してください
-                %option{value: "送料込み（出品者負担）"} 送料込み（出品者負担）
-                %option{value: "着払い（購入者負担）"} 着払い（購入者負担）
+          -# 商品名・説明
+        .single-main__form1
+          .single-main__form1__text1
+            商品名
+            %span.l-single-content__require 必須
+            %br
+            .single-main__form1__text1__itemname
+            = f.text_field :name, autofocus: true, class: "product_name", placeholder: "  40文字まで"
+          .single-main__form1__text1
+            商品の説明
+            %span.l-single-content__require 必須
+            .single-main__form1__text1__itemexplanation
+            = f.text_area :description, class: "product_description",cols: "60", rows: "7", autofocus: true, placeholder: "  商品の説明（必須1,000文字以内）\n  色、素材、重さ、定価、注意点など\n\n 例）2010年度に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n\n"
+            .single-main__form1__text1__right
+              0/1000
+          -# 商品詳細
+          .single-main__form1__text2
+            商品詳細
+            .single-main__form1__text2__itme
+              カテゴリー
+              %span.l-single-content__require 必須
+              .single-main__form1__text2__itme__select
+                .single-main__form1__text2__itme__select__category
+                  .fas.fa-chevron-down
+                  = f.collection_select :category_id, @category_parent_array, :id, :name, {prompt: "選択してください"}, {id: 'parent_category'}
+              .listing-product-detail__category
+                .fas.fa-chevron-down
+              .listing-product-detail__category
 
-        .single-main__form1__text3__place
-          発送元の地域
-          %span.l-single-content__require 必須
-          .single-main__form1__text3__itme__select
-            .single-main__form1__text3__itme__select__place
-              .fas.fa-chevron-down
-              %select{name: "place"}>
-                %option{value: ""} 選択してください
-                %option{value: "北海道"} 北海道
-                %option{value: "青森県"} 青森県
-                %option{value:  "岩手県"} 岩手県
-                %option{value: "宮城県"} 宮城県
-                %option{value: "秋田県"} 秋田県
-                %option{value: "山形県"} 山形県
-                %option{value: "福島県"} 福島県
-                %option{value: "茨城県"} 茨城県
-                %option{value: "栃木県"} 栃木県
-                %option{value: "群馬県"} 群馬県
-                %option{value: "埼玉県"} 埼玉県
-                %option{value: "千葉県"} 千葉県
-                %option{value: "東京都"} 東京都
-                %option{value: "神奈川県"} 神奈川県
-                %option{value: "新潟県"} 新潟県
-                %option{value: "富山県"} 富山県
-                %option{value: "石川県"} 石川県
-                %option{value: "福井県"} 福井県
-                %option{value: "山梨県"} 山梨県
-                %option{value: "長野県"} 長野県
-                %option{value: "岐阜県"} 岐阜県
-                %option{value: "静岡県"} 静岡県
-                %option{value: "愛知県"} 愛知県
-                %option{value: "三重県"} 三重県
-                %option{value: "滋賀県"} 滋賀県
-                %option{value: "京都府"} 京都府
-                %option{value: "大阪府"} 大阪府
-                %option{value: "兵庫県"} 兵庫県
-                %option{value: "奈良県"} 奈良県
-                %option{value: "和歌山県"} 和歌山県
-                %option{value: "鳥取県"} 鳥取県
-                %option{value: "島根県"} 島根県
-                %option{value: "岡山県"} 岡山県
-                %option{value: "広島県"} 広島県
-                %option{value: "山口県"} 山口県
-                %option{value: "徳島県"} 徳島県
-                %option{value: "香川県"} 香川県
-                %option{value: "愛媛県"} 愛媛県
-                %option{value: "高知県"} 高知県
-                %option{value: "福岡県"} 福岡県
-                %option{value: "佐賀県"} 佐賀県
-                %option{value: "長崎県"} 長崎県
-                %option{value: "熊本県"} 熊本県
-                %option{value: "大分県"} 大分県
-                %option{value: "宮崎県"} 宮崎県
-                %option{value: "鹿児島県"} 鹿児島県
-                %option{value: "沖縄県"} 沖縄県
+            .single-main__form1__text2__brand
+              ブランド
+              %span.l-single-content__require1 必須
+              .single-main__form1__text2__brand__name
+              = f.text_field :brand, autofocus: true, class: "product_brand", placeholder: "  例）シャネル"
+            .single-main__form1__text2__status
+              商品の状態
+              %span.l-single-content__require 必須
+              .single-main__form1__text2__itme__select
+                .single-main__form1__text2__itme__select__status
+                  .fas.fa-chevron-down
+                  = f.select :status, ["新品、未使用","未使用に近い","目立った汚れや傷なし","やや汚れや傷あり","汚れや傷あり","全体的に状態が悪い"], :prompt => "選択してください"
 
-        .single-main__form1__text3__days
-          発送までの日数
-          %span.l-single-content__require 必須
-          .single-main__form1__text3__itme__select
-            .single-main__form1__text3__itme__select__days
-              .fas.fa-chevron-down
-              %select{name: "days"}>
-                %option{value: ""} 選択してください
-                %option{value: "1日〜2日で発送"} 1日〜2日で発送
-                %option{value: "2日〜3日で発送"} 2日〜3日で発送
-                %option{value: "4日〜7日で発送"} 4日〜7日で発送
+          -# 配送について
+          .single-main__form1__text3
+            配送について
+            .single-main__form1__text3__charge
+              配送料の負担
+              %span.l-single-content__require 必須
+              .single-main__form1__text3__itme__select
+                .single-main__form1__text3__itme__select__fee
+                  .fas.fa-chevron-down
+                  = f.select :postage, ["送料込み（出品者負担）","着払い（購入者負担）"], :prompt => "選択してください"
 
-        .single-main__form1__text4
-          .single-main__form1__text4__left
-            価格（¥300〜9,999,999）
-          .single-main__form1__text4__price
-            販売価格
-            %span.l-single-content__require2 必須
-            .single-main__form1__text4__price__number
-              %input.numberbox{name: "sample", type: "number", style: "text-align: right", placeholder: "0"}/
-              .fas.fa-yen-sign
+            .single-main__form1__text3__place
+              発送元の地域
+              %span.l-single-content__require 必須
+              .single-main__form1__text3__itme__select
+                .single-main__form1__text3__itme__select__place
+                  .fas.fa-chevron-down
+                  %select{name: "city"}>
+                    %option{value: ""} 選択してください
+                    %option{value: "北海道"} 北海道
+                    %option{value: "青森県"} 青森県
+                    %option{value:  "岩手県"} 岩手県
+                    %option{value: "宮城県"} 宮城県
+                    %option{value: "秋田県"} 秋田県
+                    %option{value: "山形県"} 山形県
+                    %option{value: "福島県"} 福島県
+                    %option{value: "茨城県"} 茨城県
+                    %option{value: "栃木県"} 栃木県
+                    %option{value: "群馬県"} 群馬県
+                    %option{value: "埼玉県"} 埼玉県
+                    %option{value: "千葉県"} 千葉県
+                    %option{value: "東京都"} 東京都
+                    %option{value: "神奈川県"} 神奈川県
+                    %option{value: "新潟県"} 新潟県
+                    %option{value: "富山県"} 富山県
+                    %option{value: "石川県"} 石川県
+                    %option{value: "福井県"} 福井県
+                    %option{value: "山梨県"} 山梨県
+                    %option{value: "長野県"} 長野県
+                    %option{value: "岐阜県"} 岐阜県
+                    %option{value: "静岡県"} 静岡県
+                    %option{value: "愛知県"} 愛知県
+                    %option{value: "三重県"} 三重県
+                    %option{value: "滋賀県"} 滋賀県
+                    %option{value: "京都府"} 京都府
+                    %option{value: "大阪府"} 大阪府
+                    %option{value: "兵庫県"} 兵庫県
+                    %option{value: "奈良県"} 奈良県
+                    %option{value: "和歌山県"} 和歌山県
+                    %option{value: "鳥取県"} 鳥取県
+                    %option{value: "島根県"} 島根県
+                    %option{value: "岡山県"} 岡山県
+                    %option{value: "広島県"} 広島県
+                    %option{value: "山口県"} 山口県
+                    %option{value: "徳島県"} 徳島県
+                    %option{value: "香川県"} 香川県
+                    %option{value: "愛媛県"} 愛媛県
+                    %option{value: "高知県"} 高知県
+                    %option{value: "福岡県"} 福岡県
+                    %option{value: "佐賀県"} 佐賀県
+                    %option{value: "長崎県"} 長崎県
+                    %option{value: "熊本県"} 熊本県
+                    %option{value: "大分県"} 大分県
+                    %option{value: "宮崎県"} 宮崎県
+                    %option{value: "鹿児島県"} 鹿児島県
+                    %option{value: "沖縄県"} 沖縄県
 
-        .single-main__form1__text4__commission
-          .single-main__form1__text4__commission__from1
-            販売手数料（10%)
-            .single-main__form1__text4__commission__from__boder
-              ー
-          .single-main__form1__text4__commission__form2
-            .single-main__form1__text4__commission__form2__benefit
-              販売利益
-            .single-main__form1__text4__commission__from2__benefit__boder
-              ー
-      -# ボタン
-      .single-main__form1__text5
-        %button.btn-red{type: "submit"} 出品する
-        .single-main__form1__text5__btn
-          %button.btn-gry{type: "submit"} 下書きに保存
-          .single-main__form1__text5__back
-            = link_to "戻る","#"
-      -# 注意書き
-      .single-main__form1__text6
-        禁止されている
-        = link_to "行為","#"
-        および
-        = link_to "出品物","#"
-        を必ずご確認ください。
-        = link_to "偽ブランド","#"
-        や
-        = link_to "盗品物","#"
-        などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして
-        = link_to "加盟店規約","#"
-        に同意したことになります。
+            .single-main__form1__text3__days
+              発送までの日数
+              %span.l-single-content__require 必須
+              .single-main__form1__text3__itme__select
+                .single-main__form1__text3__itme__select__days
+                  .fas.fa-chevron-down
+                  = f.select :lead_time, ["1日〜2日で発送", "2日〜3日で発送", "4日〜7日で発送"], :prompt => "選択してください"
 
-.single-footer
-  = render "layouts/footer"
+            .single-main__form1__text4
+              .single-main__form1__text4__left
+                価格（¥300〜9,999,999）
+              .single-main__form1__text4__price
+                販売価格
+                %span.l-single-content__require2 必須
+                .single-main__form1__text4__price__number
+                  = f.number_field :price, autofocus: true, style: "text-align: right", placeholder: "  0"
+                  .fas.fa-yen-sign
+
+            .single-main__form1__text4__commission
+              .single-main__form1__text4__commission__from1
+                販売手数料（10%)
+                .single-main__form1__text4__commission__from__boder
+                  ー
+              .single-main__form1__text4__commission__form2
+                .single-main__form1__text4__commission__form2__benefit
+                  販売利益
+                .single-main__form1__text4__commission__from2__benefit__boder
+                  ー
+          -# ボタン
+          .single-main__form1__text5
+            %button.btn-red{type: "submit"} 出品する
+            .single-main__form1__text5__btn
+              %button.btn-gry{type: "submit"} 下書きに保存
+              .single-main__form1__text5__back
+                = link_to "戻る","#"
+          -# 注意書き
+          .single-main__form1__text6
+            禁止されている
+            = link_to "行為","#"
+            および
+            = link_to "出品物","#"
+            を必ずご確認ください。
+            = link_to "偽ブランド","#"
+            や
+            = link_to "盗品物","#"
+            などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして
+            = link_to "加盟店規約","#"
+            に同意したことになります。
+
+  .single-footer
+    = render "layouts/footer"
