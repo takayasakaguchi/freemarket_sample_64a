@@ -45,10 +45,10 @@ p {
     display: block;
   }
 }
-
 img {
   width: 100%;
 }
+
 
 .searchBox {
   margin-left: auto;
@@ -58,7 +58,6 @@ img {
     display: flex;
     margin-bottom: 5px;
   }
-  
   input {
     width: calc(100% - 26px);
     height: 36px;
@@ -67,8 +66,6 @@ img {
     font-family: inherit;
   }
 }
-
-
 
 button {
   width: 36px;
