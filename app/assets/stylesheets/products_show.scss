@@ -6,6 +6,8 @@
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
 }
 
+
+
 /// ボタン
 @mixin btn{
   display: flex;
@@ -52,6 +54,9 @@
               }
             }
             &__img_sub{
+              display: flex;
+              padding-left: 10px;
+              flex-wrap: wrap;
               &__first{
                 display: flex;
                 justify-content: center;
@@ -64,6 +69,7 @@
                     width: auto;
                     height: auto;
                     padding: 0;
+                    display: flex;
                     img.image{
                       position: absolute;
                       top: 0;
@@ -104,16 +110,18 @@
 
           /// 価格情報表示
           &--price_info{
-            font-size: 22px;
-            padding-top: 20px;
+            font-size: 46px;
+            padding-top: 40px;
             text-align: center;
             .price{
               font-size: 50px;
+              font-weight: bold;
               margin-right: 20px;
               display: block;
             }
             .tax{
               font-size: 16px;
+              text-decoration: none;
             }
             .shipping_fee{
               font-size: 16px;
@@ -185,6 +193,48 @@
             cursor: pointer; 
             font-size: 24px; 
             font-weight: bold;
+          }
+
+          &__btn__buy{
+            @include btn;
+            background-color: #C0C0C0;
+            color:#FFFFFF;
+            margin: 20px auto 0;
+            cursor: pointer; 
+            font-size: 24px; 
+            font-weight: bold;
+            cursor: not-allowed;
+            
+          }
+
+          &__btn__else{
+            display: flex;
+          }
+
+          &__btn__else__edit{
+            @include btn;
+            background-color: $color-furima;
+            color:white;
+            margin: 20px auto 0;
+            padding: 15px;
+            cursor: pointer; 
+            font-size: 24px; 
+            font-weight: bold;
+            border-radius: 25px;
+          }
+
+          &__btn__else__delete{
+            @include btn;
+            background-color: $color-furima;
+            color:white;
+            margin: 20px auto 0;
+            padding: 15px;
+            cursor: pointer; 
+            font-size: 24px; 
+            font-weight: bold;
+            border-radius: 25px;
+            
+            
           }
   
           /// お気に入り/不適切報告ボタン
