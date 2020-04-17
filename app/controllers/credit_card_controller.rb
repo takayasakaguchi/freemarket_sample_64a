@@ -13,7 +13,6 @@ class CreditCardController < ApplicationController
       # paramsの中にjsで作った'payjpTokenが存在するか確かめる
       redirect_to action: "new"
     else
-      # binding.pry
       customer = Payjp::Customer.create(
       # description: '登録テスト', #なくてもOK
       # email: user.email, #なくてもOK
@@ -28,8 +27,8 @@ class CreditCardController < ApplicationController
       if @card.save
         redirect_to controller: "purchases", action: 'index'
         flash[:notice] = 'クレジットカードを登録しました。'
-      # else
-      #   redirect_to action: "pay"
+      else
+        redirect_to action: "registration"
       end
     end
   end
