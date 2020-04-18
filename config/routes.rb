@@ -13,9 +13,7 @@ Rails.application.routes.draw do
   resources :mypage, only: [:index]
   resources :logout, only: [:index]
   resources :purchases, only: [:index]
-  resources :products, only: [:new]
-  # 動作確認用URL（サーバーサイド情報がまだないため仮ルート設定）
-  get "/pruducts/1", to: 'products#show'
+  resources :products, only: [:new, :show]
   resources :signup, only: [:index]
   resources :credit_card, only: [:new] do
     collection do

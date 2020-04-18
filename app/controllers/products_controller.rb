@@ -1,9 +1,7 @@
 class ProductsController < ApplicationController
   def show
-    @product = Product.includes(:user).find(1)
+    @product = Product.find(params[:id])
     @images = @product.images
-    # @parents = Category.all
-    # @users = User.includes(:user)
   end
 
   def new
