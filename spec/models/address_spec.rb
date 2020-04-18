@@ -155,17 +155,6 @@ describe Address do
       expect(address.errors[:city]).to include("を入力してください")
     end
 
-    # it "cityが10文字以下である場合は登録できること" do
-    #   address = build(:address, city: "札幌市札幌市中央区区")
-    #   expect(address).to be_valid
-    # end
-
-    # it "cityが11文字以上である場合は登録できないこと" do
-    #   address = build(:address, city: "札幌市札幌市市中央区区")
-    #   address.valid?
-    #   expect(address.errors[:city]).to include("文字数オーバーです")
-    # end
-
     it "cityが「全角ひらがな、全角カタカナ、漢字」を満たす場合は登録できること" do
       address = build(:address, city: "さっぽろ市チュウオウ区")
       address.valid?
