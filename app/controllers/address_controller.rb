@@ -7,8 +7,7 @@ class AddressController < ApplicationController
   end
 
   def create
-    Address.new
-    @address = Address.create(address_params)
+    @address = Address.new(address_params)
     if @address.save
       redirect_to purchases_path
     else
