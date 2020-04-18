@@ -492,7 +492,7 @@ others_9.children.create([{name: "すべて"}])
     lead_time: 3,
     size: "28.0",
     user_id: 1,
-    category_id: 1341,
+    category_id: 5,
   )
 end
 2.times do |n|
@@ -507,7 +507,7 @@ end
     lead_time: 3,
     size: "28.0",
     user_id: 1,
-    category_id: 1341,
+    category_id: 5,
     purchase: 1,
     buyer_id: 1,
   )
