@@ -79,44 +79,6 @@
                   .main__products_center__upper__info_box__image__img_sub__first__outer--image
                     = image_tag image.image.url
 
-                -# .main__products_center__upper__info_box__image__img_sub__first__outer{id: "hidden"}
-                -#   .main__products_center__upper__info_box__image__img_sub__first__outer--image
-                -#     = image_tag @product.images.first.image
-                -# .main__products_center__upper__info_box__image__img_sub__first__outer{id: "hidden"}
-                -#   .main__products_center__upper__info_box__image__img_sub__first__outer--image
-                -#     = image_tag @product.images.first.image
-
-                -# .main__products_center__upper__info_box__image__img_sub__first__outer{id: "hidden"}
-                -#   .main__products_center__upper__info_box__image__img_sub__first__outer--image
-                -#     = image_tag @product.images.first.image
-
-                -# .main__products_center__upper__info_box__image__img_sub__first__outer{id: "hidden"}
-                -#   .main__products_center__upper__info_box__image__img_sub__first__outer--image
-                -#     = image_tag @product.images.first.image
-              
-              -##### サブ画像表示2段目
-              -# .main__products_center__upper__info_box__image__img_sub__second
-
-              -#   .main__products_center__upper__info_box__image__img_sub__second__outer{id: "hidden"}
-              -#     .main__products_center__upper__info_box__image__img_sub__second__outer--image
-              -#       = image_tag @product.images.first.image
-
-              -#   .main__products_center__upper__info_box__image__img_sub__second__outer{id: "hidden"}
-              -#     .main__products_center__upper__info_box__image__img_sub__second__outer--image
-              -#       = image_tag @product.images.first.image
-
-              -#   .main__products_center__upper__info_box__image__img_sub__second__outer{id: "hidden"}
-              -#     .main__products_center__upper__info_box__image__img_sub__second__outer--image
-              -#       = image_tag @product.images.first.image
-
-              -#   .main__products_center__upper__info_box__image__img_sub__second__outer{id: "hidden"}
-              -#     .main__products_center__upper__info_box__image__img_sub__second__outer--image
-              -#       = image_tag @product.images.first.image
-
-              -#   .main__products_center__upper__info_box__image__img_sub__second__outer{id: "hidden"}
-              -#     .main__products_center__upper__info_box__image__img_sub__second__outer--image
-              -#       = image_tag @product.images.first.image
-
           -### 値段表示
           .main__products_center__upper__info_box--price_info
             .price
@@ -153,7 +115,7 @@
                 %th ブランド
                 %td
                   .bland_name
-                    = @product.bland
+                    = @product.brand
               %tr
                 %th 商品のサイズ
                 %td
@@ -202,10 +164,6 @@
           .main__products_center__upper__info_box__btn
             購入画面に進む
             
-            
-
-
-
       -# 2段目（コメントなど）
       .main__products_center__bottom
         .main__products_center__bottom__comment
