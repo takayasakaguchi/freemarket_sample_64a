@@ -1,9 +1,13 @@
 class AddressController < ApplicationController
+
+  before_action :set_address, only: [:edit, :update]
+
   def index
     @address = Address.new
   end
 
   def create
+    Address.new
     @address = Address.create(address_params)
     if @address.save
       redirect_to purchases_path
@@ -13,12 +17,9 @@ class AddressController < ApplicationController
   end
 
   def edit
-    @address = Address.includes(:user).find(params[:id])
   end
 
   def update
-    @address = Address.includes(:user).find(params[:id])
-    @address.update(address_params)
     if @address.update(address_params)
       redirect_to purchases_path
     else
@@ -31,4 +32,7 @@ private
     params.require(:address).permit(:first_name, :last_name, :first_name_reading, :last_name_reading, :postal_code, :prefecture_id, :city, :house_number, :building_name, :phone_number).merge(user_id: User.find(1).id)
   end
 
+  def set_address
+    @address = Address.includes(:user).find(params[:id])
+  end
 end
