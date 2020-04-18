@@ -98,6 +98,7 @@
               @include input-text;
             }
           }
+          
           .card-logos{
             margin: 8px 0 16px 0;
             .card_logo{
@@ -116,7 +117,7 @@
                 display: flex;
                 &__form{
                   @include form-style;
-                  #due_month{
+                  #card_month{
                     @include form-scroll;
                     padding: 15px 0 15px 14px;
                     font-size: 14px;
@@ -136,7 +137,7 @@
                 display: flex;
                 &__form{
                   @include form-style;
-                  #due_year{
+                  #card_year{
                     @include form-scroll;
                     padding: 15px 0 15px 14px;
                     font-size: 14px;
@@ -173,10 +174,16 @@
             background-color: $color-furima;
             color: #fff;
             margin: 20px auto 0;
-            cursor: pointer;  
+            cursor: pointer; 
+            width: 100%;
+            border: 0; 
           }
         }
       }
     }
+  }
+  // validationエラーメッセージ
+  form.cmxform label.error, label.error {
+    color: #F0F;
   }
 }

@@ -17,8 +17,17 @@ Rails.application.routes.draw do
   # 動作確認用URL（サーバーサイド情報がまだないため仮ルート設定）
   get "/pruducts/1", to: 'products#show'
   resources :signup, only: [:index]
+  resources :credit_card, only: [:new] do
+    collection do
+      post 'registration'
+      post 'buy'
+      post 'delete'
+    end
+  end
+
   resources :complete, only: [:index]
   resources :credit_card, only: [:index] do
+
   end
   resources :address, only: [:index, :create, :edit, :update] do
   end

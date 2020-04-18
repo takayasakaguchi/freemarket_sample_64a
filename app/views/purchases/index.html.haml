@@ -13,12 +13,14 @@
       .main__center__product
         .main__center__product__detail
           .main__center__product__detail__image
-            = image_tag("https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png")
+            = image_tag @product.images.first.image
           .main__center__product__detail__info
             .main__center__product__detail__info--name
-              腕時計
+              = @product.name
             .main__center__product__detail__info--price
-              ¥6,000 （税込）送料込み
+              ¥
+              = @product.price 
+              （税込）送料込み
 
       -# 3段目以降
       .main__center__purchase
@@ -27,7 +29,8 @@
             .main__center__purchase__form__price--character
               支払い金額
             .main__center__purchase__form__price--confirmation
-              ¥6,000
+              ¥
+              = @product.price
 
           .main__center__purchase__form__point
             .main__center__purchase__form__point--plus-mark
@@ -35,14 +38,43 @@
             .main__center__purchase__form__point--text
               ポイントを使用（所持ポイント：P0）
 
-          .main__center__purchase__form__pay
-            .main__center__purchase__form__pay__title
-              支払い方法
+          
+
+          // クレジットカード情報が登録しているか否かで条件分岐
+          - if @customer_card.blank?
+            .main__center__purchase__form__pay
+              .main__center__purchase__form__pay__title
+                .main__center__purchase__form__pay__title--character
+                  支払い方法
             .registration
               .registration--plus-mark
                 %i.fas.fa-plus-circle
-              = link_to credit_card_index_path, class: "registration--text" do
+              = link_to new_credit_card_path, class: "registration--text" do
                 登録してください
+          - else
+            .main__center__purchase__form__pay
+              .main__center__purchase__form__pay__title
+                .main__center__purchase__form__pay__title--character
+                  支払い方法
+            .customer-card
+              .customer-card__title_box
+                %span
+                  クレジットカード情報
+                = link_to delete_credit_card_index_path, class: "delete-card", method: :post do
+                  削除する
+              .customer-card__content
+                .customer-card__content__card_logo
+                  = image_tag "#{@card_src}", width: '50', height: '30', alt: @card_brand, id: "card_image"
+                .customer-card__content__card_info
+                  .customer-card__content__card_info--number.form_space
+                    %span
+                      = "**** **** **** " + @customer_card.last4
+                    .customer-card__content__card_info--expired.form_space
+                      - exp_month = @customer_card.exp_month.to_s
+                      - exp_year = @customer_card.exp_year.to_s.slice(2,3)
+                      %span
+                        = exp_month + " / " + exp_year
+              
 
           - if @address.blank?
             .main__center__purchase__form__destination
@@ -74,8 +106,7 @@
 
             
     
-          .main__center__purchase__form__btn
-            購入する
-
+          = form_tag({controller: :credit_card, action: :buy},{ method: :post}) do
+            %button.main__center__purchase__form__btn 購入する
 
   = render partial: 'layouts/footer'
