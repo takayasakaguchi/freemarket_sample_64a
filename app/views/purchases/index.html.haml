@@ -13,7 +13,7 @@
       .main__center__product
         .main__center__product__detail
           .main__center__product__detail__image
-            = image_tag @product.images.first.image
+            = image_tag @product.images.first.image.url
           .main__center__product__detail__info
             .main__center__product__detail__info--name
               = @product.name
@@ -76,17 +76,35 @@
                         = exp_month + " / " + exp_year
               
 
-          .main__center__purchase__form__destination
-            .main__center__purchase__form__destination__title
-              .main__center__purchase__form__destination__title--character
-                配送先
-              = link_to address_index_path, class: "change-text" do
-                変更する
-            .registration
-              .registration--plus-mark
-                %i.fas.fa-plus-circle
-              = link_to address_index_path, class: "registration--text" do
-                登録してください
+          - if @address.blank?
+            .main__center__purchase__form__destination
+              .main__center__purchase__form__destination__title
+                .main__center__purchase__form__destination__title--character
+                  配送先
+              .registration
+                .registration--plus-mark
+                  %i.fas.fa-plus-circle
+                = link_to address_index_path, class: "registration--text" do
+                  登録してください
+
+          - else
+            .main__center__purchase__form__destination
+              .main__center__purchase__form__destination__title
+                .main__center__purchase__form__destination__title--character
+                  配送先
+                = link_to edit_address_path(@address.id), class: "change-text" do
+                  変更する
+
+              .address-info
+                .address-info__content
+                  .address-info__content--postal_code
+                    = "〒" + @address.postal_code
+                  .address-info__content--address
+                    = @address.prefecture.name + @address.city + @address.house_number + @address.building_name
+                  .address-info__content--user-name
+                    = @address.first_name + @address.last_name
+
+            
     
           = form_tag({controller: :credit_card, action: :buy},{ method: :post}) do
             %button.main__center__purchase__form__btn 購入する
