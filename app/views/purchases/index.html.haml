@@ -13,7 +13,7 @@
       .main__center__product
         .main__center__product__detail
           .main__center__product__detail__image
-            = image_tag @product.images.first.image
+            = image_tag @product.images.first.image.url
           .main__center__product__detail__info
             .main__center__product__detail__info--name
               = @product.name

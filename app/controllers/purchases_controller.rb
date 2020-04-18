@@ -8,7 +8,7 @@ class PurchasesController < ApplicationController
 
     #クレジットカード登録済みの場合、登録内容を表示する
    
-    card = current_user.credit_card
+    card = User.find(1).credit_card
       # テーブル紐付けてるのでログインユーザーのクレジットカードを引っ張ってくる（ダミーユーザーのカード）
 
     if card.blank?
