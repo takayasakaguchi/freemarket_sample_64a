@@ -66,7 +66,7 @@
             -#### メイン画像
             .main__products_center__upper__info_box__image__img_main
               .main__products_center__upper__info_box__image__img_main--image
-                = image_tag @product.images.first.image
+                = image_tag @product.images.first.image.url
 
             -#### サブ画像（複数投稿時）
             .main__products_center__upper__info_box__image__img_sub
@@ -77,7 +77,7 @@
               - @images.each do |image|
                 .main__products_center__upper__info_box__image__img_sub__first__outer
                   .main__products_center__upper__info_box__image__img_sub__first__outer--image
-                    = image_tag image.image
+                    = image_tag image.image.url
 
                 -# .main__products_center__upper__info_box__image__img_sub__first__outer{id: "hidden"}
                 -#   .main__products_center__upper__info_box__image__img_sub__first__outer--image
