@@ -1,7 +1,7 @@
 class PurchasesController < ApplicationController
 
   def index
-    @address = current_user.address 
+    @address = User.find(1).address 
   end
   
 end
