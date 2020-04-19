@@ -21,15 +21,15 @@
             %ul.parent-wrap
               - @parents.each do |parent|
                 %li.parent
-                  = link_to parent.name
+                  = link_to parent.name, category_path(parent.id)
                   %ul.child-wrap
                     - parent.children.each do |child|
                       %li.child
-                        =link_to child.name
+                        =link_to child.name, category_path(child.id)
                         %ul.grand-child-wrap
                           - child.children.each do |grandchild|
                             %li.grand-child
-                              = link_to grandchild.name
+                              = link_to grandchild.name, category_path(grandchild.id)
 
           %li.listLeft__item
             #brandBtn

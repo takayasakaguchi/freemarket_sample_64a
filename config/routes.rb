@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   } 
 
   resources :purchases, only: [:index]
-  resources :products, only: [:new]
+  resources :products, only: [:new, :show]
+  resources :categories, only: [:show]
   # 動作確認用URL（サーバーサイド情報がまだないため仮ルート設定）
   get "/pruducts/1", to: 'products#show'
   resources :signup, only: [:index]
