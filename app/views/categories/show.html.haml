@@ -44,10 +44,7 @@
       .nav_bottom_for_category
         .nav_bottom_for_category__category
           %span.title
-            = link_to 'FURIMA' , root_path
-          %i.fas.fa-chevron-right
-          %span
-            = link_to 'カテゴリー一覧' , '#'
+            = link_to 'FURIMA' ,root_path
             - if @category.parent.blank?
               %i.fas.fa-chevron-right
               %span
@@ -73,14 +70,7 @@
   %section.pickupContainer
     .productBox
       .productHead
-      - if @category.parent.blank?
-        %h3.subtitle
-          = @category.root.name + "の商品一覧"
-      - elsif @category.parent
-        %h3.subtitle
-          = @category.parent.name + "の商品一覧"
-      - else
-        %h3.subtitle
+        .category_title
           = @category.name + "の商品一覧"
 
     .productLists
