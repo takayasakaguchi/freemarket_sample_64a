@@ -1,3 +1,11 @@
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+#
+# Examples:
+#
+#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   Character.create(name: 'Luke', movie: movies.first)
+
 # レディース
 lady   = Category.create(name: "レディース")
 
@@ -470,4 +478,44 @@ others_8 = others.children.create(name: "事務/店舗用品")
 others_8.children.create([{name: "オフィス用品一般"},{name: "オフィス家具"},{name: "店舗用品"},{name: "OA機器"},{name: "ラッピング/包装"},{name: "その他"}])
 
 others_9 = others.children.create(name: "その他")
-others_9.children.create([{name: "すべて"}])
+others_9.children.create([{name: "すべて"}]) 
+
+2.times do |n|
+  Product.create!(
+    price: "200",
+    name: "product#{n + 1}",
+    description: "使用済みです",
+    brand: "ナイキ",
+    status: "未使用に近い",
+    postage: "送料込み（出品者負担）",
+    destination: "岩手県",
+    lead_time: 3,
+    size: "28.0",
+    user_id: 1,
+    category_id: 5,
+  )
+end
+2.times do |n|
+  Product.create!(
+    price: "200",
+    name: "product#{n + 1}",
+    description: "使用済みです",
+    brand: "ナイキ",
+    status: "未使用に近い",
+    postage: "送料込み（出品者負担）",
+    destination: "岩手県",
+    lead_time: 3,
+    size: "28.0",
+    user_id: 1,
+    category_id: 5,
+    purchase: 1,
+    buyer_id: 1,
+  )
+end
+
+Product.all.each do |product|
+  product.images.create!(
+    image: File.open('./app/assets/images/魚.jpeg'),
+    product_id: product.id,
+  )
+end

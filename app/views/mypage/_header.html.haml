@@ -1,0 +1,31 @@
+%body
+  %header.pcHeader
+    .headerInner
+      .mainHeader
+        %h1.icon
+          = link_to image_tag("http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg")
+        .searchBox
+          %form{"accept-charset": "UTF-8", action: "#", method: "get"}
+            %input{name: "utf8", type: "hidden", value: "#"}/
+            %input#searchInput.searchBox--input{name: "key", placeholder: "キーワードから探す"}/
+            %button{type:  "submit"}
+              .searchBox__icon
+                = link_to image_tag("http://furima.tokyo/assets/icon-search-60a83ada85216fe00789cd16065281694d9a08948275fef83683fadcf131d84d.svg")
+        %ul.resultLists
+      .nav
+        %ul.listsLeft
+          %li.listLeft__item.listsLeft__item--first
+            #catBtn 
+            = link_to 'カテゴリー'
+            .tree.displayNone
+              .tree.displayNone
+                %ul.categoryTree
+          %li.listLeft__item
+            #brandBtn
+            = link_to 'ブランド'
+            %ul.brandsPulldown.displayNone
+        %ul.listsRight
+          %li.listsRight__item.listsRight__item--login
+            = link_to 'ログイン' , '#'
+          %li.listsRight__item.listsRight__item--new
+            = link_to '新規会員登録' , '#'

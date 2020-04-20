@@ -1,12 +1,11 @@
-.single_wrapper{
-  padding: 0 0 164px;
+.single_wrapper_sign_up{
   background: #f5f5f5;
   font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
+  height: 100vh;
 }
   
   .mainform{
     height: 344px;
-    
     &__one{
       height: 375px;
       width: 700px;
@@ -34,13 +33,15 @@
       width: 343px;
       height: 50px;
       position: relative;
+      a{
+        color: #fff;
+      }
     }
     .far.fa-envelope{
       color: white;
       font-size: 20px;
       position: absolute;
       left: 16px;
-      // top: 254px;
     }
     .btn-default.btn-blue{
       display: block;
