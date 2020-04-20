@@ -85,8 +85,9 @@
       - @products.each do |product|
         - if product.purchase.blank?
           .product_box
-            %figure.productList--img
-              = image_tag product.images.first.image.url
+            =link_to product_path(product.id) do
+              %figure.productList--img
+                = image_tag product.images.first.image.url
 
             .productList--body
               .productforder
