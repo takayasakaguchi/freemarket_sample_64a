@@ -45,10 +45,14 @@
         .nav_bottom_for_category__category
           %span.title
             = link_to 'FURIMA' ,root_path
+
+            -# カテゴリーナビバーの表示を条件分岐
             - if @category.parent.blank?
               %i.fas.fa-chevron-right
               %span
                 = link_to @category.root.name, category_path(@category.root.id)
+                -## @categoryに親がいない場合、親カテゴリーの名前のみ表示される
+
             - elsif @category.parent.parent
               %i.fas.fa-chevron-right
               %span
@@ -59,6 +63,8 @@
               %i.fas.fa-chevron-right
               %span
                 = link_to @category.name, category_path(@category.id)
+                -## @categoryに孫がいる場合、親、子、孫カテゴリーの名前が表示される
+
             - else
               %i.fas.fa-chevron-right
               %span
@@ -66,10 +72,12 @@
               %i.fas.fa-chevron-right
               %span
                 = link_to @category.name, category_path(@category.id)
+                -## @category親がいて孫がいない場合、親、子カテゴリーの名前が表示される
             
   %section.pickupContainer
     .productBox
       .productHead
+        -# カテゴリーのタイトル名を表示
         .category_title
           = @category.name + "の商品一覧"
 
