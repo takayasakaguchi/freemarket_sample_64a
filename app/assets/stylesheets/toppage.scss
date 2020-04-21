@@ -512,6 +512,27 @@ h2 {
   
 }
 
+// 子カテゴリーの一覧表示
+.child_categories{
+  margin: 30px 60px 0;
+  font-size: 14px;
+  background-color: #ffc;
+  border-radius: 10px;
+  word-break: keep-all;
+  padding: 5px;
+  .categories{
+    display: inline; 	
+    margin-right: 1em;
+    a{
+      color: $color-furima;
+    }
+  }
+  a:hover{
+    opacity: 0.6;
+    text-decoration: underline;
+  }
+}
+
 .head {
   text-align: center;
   font-size: 28px;
