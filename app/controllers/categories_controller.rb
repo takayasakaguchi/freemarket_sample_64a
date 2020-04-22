@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   def index
-    @parents = Category.all
+    @parents = Category.roots.all
   end
 
   def show
