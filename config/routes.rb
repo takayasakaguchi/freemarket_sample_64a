@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :logout, only: [:index]
   resources :purchases, only: [:index]
   resources :products, only: [:new, :show]
-  resources :categories, only: [:show]
+  resources :categories, only: [:index, :show]
   resources :signup, only: [:index]
   resources :credit_card, only: [:new] do
     collection do

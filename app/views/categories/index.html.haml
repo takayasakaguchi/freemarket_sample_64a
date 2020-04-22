@@ -47,81 +47,28 @@
             = link_to 'FURIMA' ,root_path
           %i.fas.fa-chevron-right
           %span
-            = link_to 'カテゴリー一覧' , categories_path 
+            = link_to 'カテゴリー一覧' , categories_path
 
-            -# カテゴリーナビバーの表示を条件分岐
-            - if @category.parent.blank?
-              %i.fas.fa-chevron-right
-              %span
-                = link_to @category.root.name, category_path(@category.root.id)
-                -## @categoryに親がいない場合、親カテゴリーの名前のみ表示される
+  %section.pickupContainerCat
+    .ContainerUpper
+      - @parents.each do |parent|
+        %span.main_categories
+          = link_to parent.name, category_path(parent.id), class: "catmain"
 
-            - elsif @category.parent.parent
-              %i.fas.fa-chevron-right
-              %span
-                = link_to @category.root.name, category_path(@category.root.id)
-              %i.fas.fa-chevron-right
-              %span
-                =link_to @category.parent.name, category_path(@category.parent.id)
-              %i.fas.fa-chevron-right
-              %span
-                = link_to @category.name, category_path(@category.id)
-                -## @categoryに孫がいる場合、親、子、孫カテゴリーの名前が表示される
-
-            - else
-              %i.fas.fa-chevron-right
-              %span
-                = link_to @category.root.name, category_path(@category.root.id)
-              %i.fas.fa-chevron-right
-              %span
-                = link_to @category.name, category_path(@category.id)
-                -## @category親がいて孫がいない場合、親、子カテゴリーの名前が表示される
-            
-  %section.pickupContainer
-    .productBox
-      .productHead
-        -# カテゴリーのタイトル名を表示
-        .category_title
-          = @category.name + "の商品一覧"
-    -# 子カテゴリーの一覧を表示
-    .child_categories
-      - @category.children.each do |child|
-        %li.categories
-          =link_to child.name, category_path(child.id)
-
-    .productLists
-      - @products.each do |product|
-        - if product.purchase.blank?
-          .product_box
-            =link_to product_path(product.id) do
-              %figure.productList--img
-                = image_tag product.images.first.image.url
-
-            .productList--body
-              .productforder
-                %h3.name
-                  = product.name
-                  %br/
-                .details
-                  %span ¥
-                  = product.price
-                  %span.tax （税込）
-
-        - else
-          .product_box-sold_out
-            %figure.productList--img_sold_out
-              = image_tag product.images.first.image.url
-            .sold_out SOLD OUT
-
-            .productList--body_sold_out
-              .productforder
-                %h3.name
-                  = product.name
-                  %br/
-                .details
-                  %span ¥
-                  = product.price
-                  %span.tax （税込）
+    - @parents.each do |parent|
+      .category_box
+        = link_to parent.name, category_path(parent.id), class: "cattitle"
+        - parent.children.each do |child|
+          .catcontents
+            .child_box
+              =link_to child.name, category_path(child.id), class: "subtitle"
+            .catitem
+              - child.children.each do |grandchild|
+                .grand-child_box
+                  = link_to grandchild.name, category_path(grandchild.id), class: "itemtitle"
+        .topBtn
+          = link_to "\tページトップへ", "#", class: "fas fa-arrow-up"
+          
   .side.appBanner
     .inner
       %h2.inner__title だれでもかんたん、人生を変えるフリマアプリ
