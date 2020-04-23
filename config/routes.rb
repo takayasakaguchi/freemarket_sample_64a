@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
+      get 'get_size', defaults: { format: 'json' }
     end
   end
   # 動作確認用URL（サーバーサイド情報がまだないため仮ルート設定）

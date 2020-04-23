@@ -1,13 +1,13 @@
 class ProductsController < ApplicationController
   # before_action :set_product, except: [:index, :new, :create]
 
-
   def show
-    
+
   end
 
   def new
     @product = Product.new
+    @products = Product.includes(:images).order('created_at DESC')
     @product.images.build
     @category_parent_array = []
     #データベースから、親カテゴリーのみ抽出し、配列化
@@ -17,14 +17,22 @@ class ProductsController < ApplicationController
   end
 
   def create
-    
     @product = Product.new(product_params)
+    binding.pry
     if @product.save
       redirect_to root_path
     else
       render :new
     end
   end
+
+  # def update
+  #   if @product.update(product_params)
+  #     redirect_to root_path
+  #   else
+  #     render :edit
+  #   end
+  # end
 
   # def destroy
   #   @product.destroy
