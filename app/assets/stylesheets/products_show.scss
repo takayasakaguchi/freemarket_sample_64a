@@ -196,6 +196,7 @@
             font-weight: bold;
           }
 
+
           &__btn__buy{
             @include btn;
             background-color: #C0C0C0;
@@ -205,7 +206,6 @@
             font-size: 24px; 
             font-weight: bold;
             cursor: not-allowed;
-            
           }
 
           &__btn__else{
@@ -234,8 +234,13 @@
             font-size: 24px; 
             font-weight: bold;
             border-radius: 25px;
+            text-decoration: none;
             
-            
+          }
+
+          &__btn__else__delete a{
+            color: white;
+            text-decoration: none;
           }
   
           /// お気に入り/不適切報告ボタン

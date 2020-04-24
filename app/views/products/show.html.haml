@@ -152,17 +152,19 @@
               %span 不適切な商品の報告
               
           -### 購入画面に進むボタン
-        - if user_signed_in? && current_user.id == product.user_id
-          .main__products_center__upper__info_box__btn__buy
-            購入画面に進む
-          .main__products_center__upper__info_box__btn__else
-            .main__products_center__upper__info_box__btn__else__edit
-              商品編集画面に進む
-            .main__products_center__upper__info_box__btn__else__delete
-              商品削除画面に進む
-        - else
-          .main__products_center__upper__info_box__btn
-            購入画面に進む
+      - if user_signed_in? && current_user.id == product.user_id
+        .main__products_center__upper__info_box__btn
+          購入画面に進む    
+      - else
+        .main__products_center__upper__info_box__btn__buy
+          購入画面に進む
+        .main__products_center__upper__info_box__btn__else
+          .main__products_center__upper__info_box__btn__else__edit
+            商品を編集する
+          .main__products_center__upper__info_box__btn__else__delete
+            = link_to "商品を削除する", product_path(@product.id), method: :delete, class: "productManage__delete"
+
+          
             
       -# 2段目（コメントなど）
       .main__products_center__bottom
