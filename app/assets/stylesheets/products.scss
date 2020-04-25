@@ -90,6 +90,9 @@
     &__brand{
       margin-top: 16px;
     }
+    &__size{
+      margin-top: 16px;
+    }
     &__status{
       margin-top: 16px;
       margin-bottom: 31px;
@@ -100,6 +103,14 @@
 
     .listing-select-wrapper__box--select{
       margin-top: 16px;
+    }
+
+    .size{
+      width: 575px;
+      height: 45px;
+      margin-top: 16px;
+      border: 1px solid #aaa;
+      border-radius: 5px;
     }
 
     .product_brand{

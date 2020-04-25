@@ -53,6 +53,12 @@
               .listing-product-detail__category
                 .fas.fa-chevron-down
 
+            .single-main__form1__text2__size
+              サイズ
+              %span.l-single-content__require1 任意
+              .single-main__form1__text2__size__name
+              = f.text_field :size, autofocus: true, class: "size", placeholder: "  例）28.0cm"
+
             .single-main__form1__text2__brand
               ブランド
               %span.l-single-content__require1 任意
