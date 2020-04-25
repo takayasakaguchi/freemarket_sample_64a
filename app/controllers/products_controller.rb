@@ -10,6 +10,10 @@ class ProductsController < ApplicationController
     
   end
 
+  def destroy
+    product.destroy
+  end
+
   def set_product
     product = Product.find(params[:id])
 
