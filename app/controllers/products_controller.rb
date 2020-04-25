@@ -10,17 +10,15 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    
-  end
-
-  def set_product
-    product = Product.find(params[:id])
-
     if product.destroy 
       redirect_to root_path
 
     else
       render_from StandardError, with: :render_500 unless Rails.env.development?
     end
+  end
+
+  def set_product
+    product = Product.find(params[:id])
   end
 end
