@@ -13,17 +13,18 @@
        
         .single-main__form__text__sentence__input
           .l-single-content__image
-            #image-box
-              #previews
-                %label.l-single-content__image__icon
-                  .fas.fa-camera
-                    .l-single-content__image__icon__text
+            
+            #previews
+              %label.l-single-content__image__icon
+                .fas.fa-camera
+                  .l-single-content__image__icon__text
+                  #image-box
                     = f.fields_for :images do |i|
-                      = i.file_field :image_url, type: "file", multiple: true, name: 'product_images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
-                      ドラッグアンドドロップ
-                      %br
-                      またはクリックしてファイルをダウンロード
-                  -# %input.file{type: "file"}
+                      .js-file_group{"data-index" => i.index}
+                        = i.file_field :image, class: "upload-image"
+                        ドラッグアンドドロップ
+                        %br
+                        またはクリックしてファイルをダウンロード
                     
 
           -# 商品名・説明
@@ -117,7 +118,7 @@
                   ー
           -# ボタン
           .single-main__form1__text5
-            %button.btn-red{type: "submit"} 出品する
+            %button.btn-red#submit_product{type: "submit"} 出品する
             .single-main__form1__text5__btn
               %button.btn-gry{type: "submit"} 下書きに保存
               .single-main__form1__text5__back

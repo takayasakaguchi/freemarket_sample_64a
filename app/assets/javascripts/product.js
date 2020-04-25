@@ -3,16 +3,27 @@ $(document).on('turbolinks:load', ()=> {
   const buildFileField = (index)=> {
     const html = `<div data-index="${index}" class="upload-image">
                     <input class="upload-image" type="file"
-                    name="product[images_attributes][${index}][src]"
-                    id="product_images_attributes_${index}_src"><br>
+                    name="product[images_attributes][${index}][image]"
+                    id="product_images_attributes_${index}_image"><br>
                   </div>`;
     return html;
   }
     // プレビュー用のimgタグを生成する関数
     const buildImg = (index, url)=> {
-      const html = `<img data-index="${index}" src="${url}" width="100px" height="100px">`;
+      const html = `<div class='image_box'>
+                      <img data-index="${index}" src="${url}" width="100px" height="100px">
+                      <div class='item-image__operetion--delete'>削除</div>
+                    </div>`;
       return html;
     }
+  $(document).on("click", '.item-image__operetion--delete', function(){
+    //プレビュー要素を取得
+    var target_image = $(this).parent()
+    //プレビューを削除
+    target_image.remove();
+    //inputタグに入ったファイルを削除
+    file_field.val("")
+  })
 
 
   // file_fieldのnameに動的なindexをつける為の配列
@@ -30,6 +41,7 @@ $(document).on('turbolinks:load', ()=> {
     $('#previews').append(buildImg(targetIndex, blobUrl));
     // fileIndexの先頭の数字を使ってinputを作る
     $('#image-box').append(buildFileField(fileIndex[0]));
+    // $('#image-box').attr('class', `item-num-${num}`)
 
     fileIndex.shift();
     // 末尾の数に1足した数を追加する
@@ -37,7 +49,7 @@ $(document).on('turbolinks:load', ()=> {
   });
 
   $('#image-box').on('click', '.js-remove', function() {
-    $(this).parent().remove();
+    $(this).parent().parent().remove();
     // 画像入力欄が0個にならないようにしておく
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
