@@ -12,19 +12,30 @@
           最大10枚までアップロードできます
        
         .single-main__form__text__sentence__input
-          .l-single-content__image
+          #image-box
+            = f.fields_for :images do |i|
+              .js-file_group{"data-index" => i.index}
+              = f.label :images_attributes_0_image, class: 'image-box_label' do
+                = icon('fas', 'image', class: 'icon')
+                .image-box_text
+                  ドラッグアンドドロップ
+                  %br
+                  またはクリックしてファイルをダウンロード
+                = i.file_field :image, class: "upload-image"
+        -# .single-main__form__text__sentence__input
+        -#   .l-single-content__image
             
-            #previews
-              %label.l-single-content__image__icon
-                .fas.fa-camera
-                  .l-single-content__image__icon__text
-                  #image-box
-                    = f.fields_for :images do |i|
-                      .js-file_group{"data-index" => i.index}
-                        = i.file_field :image, class: "upload-image"
-                        ドラッグアンドドロップ
-                        %br
-                        またはクリックしてファイルをダウンロード
+        -#     #previews
+        -#       %label.l-single-content__image__icon
+        -#         .fas.fa-camera
+        -#           .l-single-content__image__icon__text
+        -#           #image-box
+        -#             = f.fields_for :images do |i|
+        -#               .js-file_group{"data-index" => i.index}
+        -#                 = i.file_field :image, class: "upload-image"
+        -#                 ドラッグアンドドロップ
+        -#                 %br
+        -#                 またはクリックしてファイルをダウンロード
                     
 
           -# 商品名・説明

@@ -247,19 +247,23 @@
     .image{
       display: none;
     }
-    .upload-image{
-      display: none;
-    }
-    #image-box{
-      height: 145px;
+    // .upload-image{
+    //   display: none;
+    // }
+
+
+    
+
+    .image_box{
+      width: 100px;
     }
   }
-  .fas.fa-camera{
-    width: 600px;
-    height: 145px;
-    cursor: pointer;
-    margin-top: 44px;
-  }
+  // .fas.fa-camera{
+  //   width: 600px;
+  //   height: 145px;
+  //   cursor: pointer;
+  //   margin-top: 44px;
+  // }
 
 
   .l-single-content__require{
@@ -324,4 +328,51 @@
     color: #0099E8;
     cursor: pointer;
     text-decoration: none;
+  }
+
+
+// 画像投稿欄マークアップ修正
+  #image-box{
+    height: 145px;
+    width: 600px;
+    cursor: pointer;
+    background: #f5f5f5;
+    border: dashed 1px darkgray;
+    text-align: center;
+    margin-bottom: 56px;
+    height: 145px;
+    #product_images_attributes_0_image{
+      display: none;
+      width: 600px;
+      height: 145px;
+      background: #f5f5f5;
+      position: relative;
+    }
+
+    #product_images_attributes_1_image{
+      display: none;
+      width: 600px;
+      height: 145px;
+      background: #f5f5f5;
+      position: relative;
+    }
+    .icon{
+      position: absolute;
+      z-index: 2;
+      top: 300px;
+      left: 700px;
+      pointer-events: none;
+    }
+    .image-box_text{
+      position: absolute;
+      z-index: 2;
+      top: 320px;
+      left: 550px;
+      pointer-events: none;
+    }
+  }
+  .image-box_label{
+    width: 100%;
+    display: block;
+    height: 100%;
   }
