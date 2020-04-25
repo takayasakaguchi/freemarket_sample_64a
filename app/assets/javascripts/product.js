@@ -1,56 +1,80 @@
-$(document).on('turbolinks:load', ()=> {
-  // 画像用のinputを生成する関数
-  const buildFileField = (index)=> {
-    const html = `<div data-index="${index}" class="js-file_group">
-                    <input class="upload-image" type="file"
-                    name="product[images_attributes][${index}][image]"
-                    id="product_images_attributes_${index}_image"><br>
-                  </div>`;
-    return html;
+$(function(){
+  //DataTransferオブジェクトで、データを格納する箱を作る
+  var dataBox = new DataTransfer();
+  //querySelectorでfile_fieldを取得
+  var file_field = document.querySelector('input[type=file]')
+  //fileが選択された時に発火するイベント
+  $('#img-file').change(function(){
+    //選択したfileのオブジェクトをpropで取得
+    var files = $('input[type="file"]').prop('files')[0];
+    $.each(this.files, function(i, file){
+      //FileReaderのreadAsDataURLで指定したFileオブジェクトを読み込む
+      var fileReader = new FileReader();
+
+      //DataTransferオブジェクトに対して、fileを追加
+      dataBox.items.add(file)
+      //DataTransferオブジェクトに入ったfile一覧をfile_fieldの中に代入
+      file_field.files = dataBox.files
+
+      var num = $('.item-image').length + 1 + i
+      fileReader.readAsDataURL(file);
+     //画像が10枚になったら超えたらドロップボックスを削除する
+     if (num == 10){
+      $('#image-box__container').css('display', 'none')   
+    //画像が2枚になったら超えたらテキストを削除する
+    } else if (num == 1){
+      //画像を投稿したら超えたらテキストを削除する
+      $('.image-box_text').css('display', 'none')  
+    } 
+      //読み込みが完了すると、srcにfileのURLを格納
+      fileReader.onloadend = function() {
+        var src = fileReader.result
+        var html= `<div class='item-image' data-image="${file.name}">
+                    <div class=' item-image__content'>
+                      <div class='item-image__content--icon'>
+                        <img src=${src} width="114" height="114" >
+                      </div>
+                    </div>
+                    <div class='item-image__operetion'>
+                      <div class='item-image__operetion--delete'>削除</div>
+                    </div>
+                  </div>`
+        //image_box__container要素の前にhtmlを差し込む
+        $('#image-box__container').before(html);
+      };
+      //image-box__containerのクラスを変更し、CSSでドロップボックスの大きさを変えてやる。
+      $('#image-box__container').attr('class', `item-num-${num}`)
+    });
+  });
+
+  //削除ボタンをクリックすると発火するイベント
+$(document).on("click", '.item-image__operetion--delete', function(){
+  //削除を押されたプレビュー要素を取得
+  var target_image = $(this).parent().parent()
+  //削除を押されたプレビューimageのfile名を取得
+  var target_name = $(target_image).data('image')
+  //プレビューがひとつだけの場合、file_fieldをクリア
+  if(file_field.files.length==1){
+    //inputタグに入ったファイルを削除
+    $('input[type=file]').val(null)
+    dataBox.clearData();
+    console.log(dataBox)
+  }else{
+    //プレビューが複数の場合
+    $.each(file_field.files, function(i,input){
+      //削除を押された要素と一致した時、index番号に基づいてdataBoxに格納された要素を削除する
+      if(input.name==target_name){
+        dataBox.items.remove(i) 
+      }
+    })
+    //DataTransferオブジェクトに入ったfile一覧をfile_fieldの中に再度代入
+    file_field.files = dataBox.files
   }
-    // プレビュー用のimgタグを生成する関数
-  //   const buildImg = (index, url)=> {
-  //     const html = `<div class='image_box'>
-  //                     <img data-index="${index}" src="${url}" width="100px" height="100px">
-  //                     <div class='item-image__operetion--delete'>削除</div>
-  //                   </div>`;
-  //     return html;
-  //   }
-  // $(document).on("click", '.item-image__operetion--delete', function(){
-  //   //プレビュー要素を取得
-  //   var target_image = $(this).parent()
-  //   //プレビューを削除
-  //   target_image.remove();
-  //   //inputタグに入ったファイルを削除
-  //   file_field.val("")
-  // })
-
-
-  // file_fieldのnameに動的なindexをつける為の配列
-  let fileIndex = [1,2,3,4,5,6,7,8,9,10];
-  
-  $('#image-box').on('change', '.upload-image', function(e) {
-     // プレビュー用のimgタグを生成する関数
-    // const targetIndex = $(this).parent().data('index');
-    
-    // console.log(e.target.files[0])
-    // var file = e.target.files[0];
-
-    // ファイルのブラウザ上でのURLを取得する
-    // var blobUrl = window.URL.createObjectURL(file);
-    // $('#previews').append(buildImg(targetIndex, blobUrl));
-    // fileIndexの先頭の数字を使ってinputを作る
-    $('#image-box').append(buildFileField(fileIndex[0]));
-    // $('#image-box').attr('class', `item-num-${num}`)
-
-    fileIndex.shift();
-    // 末尾の数に1足した数を追加する
-    fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
-  });
-
-  $('#image-box').on('click', '.js-remove', function() {
-    $(this).parent().parent().remove();
-    // 画像入力欄が0個にならないようにしておく
-    if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
-  });
+  //プレビューを削除
+  target_image.remove()
+  //image-box__containerクラスをもつdivタグのクラスを削除のたびに変更
+  var num = $('.item-image').length
+  $('#image-box__container').show()
+  $('#image-box__container').attr('class', `item-num-${num}`)
+})
 });
