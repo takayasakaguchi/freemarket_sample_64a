@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   resources :mypage, only: [:index]
   resources :logout, only: [:index]
   resources :purchases, only: [:index]
-
   resources :products, only: [:new, :show, :destroy]
   resources :signup, only: [:index]
   resources :credit_card, only: [:new] do
