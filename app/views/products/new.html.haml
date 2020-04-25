@@ -13,30 +13,16 @@
        
         .single-main__form__text__sentence__input
           #image-box
-            = f.fields_for :images do |i|
-              .js-file_group{"data-index" => i.index}
-              = f.label :images_attributes_0_image, class: 'image-box_label' do
-                = icon('fas', 'image', class: 'icon')
-                .image-box_text
-                  ドラッグアンドドロップ
-                  %br
-                  またはクリックしてファイルをダウンロード
-                = i.file_field :image, class: "upload-image"
-        -# .single-main__form__text__sentence__input
-        -#   .l-single-content__image
-            
-        -#     #previews
-        -#       %label.l-single-content__image__icon
-        -#         .fas.fa-camera
-        -#           .l-single-content__image__icon__text
-        -#           #image-box
-        -#             = f.fields_for :images do |i|
-        -#               .js-file_group{"data-index" => i.index}
-        -#                 = i.file_field :image, class: "upload-image"
-        -#                 ドラッグアンドドロップ
-        -#                 %br
-        -#                 またはクリックしてファイルをダウンロード
-                    
+            .item-num-0#image-box__container
+              = f.fields_for :images do |i|
+                .input-area
+                  = i.file_field :image, type: 'file', name: "product[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
+                  %label.image-box_label{for: "img-file"}
+                    %i.fas.fa-camera
+                    .image-box_text
+                      ドラッグアンドドロップ
+                      %br
+                      またはクリックしてファイルをダウンロード
 
           -# 商品名・説明
         .single-main__form1
