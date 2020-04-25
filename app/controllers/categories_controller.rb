@@ -1,10 +1,10 @@
 class CategoriesController < ApplicationController
   def index
-    @parents = Category.roots.all
+    @parents = Category.roots
   end
 
   def show
-    @parents = Category.roots.all
+    @parents = Category.roots
     @category = Category.find(params[:id])
 
     # @categoryの子供以下のカテゴリのid全てと、@categoryのidが入った配列を作成
