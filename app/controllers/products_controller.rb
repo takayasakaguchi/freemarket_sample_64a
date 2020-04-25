@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product,only: [:destroy]
+  before_action :set_product,only: [:destroy, :show]
 
   def show
     @product = Product.find(params[:id])
