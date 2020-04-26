@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :logout, only: [:index]
   resources :purchases, only: [:index]
   resources :products, only: [:new, :create] do
+    # 商品出品ページでのカテゴリー選択アクション
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
@@ -21,6 +22,7 @@ Rails.application.routes.draw do
     end
   end
 
+  # 商品出品ページでvalidationにかかった時用のカテゴリー選択アクション
   resources :get_category_children, only: [:index]
   resources :get_category_grandchildren, only: [:index]
 
