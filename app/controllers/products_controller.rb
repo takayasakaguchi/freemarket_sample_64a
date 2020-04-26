@@ -9,11 +9,6 @@ class ProductsController < ApplicationController
     @product = Product.new
     @products = Product.includes(:images).order('created_at DESC')
     @product.images.build
-    @category_parent_array = []
-    #データベースから、親カテゴリーのみ抽出し、配列化
-    Category.where(ancestry: nil).each do |parent|
-        @category_parent_array << parent
-    end
   end
 
   def create
