@@ -20,6 +20,10 @@ Rails.application.routes.draw do
       get 'get_size', defaults: { format: 'json' }
     end
   end
+
+  resources :get_category_children, only: [:index]
+  resources :get_category_grandchildren, only: [:index]
+
   # 動作確認用URL（サーバーサイド情報がまだないため仮ルート設定）
   get "/pruducts/1", to: 'products#show'
   resources :signup, only: [:index]
