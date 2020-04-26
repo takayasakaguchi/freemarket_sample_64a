@@ -10,7 +10,8 @@ class Product < ApplicationRecord
   belongs_to_active_hash :prefecture
 
   validates_associated :images
-  validates :images, presence: true
+  validates :images,
+    presence: { message: "を投稿してください"}
 
   validates :name,
     presence: true,
@@ -21,22 +22,22 @@ class Product < ApplicationRecord
     length: { maximum: 1000, message: "文字数オーバーです", allow_blank: true}
 
   validates :category_id,
-    presence: true
-
+    presence: { message: "まで入力してください"}
+  
   validates :status,
-    presence: true
+    presence: { message: "を選択してください"}
 
   validates :postage,
-    presence: true
+    presence: { message: "を選択してください"}
 
   validates :prefecture_id,
-    presence: true
+    presence: { message: "を選択してください"}
 
   validates :lead_time,
-    presence: true
+    presence: { message: "を選択してください"}
 
   validates :price,
     presence: true,
-    numericality: {greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}
+    numericality: {greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: "は¥300 ~ ¥9,999,999です", allow_blank: true}
 end
 
