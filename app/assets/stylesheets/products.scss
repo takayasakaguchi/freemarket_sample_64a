@@ -13,6 +13,7 @@
     width: 700px;
     margin: 0 auto;
     background: white;
+    padding-top: 10px;
     &__text{
       padding-top: 40px;
       padding-right: 40px;
@@ -390,10 +391,12 @@
   .field_with_errors {
     display: contents;
   }
-  .alert.alert-warning {
+  .alert.alert-warning_products {
     color: #F0F;
     margin-bottom: 20px;
     background-color: #ff9;
+    width: 50%;
+    margin: 20px auto;
     .main_message{
       font-weight: bold;
       font-size: 20px;

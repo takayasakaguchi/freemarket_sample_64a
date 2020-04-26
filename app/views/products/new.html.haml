@@ -1,9 +1,20 @@
 .single_wrapper_background
   .single-header
     = render "layouts/header"
-  -# 出品画像
+
   .single-main
+
+    -# 出品画像
     .single-main__form
+      -# エラーメッセージ
+      -if @product.errors.any?
+        .alert.alert-warning_products
+          %p.main_message 入力エラーがあります
+          - @product.errors.full_messages.each do |message| 
+            .error_list
+              %li
+                = message
+                
       = form_for @product do |f|
         .single-main__form__text
           商品画像
