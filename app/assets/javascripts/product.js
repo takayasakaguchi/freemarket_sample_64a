@@ -118,7 +118,7 @@ $(function(){
         //画像が10枚になったら超えたらドロップボックスを削除する
         if (num == 10){
           $('#image-box__container').css('display', 'none')   
-        //画像が2枚になったら超えたらテキストを削除する
+        //画像を投稿したらテキストを削除する
         } else if (num == 1){
           //画像を投稿したら超えたらテキストを削除する
           $('.image-box_text').css('display', 'none')  
