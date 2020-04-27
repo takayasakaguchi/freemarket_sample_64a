@@ -10,24 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_19_115759) do
+ActiveRecord::Schema.define(version: 2020_04_09_042346) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.string "ancestry"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.string "customer_id", null: false
-    t.string "card_id", null: false
+    t.integer "prefecture_id"
+    t.string "city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -44,17 +31,6 @@ ActiveRecord::Schema.define(version: 2020_04_19_115759) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "description", null: false
-    t.string "brand"
-    t.string "status", null: false
-    t.string "postage", null: false
-    t.string "destination", null: false
-    t.integer "lead_time", null: false
-    t.string "size"
-    t.integer "purchase"
-    t.integer "buyer_id"
-    t.integer "user_id", null: false
-    t.integer "category_id", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
