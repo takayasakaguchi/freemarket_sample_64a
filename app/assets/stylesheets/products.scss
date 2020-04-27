@@ -18,17 +18,17 @@
       padding-top: 40px;
       padding-right: 40px;
       padding-left: 40px;
-    &__sentence{
-      margin-top: 16px;
-      padding-left: 40px;
-      font-size: 14px;
-      color: currentColor;
-    &__input{
-      padding-left: 40px;
-      padding-right: 40px;
-      margin-top: 16px
-    }
-    }
+      &__sentence{
+        margin-top: 16px;
+        padding-left: 40px;
+        font-size: 14px;
+        color: currentColor;
+        &__input{
+          padding-left: 40px;
+          padding-right: 40px;
+          margin-top: 16px
+        }
+      }
     }
   }
   //  商品名・説明
@@ -41,34 +41,34 @@
       padding-top: 40px;
       padding-right: 40px;
       padding-left: 40px;
-    &__name{
-      margin: 16px;
-    }
-    &__right{
-      text-align: right;
-      width: 600px;
-      margin-top: 16px;
-      font-size: 12px;
-      color: dimgrey;
-      margin-bottom: 31px;
-    }
-    // 必須
-    .product_name{
-      width: 600px;
-      height: 45px;
-      margin-top: 16px;
-      border-radius: 5px;
-      border: 1px solid #aaa;
-    }
-    // 任意
-    .product_description{
-      width: 600px;
-      height: 135px;
-      margin-top: 16px;
-      border-color: gainsboro;
-      border-radius: 5px;
-      border: 1px solid #aaa;
-    }
+      &__name{
+        margin: 16px;
+      }
+      &__right{
+        text-align: right;
+        width: 600px;
+        margin-top: 16px;
+        font-size: 12px;
+        color: dimgrey;
+        margin-bottom: 31px;
+      }
+      // 必須
+      .product_name{
+        width: 600px;
+        height: 45px;
+        margin-top: 16px;
+        border-radius: 5px;
+        border: 1px solid #aaa;
+      }
+      // 任意
+      .product_description{
+        width: 600px;
+        height: 135px;
+        margin-top: 16px;
+        border-color: gainsboro;
+        border-radius: 5px;
+        border: 1px solid #aaa;
+      }
     }
     // 商品詳細
     &__text2{
@@ -213,9 +213,9 @@
           border-top: 1px solid #f5f5f5;
           display: flex;
           justify-content: space-between;
-        &__benefit__boder{
-          direction: rtl;
-        }
+          &__benefit__boder{
+            direction: rtl;
+          }
         }
       }
       input{
@@ -263,7 +263,7 @@
       display: block;
       height: 145px;
     }
-    // file_field
+    // file_field（js動作用）
     .item-num-0{
       width: 100%;
     }
@@ -295,6 +295,7 @@
     .item-num-9{
       width: 106px;
     }  
+    
     .fas.fa-camera{
       width: 90%;
       margin: 30px auto 0;
