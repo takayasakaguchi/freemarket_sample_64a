@@ -37,16 +37,16 @@
         = link_to 'FURIMA' , '#'
       %i.fas.fa-chevron-right
       %span
-        = link_to @product.category.parent.parent.name , '#'
+        = link_to 'ベビー・キッズ' , '#'
       %i.fas.fa-chevron-right
       %span
-        = link_to  @product.category.parent.name , '#'
+        = link_to 'ベビー服(男女兼用) ~95cm' , '#'
       %i.fas.fa-chevron-right
       %span
-        = link_to  @product.category.name , '#'
+        = link_to 'アウター' , '#'
       %i.fas.fa-chevron-right
       %span.now
-        = @product.name
+        adidas アディダス スニーカー
 
   .main
     .main__products_center
@@ -56,7 +56,7 @@
 
         -## 商品名表示
         .main__products_center__upper--product_name
-          = @product.name
+          adidas アディダス スニーカー
 
         -## 商品名情報表示 
         .main__products_center__upper__info_box
@@ -66,7 +66,8 @@
             -#### メイン画像
             .main__products_center__upper__info_box__image__img_main
               .main__products_center__upper__info_box__image__img_main--image
-                = image_tag @product.images.first.image.url
+                = image_tag("https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png")
+
 
             -#### サブ画像（複数投稿時）
             .main__products_center__upper__info_box__image__img_sub
@@ -74,23 +75,67 @@
               -##### サブ画像表示1段目
                      2段に分けないとビューが崩れてしまうのでとりあえず2段に分けて表示しています。
               .main__products_center__upper__info_box__image__img_sub__first
-              - @images.each do |image|
+
                 .main__products_center__upper__info_box__image__img_sub__first__outer
                   .main__products_center__upper__info_box__image__img_sub__first__outer--image
-                    = image_tag image.image.url
+                    = image_tag("https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png")
+
+                .main__products_center__upper__info_box__image__img_sub__first__outer{id: "hidden"}
+                  .main__products_center__upper__info_box__image__img_sub__first__outer--image
+                    = image_tag("https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png")
+                .main__products_center__upper__info_box__image__img_sub__first__outer{id: "hidden"}
+                  .main__products_center__upper__info_box__image__img_sub__first__outer--image
+                    = image_tag("https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png")
+
+                .main__products_center__upper__info_box__image__img_sub__first__outer{id: "hidden"}
+                  .main__products_center__upper__info_box__image__img_sub__first__outer--image
+                    = image_tag("https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png")
+
+                .main__products_center__upper__info_box__image__img_sub__first__outer{id: "hidden"}
+                  .main__products_center__upper__info_box__image__img_sub__first__outer--image
+                    = image_tag("https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png")
+              
+              -##### サブ画像表示2段目
+              .main__products_center__upper__info_box__image__img_sub__second
+
+                .main__products_center__upper__info_box__image__img_sub__second__outer{id: "hidden"}
+                  .main__products_center__upper__info_box__image__img_sub__second__outer--image
+                    = image_tag("https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png")
+
+                .main__products_center__upper__info_box__image__img_sub__second__outer{id: "hidden"}
+                  .main__products_center__upper__info_box__image__img_sub__second__outer--image
+                    = image_tag("https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png")
+
+                .main__products_center__upper__info_box__image__img_sub__second__outer{id: "hidden"}
+                  .main__products_center__upper__info_box__image__img_sub__second__outer--image
+                    = image_tag("https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png")
+
+                .main__products_center__upper__info_box__image__img_sub__second__outer{id: "hidden"}
+                  .main__products_center__upper__info_box__image__img_sub__second__outer--image
+                    = image_tag("https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png")
+
+                .main__products_center__upper__info_box__image__img_sub__second__outer{id: "hidden"}
+                  .main__products_center__upper__info_box__image__img_sub__second__outer--image
+                    = image_tag("https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png")
 
           -### 値段表示
           .main__products_center__upper__info_box--price_info
-            .price
-            %span ¥
-            = @product.price
-            %td
-            .tax (税込) 送料込み
-            
+            %span.price ¥4,999
+            %span.tax (税込)
+            %span.shipping_fee 送料込み
 
           -### 商品説明
           .main__products_center__upper__info_box--description
-            = @product.description
+            色は、グレー、ブルー
+            %br
+            サイズは、27cm
+            %br
+            %br
+            数回履きましたが、もう履かなそうなので履いてくれる方にお譲りします。
+            ※creprotectの防水スプレーもかけてあります。
+            %br
+            %br
+            中古品なので神経質の方は購入を避けた方がいいと思います。
 
           -### 商品情報表示テーブル 
           .main__products_center__upper__info_box__table
@@ -99,47 +144,43 @@
                 %th 出品者
                 %td
                   .owner_name
-                    = @product.user.nickname
+                    %a hata
               %tr
                 %th カテゴリー
                 %td
                   .category_1
-                    = @product.category.parent.parent.name
+                    メンズ
                   .category_2
                     %i.fas.fa-chevron-right 
-                    = @product.category.parent.name
+                    靴
                   .category_3
                     %i.fas.fa-chevron-right 
-                    = @product.category.name
+                    スニーカー
               %tr
                 %th ブランド
                 %td
                   .bland_name
-                    = @product.brand
+                    %a アディダス
               %tr
                 %th 商品のサイズ
                 %td
-                  = @product.size
-                  %span cm
-                      
+                  27.0 cm
               %tr
                 %th 商品の状態
                 %td
-                  = @product.status
+                  新品・未使用
               %tr
                 %th 送料の負担
                 %td
-                  = @product.postage
+                  送料込み（出品者負担）
               %tr
                 %th 配送本地域
                 %td
-                  = @product.destination
+                  千葉県
               %tr
                 %th 発送日の目安
                 %td
-                  = @product.lead_time
-                  %span 日
-
+                  4-7日で発送
      
           -### いいねボタンなど
           .main__products_center__upper__info_box__small_btns
@@ -152,20 +193,9 @@
               %span 不適切な商品の報告
               
           -### 購入画面に進むボタン
-      - if user_signed_in? && current_user.id == product.user_id
-        .main__products_center__upper__info_box__btn
-          購入画面に進む    
-      - else
-        .main__products_center__upper__info_box__btn__buy
-          購入画面に進む
-        .main__products_center__upper__info_box__btn__else
-          .main__products_center__upper__info_box__btn__else__edit
-            商品を編集する
-          .main__products_center__upper__info_box__btn__else__delete
-            = link_to "商品を削除する", product_path(@product.id), method: :delete, class: "productManage__delete"
+          .main__products_center__upper__info_box__btn
+            購入画面に進む
 
-          
-            
       -# 2段目（コメントなど）
       .main__products_center__bottom
         .main__products_center__bottom__comment
@@ -235,5 +265,4 @@
     %p © FURIMA
     .purchaseBtn
       %span.purchaseBtn__text 出品する
-      .purchaseBtn--img
-        = link_to image_tag("http://furima.tokyo/assets/icon_camera-968c5ebaa05319bf1e2ad7508f852dd712504a4d26a1930d8bd87ec03ebcc37a.svg"), new_product_path
+      = link_to image_tag("http://furima.tokyo/assets/icon_camera-968c5ebaa05319bf1e2ad7508f852dd712504a4d26a1930d8bd87ec03ebcc37a.svg"), new_product_path

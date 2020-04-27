@@ -1,4 +1,4 @@
-.single_wrapper_sign_up
+.single_wrapper
   .single-header
     = render "layouts/header"
 
@@ -8,7 +8,7 @@
         新規会員登録
       .mainform__one__form1
         %button.btn-default.btn-red1{type: "submit"} 
-          = link_to "メールアドレスで登録する", new_user_registration_path
+          メールアドレスで登録する
           .far.fa-envelope
 
         %button.btn-default.btn-blue{type: "submit"} 
@@ -19,5 +19,5 @@
           Googleで登録する
           .fab.fa-google
 
-  .single-footer
-    = render "layouts/footer"
+.single-footer
+  = render "layouts/footer"

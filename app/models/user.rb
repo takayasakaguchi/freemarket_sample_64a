@@ -3,7 +3,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
   has_many :products
   has_many :comments
   has_many :likes
@@ -33,7 +32,7 @@ class User < ApplicationRecord
   validates :password,
     presence: true,
     confirmation: true,
-    length: { minimum: 7, message: "文字数オーバーです", allow_blank: true},
+    length: { maximum: 7, message: "文字数オーバーです", allow_blank: true},
     format: {with: VALID_PASSWORD_REGEX, message: "は半角英数字で入力してください", allow_blank: true}
   
   # 姓（漢字）

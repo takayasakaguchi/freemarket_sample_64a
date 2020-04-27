@@ -7,7 +7,7 @@
       .login-panel__header
         .login-panel__header__text
           アカウントをお持ちでない方はこちら
-        = link_to "signup_index_path", class: "login-panel_header--btn" do
+        = link_to "new_registration_path", class: "login-panel_header--btn" do
           .login-panel_header__font
             新規会員登録
 
@@ -30,5 +30,6 @@
           .remember
             = link_to "パスワードお忘れの方","#"
 
+.single_wrapper
   .single-footer
     = render "layouts/footer"

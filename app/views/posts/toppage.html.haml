@@ -14,32 +14,21 @@
         %ul.resultLists
       .nav
         %ul.listsLeft
-        
-          -# カテゴリー
-          %li.listLeft__item
+          %li.listLeft__item.listsLeft__item--first
+            #catBtn 
             = link_to 'カテゴリー'
-            %ul.parent-wrap
-              - @parents.each do |parent|
-                %li.parent
-                  = link_to parent.name #category_path(parent.id)
-                  %ul.child-wrap
-                    - parent.children.each do |child|
-                      %li.child
-                        =link_to child.name #category_path(child.id)
-                        %ul.grand-child-wrap
-                          - child.children.each do |grandchild|
-                            %li.grand-child
-                              = link_to grandchild.name #category_path(grandchild.id)
-
+            .tree.displayNone
+              .tree.displayNone
+                %ul.categoryTree
           %li.listLeft__item
             #brandBtn
             = link_to 'ブランド'
             %ul.brandsPulldown.displayNone
         %ul.listsRight
           %li.listsRight__item.listsRight__item--login
-            = link_to 'ログイン', new_user_session_path
+            = link_to 'ログイン' , '#'
           %li.listsRight__item.listsRight__item--new
-            = link_to '新規会員登録', signup_index_path
+            = link_to '新規会員登録' , '#'
   .main
     %section.mainVisual
       .content
@@ -132,9 +121,8 @@
         - @products.each do |product|
           - if product.purchase.blank?
             .product_box
-              =link_to product_path(product.id) do
-                %figure.productList--img
-                  = image_tag product.images.first.image.url
+              %figure.productList--img
+                = image_tag product.images.first.image.url
 
               .productList--body
                 .productforder
@@ -172,9 +160,8 @@
           - @products.each do |product|
             - if product.purchase.blank?
               .product_box
-                =link_to product_path(product.id) do
-                  %figure.productList--img
-                    = image_tag product.images.first.image.url
+                %figure.productList--img
+                  = image_tag product.images.first.image.url
 
                 .productList--body
                   .productforder
