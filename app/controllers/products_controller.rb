@@ -1,5 +1,4 @@
 class ProductsController < ApplicationController
-  # before_action :set_product, except: [:index, :new, :create]
 
   def show
 
@@ -21,19 +20,6 @@ class ProductsController < ApplicationController
     end
   end
 
-  # def update
-  #   if @product.update(product_params)
-  #     redirect_to root_path
-  #   else
-  #     render :edit
-  #   end
-  # end
-
-  # def destroy
-  #   @product.destroy
-  #   redirect_to root_path
-  # end
-
    # 以下全て、formatはjsonのみ
    # 親カテゴリーが選択された後に動くアクション
   def get_category_children
@@ -51,7 +37,4 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:name, :price, :status, :lead_time, :postage, :size, :brand, :description, :prefecture_id, :category_id, images_attributes: [:image]).merge(user_id: User.find(1).id)
   end
 
-  # def set_product
-  #   @product = Product.find(params[:id])
-  # end
 end
