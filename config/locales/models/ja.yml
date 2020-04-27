@@ -1,15 +1,15 @@
-  ja:
-  activerecord:
-    models:
-      user: ユーザー
-    attributes:
-      user:
-        nickname: "ニックネーム"
-        first_name: "お名前（姓）"
-        last_name: "お名前（名）"
-        first_name_reading: "お名前カナ（姓）"
-        last_name_reading: "お名前カナ（名）"
-        email: メールアドレス
-        password: パスワード
-        password_confirmation: "確認用パスワード"
-        select: "生年月日"
+ja:
+activerecord:
+  models:
+    user: ユーザー
+  attributes:
+    user:
+      nickname: "ニックネーム"
+      first_name: "お名前（姓）"
+      last_name: "お名前（名）"
+      first_name_reading: "お名前カナ（姓）"
+      last_name_reading: "お名前カナ（名）"
+      email: メールアドレス
+      password: パスワード
+      password_confirmation: "確認用パスワード"
+      select: "生年月日"

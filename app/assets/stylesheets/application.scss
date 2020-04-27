@@ -4,6 +4,7 @@
 @import "template/footer";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "flash";
 @import "devise/new";
 @import "sessions/new";
 @import "signup";
@@ -20,4 +21,6 @@
 @import "mypage/l-side";
 @import "mypage/side.app-banner";
 @import "complete";
+@import "categories";
+
 

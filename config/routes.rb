@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :mypage, only: [:index]
   resources :logout, only: [:index]
   resources :purchases, only: [:index]
-  resources :products, only: [:new, :create] do
+  resources :products, only: [:new, :create, :destroy] do
     # 商品出品ページでのカテゴリー選択アクション
     collection do
       get 'get_category_children', defaults: { format: 'json' }
@@ -25,12 +25,19 @@ Rails.application.routes.draw do
   resources :get_category_children, only: [:index]
   resources :get_category_grandchildren, only: [:index]
 
-  # 動作確認用URL（サーバーサイド情報がまだないため仮ルート設定）
-  get "/pruducts/1", to: 'products#show'
   resources :signup, only: [:index]
+  resources :credit_card, only: [:new] do
+    collection do
+      post 'registration'
+      post 'buy'
+      post 'delete'
+    end
+  end
+
   resources :complete, only: [:index]
   resources :credit_card, only: [:index] do
+
   end
-  resources :address, only: [:index, :edit] do
+  resources :address, only: [:index, :create, :edit, :update] do
   end
 end
