@@ -79,44 +79,6 @@
                   .main__products_center__upper__info_box__image__img_sub__first__outer--image
                     = image_tag image.image.url
 
-                -# .main__products_center__upper__info_box__image__img_sub__first__outer{id: "hidden"}
-                -#   .main__products_center__upper__info_box__image__img_sub__first__outer--image
-                -#     = image_tag @product.images.first.image
-                -# .main__products_center__upper__info_box__image__img_sub__first__outer{id: "hidden"}
-                -#   .main__products_center__upper__info_box__image__img_sub__first__outer--image
-                -#     = image_tag @product.images.first.image
-
-                -# .main__products_center__upper__info_box__image__img_sub__first__outer{id: "hidden"}
-                -#   .main__products_center__upper__info_box__image__img_sub__first__outer--image
-                -#     = image_tag @product.images.first.image
-
-                -# .main__products_center__upper__info_box__image__img_sub__first__outer{id: "hidden"}
-                -#   .main__products_center__upper__info_box__image__img_sub__first__outer--image
-                -#     = image_tag @product.images.first.image
-              
-              -##### サブ画像表示2段目
-              -# .main__products_center__upper__info_box__image__img_sub__second
-
-              -#   .main__products_center__upper__info_box__image__img_sub__second__outer{id: "hidden"}
-              -#     .main__products_center__upper__info_box__image__img_sub__second__outer--image
-              -#       = image_tag @product.images.first.image
-
-              -#   .main__products_center__upper__info_box__image__img_sub__second__outer{id: "hidden"}
-              -#     .main__products_center__upper__info_box__image__img_sub__second__outer--image
-              -#       = image_tag @product.images.first.image
-
-              -#   .main__products_center__upper__info_box__image__img_sub__second__outer{id: "hidden"}
-              -#     .main__products_center__upper__info_box__image__img_sub__second__outer--image
-              -#       = image_tag @product.images.first.image
-
-              -#   .main__products_center__upper__info_box__image__img_sub__second__outer{id: "hidden"}
-              -#     .main__products_center__upper__info_box__image__img_sub__second__outer--image
-              -#       = image_tag @product.images.first.image
-
-              -#   .main__products_center__upper__info_box__image__img_sub__second__outer{id: "hidden"}
-              -#     .main__products_center__upper__info_box__image__img_sub__second__outer--image
-              -#       = image_tag @product.images.first.image
-
           -### 値段表示
           .main__products_center__upper__info_box--price_info
             .price
@@ -153,7 +115,7 @@
                 %th ブランド
                 %td
                   .bland_name
-                    = @product.bland
+                    = @product.brand
               %tr
                 %th 商品のサイズ
                 %td
@@ -190,22 +152,20 @@
               %span 不適切な商品の報告
               
           -### 購入画面に進むボタン
-        - if user_signed_in? && current_user.id == product.user_id
-          .main__products_center__upper__info_box__btn__buy
-            購入画面に進む
-          .main__products_center__upper__info_box__btn__else
-            .main__products_center__upper__info_box__btn__else__edit
-              商品編集画面に進む
-            .main__products_center__upper__info_box__btn__else__delete
-              商品削除画面に進む
-        - else
-          .main__products_center__upper__info_box__btn
-            購入画面に進む
+      - if user_signed_in? && current_user.id == product.user_id
+        .main__products_center__upper__info_box__btn
+          購入画面に進む    
+      - else
+        .main__products_center__upper__info_box__btn__buy
+          購入画面に進む
+        .main__products_center__upper__info_box__btn__else
+          .main__products_center__upper__info_box__btn__else__edit
+            商品を編集する
+          .main__products_center__upper__info_box__btn__else__delete
+            = link_to "商品を削除する", product_path(@product.id), method: :delete, class: "productManage__delete"
+
+          
             
-            
-
-
-
       -# 2段目（コメントなど）
       .main__products_center__bottom
         .main__products_center__bottom__comment
@@ -276,4 +236,4 @@
     .purchaseBtn
       %span.purchaseBtn__text 出品する
       .purchaseBtn--img
-        = link_to image_tag("http://furima.tokyo/assets/icon_camera-968c5ebaa05319bf1e2ad7508f852dd712504a4d26a1930d8bd87ec03ebcc37a.svg")
+        = link_to image_tag("http://furima.tokyo/assets/icon_camera-968c5ebaa05319bf1e2ad7508f852dd712504a4d26a1930d8bd87ec03ebcc37a.svg"), new_product_path

@@ -1,4 +1,5 @@
 FactoryBot.define do
+
   factory :user do
     nickname              {"abe"}
     email                 {"kkk@gmail.com"}
@@ -12,4 +13,5 @@ FactoryBot.define do
     month                 {"0"}
     day                   {"0"}
   end
+
 end
