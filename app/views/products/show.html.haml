@@ -133,7 +133,7 @@
               %tr
                 %th 配送本地域
                 %td
-                  = @product.destination
+                  = @product.prefecture.name
               %tr
                 %th 発送日の目安
                 %td
@@ -160,7 +160,7 @@
           購入画面に進む
         .main__products_center__upper__info_box__btn__else
           .main__products_center__upper__info_box__btn__else__edit
-            商品を編集する
+            = link_to "商品を編集する", edit_product_path(@product.id), class: "productManage__edit"
           .main__products_center__upper__info_box__btn__else__delete
             = link_to "商品を削除する", product_path(@product.id), method: :delete, class: "productManage__delete"
 

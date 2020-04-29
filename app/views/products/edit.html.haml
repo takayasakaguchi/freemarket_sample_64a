@@ -1,0 +1,166 @@
+.single_wrapper_background
+  .single-header
+    = render "layouts/header"
+
+  .single-main
+
+    -# 出品画像
+    .single-main__form
+      -# エラーメッセージ
+      -if @product.errors.any?
+        .alert.alert-warning_products
+          %p.main_message 入力エラーがあります
+          - @product.errors.full_messages.each do |message| 
+            .error_list
+              %li
+                = message
+                
+      = form_for @product do |f|
+        .single-main__form__text
+          商品画像
+          %span.l-single-content__require 必須
+        .single-main__form__text__sentence
+          最大10枚までアップロードできます
+ 
+        
+        .uploaded_images
+          - @product.images.each do |image|
+            .uploaded_image
+              = image_tag image.image.url, class: "image_edit"
+              .uploaded_image__delete_btn
+                削除
+
+
+        .single-main__form__text__sentence__input
+          #image-box
+            .item-num-0#image-box__container
+              = f.fields_for :images do |i|
+                .input-area
+                  = i.file_field :image, type: 'file', name: "product[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
+                  %label.image-box_label{for: "img-file"}
+                    %i.fas.fa-camera
+                    .image-box_text
+                      ドラッグアンドドロップ
+                      %br
+                      またはクリックしてファイルをダウンロード
+                  
+                  
+
+          -# 商品名・説明
+        .single-main__form1
+          .single-main__form1__text1
+            商品名
+            %span.l-single-content__require 必須
+            %br
+            .single-main__form1__text1__itemname
+            = f.text_field :name, autofocus: true, class: "product_name", placeholder: "  40文字まで"
+          .single-main__form1__text1
+            商品の説明
+            %span.l-single-content__require 必須
+            .single-main__form1__text1__itemexplanation
+            = f.text_area :description, class: "product_description",cols: "60", rows: "7", autofocus: true, placeholder: "  商品の説明（必須1,000文字以内）\n  色、素材、重さ、定価、注意点など\n\n 例）2010年度に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n\n"
+            .single-main__form1__text1__right
+              0/1000
+          -# 商品詳細
+          .single-main__form1__text2
+            商品詳細
+            .single-main__form1__text2__itme
+              カテゴリー
+              %span.l-single-content__require 必須
+              .single-main__form1__text2__itme__select
+                .single-main__form1__text2__itme__select__category
+                  .fas.fa-chevron-down
+                  = f.collection_select :category_id, Category.roots, :id, :name, {prompt: '選択してください'}, {id: 'parent_category'}
+
+              .listing-product-detail__category
+                .fas.fa-chevron-down
+
+            .single-main__form1__text2__size
+              サイズ
+              %span.l-single-content__require1 任意
+              .single-main__form1__text2__size__name
+              = f.text_field :size, autofocus: true, class: "size", placeholder: "  例）28.0cm"
+
+            .single-main__form1__text2__brand
+              ブランド
+              %span.l-single-content__require1 任意
+              .single-main__form1__text2__brand__name
+              = f.text_field :brand, autofocus: true, class: "product_brand", placeholder: "  例）シャネル"
+            .single-main__form1__text2__status
+              商品の状態
+              %span.l-single-content__require 必須
+              .single-main__form1__text2__itme__select
+                .single-main__form1__text2__itme__select__status
+                  .fas.fa-chevron-down
+                  = f.select :status, ["新品、未使用","未使用に近い","目立った汚れや傷なし","やや汚れや傷あり","汚れや傷あり","全体的に状態が悪い"], :prompt => "選択してください"
+
+          -# 配送について
+          .single-main__form1__text3
+            配送について
+            .single-main__form1__text3__charge
+              配送料の負担
+              %span.l-single-content__require 必須
+              .single-main__form1__text3__itme__select
+                .single-main__form1__text3__itme__select__fee
+                  .fas.fa-chevron-down
+                  = f.select :postage, ["送料込み（出品者負担）","着払い（購入者負担）"], :prompt => "選択してください"
+
+            .single-main__form1__text3__place
+              発送元の地域
+              %span.l-single-content__require 必須
+              .single-main__form1__text3__itme__select
+                .single-main__form1__text3__itme__select__place
+                  .fas.fa-chevron-down
+                  = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "選択してください"}
+
+            .single-main__form1__text3__days
+              発送までの日数
+              %span.l-single-content__require 必須
+              .single-main__form1__text3__itme__select
+                .single-main__form1__text3__itme__select__days
+                  .fas.fa-chevron-down
+                  = f.select :lead_time, ["1日〜2日で発送", "2日〜3日で発送", "4日〜7日で発送"], :prompt => "選択してください"
+
+            .single-main__form1__text4
+              .single-main__form1__text4__left
+                価格（¥300〜9,999,999）
+              .single-main__form1__text4__price
+                販売価格
+                %span.l-single-content__require2 必須
+                .single-main__form1__text4__price__number
+                  = f.number_field :price, autofocus: true, style: "text-align: right", placeholder: "  0"
+                  .fas.fa-yen-sign
+
+            .single-main__form1__text4__commission
+              .single-main__form1__text4__commission__from1
+                販売手数料（10%)
+                .single-main__form1__text4__commission__from__boder
+                  ー
+              .single-main__form1__text4__commission__form2
+                .single-main__form1__text4__commission__form2__benefit
+                  販売利益
+                .single-main__form1__text4__commission__from2__benefit__boder
+                  ー
+          -# ボタン
+          .single-main__form1__text5
+            %button.btn-red#submit_product{type: "submit"} 変更する
+            .single-main__form1__text5__btn
+              %button.btn-gry{type: "submit"} 下書きに保存
+              .single-main__form1__text5__back
+                = link_to "戻る","#"
+          -# 注意書き
+          .single-main__form1__text6
+            禁止されている
+            = link_to "行為","#"
+            および
+            = link_to "出品物","#"
+            を必ずご確認ください。
+            = link_to "偽ブランド","#"
+            や
+            = link_to "盗品物","#"
+            などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして
+            = link_to "加盟店規約","#"
+            に同意したことになります。
+
+  .single-footer
+    = render "layouts/footer"

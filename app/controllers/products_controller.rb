@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  before_action :set_product,only: [:destroy, :show]
+  before_action :set_product,only: [:destroy, :show, :edit, :update]
 
   def show
     @images = @product.images
@@ -44,16 +44,19 @@ class ProductsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
-
+    if @product.update(product_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   private
   def product_params
-    params.require(:product).permit(:name, :price, :status, :lead_time, :postage, :size, :brand, :description, :prefecture_id, :category_id, images_attributes: [:image]).merge(user_id: User.find(1).id)
+    params.require(:product).permit(:name, :price, :status, :lead_time, :postage, :size, :brand, :description, :prefecture_id, :category_id, images_attributes: [:image, :_destroy, :id]).merge(user_id: User.find(1).id)
   end
 
   def set_product
