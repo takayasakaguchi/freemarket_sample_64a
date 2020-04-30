@@ -23,26 +23,34 @@
           最大10枚までアップロードできます
  
         
-        .uploaded_images
-          - @product.images.each do |image|
-            .uploaded_image
-              = image_tag image.image.url, class: "image_edit"
-              .uploaded_image__delete_btn
-                削除
 
+          #image-box_edit
+            #previews_edit
+              .uploaded_images
 
-        .single-main__form__text__sentence__input
-          #image-box
-            .item-num-0#image-box__container
-              = f.fields_for :images do |i|
-                .input-area
-                  = i.file_field :image, type: 'file', name: "product[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
-                  %label.image-box_label{for: "img-file"}
-                    %i.fas.fa-camera
-                    .image-box_text
-                      ドラッグアンドドロップ
-                      %br
-                      またはクリックしてファイルをダウンロード
+                -# 保存済み画像一覧表示
+                - @product.images.each_with_index do |image, i|
+                  = image_tag image.image.url, {"data-index" => i , class: "uploaded_img"}
+
+                  -# 画像差し替え用フォーム
+              #image-box__container_edit
+                = f.fields_for :images do |i|
+                  .js-file_group{"data-index" => i.index}
+                  
+                    .input-area_edit
+                      = i.file_field :image, type: 'file', class:"img-file"
+
+                      -# 画像削除用フォーム
+                      %span.js-remove 
+                        = (i.index + 1).to_s + "枚目を削除"
+                      = i.check_box :_destroy, {"data-index" => i.index, class: 'hidden-destroy'}
+
+                  -# 新規投稿欄追加
+                - if @product.images.count <  10
+                  .js-file_group{"data-index" => @product.images.count}
+                    = file_field_tag :image, name: "product[images_attributes][#{@product.images.count}][image]", class: 'js-file'
+                    %span.js-remove_new 削除
+
                   
                   
 
