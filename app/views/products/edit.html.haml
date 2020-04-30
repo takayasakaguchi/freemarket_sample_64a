@@ -5,16 +5,7 @@
   .single-main
 
     -# 出品画像
-    .single-main__form
-      -# エラーメッセージ
-      -if @product.errors.any?
-        .alert.alert-warning_products
-          %p.main_message 入力エラーがあります
-          - @product.errors.full_messages.each do |message| 
-            .error_list
-              %li
-                = message
-                
+    .single-main__form               
       = form_for @product do |f|
         .single-main__form__text
           商品画像
@@ -22,8 +13,6 @@
         .single-main__form__text__sentence
           最大10枚までアップロードできます
  
-        
-
           #image-box_edit
             #previews_edit
               .uploaded_images
@@ -41,18 +30,19 @@
                       = i.file_field :image, type: 'file', class:"img-file"
 
                       -# 画像削除用フォーム
+                      %label.img_edit{for: "product_images_attributes_#{i.index}_image"}
+                        = (i.index + 1).to_s + "枚目を変更"
                       %span.js-remove 
                         = (i.index + 1).to_s + "枚目を削除"
-                      = i.check_box :_destroy, {"data-index" => i.index, class: 'hidden-destroy'}
+                    = i.check_box :_destroy, {"data-index" => i.index, class: "hidden-destroy"}
 
                   -# 新規投稿欄追加
                 - if @product.images.count <  10
                   .js-file_group{"data-index" => @product.images.count}
-                    = file_field_tag :image, name: "product[images_attributes][#{@product.images.count}][image]", class: 'js-file'
-                    %span.js-remove_new 削除
-
-                  
-                  
+                    .input-area_edit
+                      = file_field_tag :image, name: "product[images_attributes][#{@product.images.count}][image]", class: 'js-file'
+                      %label.img_edit{for: "image"}画像を追加/編集
+                      %span.js-remove_new 削除
 
           -# 商品名・説明
         .single-main__form1
@@ -78,7 +68,15 @@
               .single-main__form1__text2__itme__select
                 .single-main__form1__text2__itme__select__category
                   .fas.fa-chevron-down
-                  = f.collection_select :category_id, Category.roots, :id, :name, {prompt: '選択してください'}, {id: 'parent_category'}
+                  .category-wrapper-select
+                    .category-wrapper-select__box
+                      = f.select :parent_name, @category_parent_array, {selected:@product.category.parent.parent.name}, { class: 'category-wrapper__category form-control', id: 'parent_category_edit'}
+                  .category-wrapper-select#children_wrapper
+                    .category-wrapper-select__box
+                      = f.select :category, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @product.category.parent.id}),{}, {class: 'category-wrapper__category form-control', id: 'child_category_edit'}
+                  .category-wrapper-select#grandchildren_wrapper
+                    .category-wrapper-select__box
+                      = f.select :category_id, options_for_select(@category_grandchildren_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @product.category.id}),{}, {class: 'category-wrapper__category form-control', id: 'grandchild_category_edit'}
 
               .listing-product-detail__category
                 .fas.fa-chevron-down
