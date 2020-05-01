@@ -9,7 +9,7 @@ $(function(){
     var childSelectHtml = '';
     childSelectHtml = `<div class='listing-select-wrapper__added' id= 'children_wrapper'>
                         <div class='listing-select-wrapper__box'>
-                          <select class="listing-select-wrapper__box--select" id="child_category" name="product[category_id]">
+                          <select class="listing-select-wrapper__box--select" id="child_category_edit" name="product[category_id]">
                             <option value="---" data-category="---">---</option>
                             ${insertHTML}
                           <select>
@@ -23,7 +23,7 @@ $(function(){
     var grandchildSelectHtml = '';
     grandchildSelectHtml = `<div class='listing-select-wrapper__added' id= 'grandchildren_wrapper'>
                               <div class='listing-select-wrapper__box'>
-                                <select class="listing-select-wrapper__box--select" id="grandchild_category" name="product[category_id]">
+                                <select class="listing-select-wrapper__box--select" id="grandchild_category_edit" name="product[category_id]">
                                   <option value="---" data-category="---">---</option>
                                   ${insertHTML}
                                 </select>
@@ -33,10 +33,10 @@ $(function(){
     $('.listing-product-detail__category').append(grandchildSelectHtml);
   }
   // 親カテゴリー選択後のイベント
-  $('#parent_category').on('change', function(){
-    var parentCategory = document.getElementById('parent_category').value; //選択された親カテゴリーの名前を取得
+  $('#parent_category_edit').on('change', function(){
+    var parentCategory = document.getElementById('parent_category_edit').value; //選択された親カテゴリーの名前を取得
     $.ajax({
-      url: '/products/get_category_children',
+      url: '/get_category_children',
       type: 'GET',
       data: { parent_name: parentCategory },
       dataType: 'json'
@@ -57,11 +57,11 @@ $(function(){
     })
   });
   // 子カテゴリー選択後のイベント
-  $('.listing-product-detail__category').on('change', '#child_category', function(){
-    var childId = $('#child_category option:selected').data('category'); //選択された子カテゴリーのidを取得
+  $('.listing-product-detail__category').on('change', '#child_category_edit', function(){
+    var childId = $('#child_category_edit option:selected').data('category'); //選択された子カテゴリーのidを取得
     if (childId != "---"){ //子カテゴリーが初期値でないことを確認
       $.ajax({
-        url: '/products/get_category_grandchildren',
+        url: '/get_category_grandchildren',
         type: 'GET',
         data: { child_id: childId },
         dataType: 'json'

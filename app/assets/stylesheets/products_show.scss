@@ -220,6 +220,10 @@
             font-size: 24px; 
             font-weight: bold;
             border-radius: 25px;
+            a{
+              color: white;
+              text-decoration: none;
+            }
           }
 
           &__btn__else__delete{
@@ -233,12 +237,10 @@
             font-weight: bold;
             border-radius: 25px;
             text-decoration: none;
-            
-          }
-
-          &__btn__else__delete a{
-            color: white;
-            text-decoration: none;
+            a{
+              color: white;
+              text-decoration: none;
+            }
           }
   
           /// お気に入り/不適切報告ボタン

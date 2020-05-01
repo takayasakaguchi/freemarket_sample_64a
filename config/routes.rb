@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :mypage, only: [:index]
   resources :logout, only: [:index]
   resources :purchases, only: [:index]
-  resources :products, only: [:new, :create, :destroy] do
+  resources :products, only: [:new, :create, :show, :destroy, :edit, :update] do
     # 商品出品ページでのカテゴリー選択アクション
     collection do
       get 'get_category_children', defaults: { format: 'json' }
