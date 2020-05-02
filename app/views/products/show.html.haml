@@ -162,10 +162,8 @@
             = link_to "商品を削除する", product_path(@product.id), method: :delete, class: "productManage__delete"
       - else
         .main__products_center__upper__info_box__btn
-          購入画面に進む    
+          = link_to "購入画面に進む", purchase_path(@product.id), class: "productManage__purchase"
 
-          
-            
       -# 2段目（コメントなど）
       .main__products_center__bottom
         .main__products_center__bottom__comment
