@@ -9,22 +9,22 @@
           = link_to new_credit_card_path, class: ' signup-main__btn-red' do
             クレジットカードを登録する
         - else
-          .customer-card
-            .customer-card__title_box
+          .customer-card_mypage
+            .customer-card_mypage__title_box
               %span クレジットカード情報
-          .customer-card__content
-            .customer-card__content__card_logo
-              = image_tag "#{@card_src}", alt: @card_brand, id: "card_image"
-            .customer-card__content__card_info
-              .customer-card__content__card_info--number.form_space
-                %span
-                  = "**** **** **** " + @customer_card.last4
-                .customer-card__content__card_info--expired.form_space
-                  - exp_month = @customer_card.exp_month.to_s
-                  - exp_year = @customer_card.exp_year.to_s.slice(2,3)
+            .customer-card_mypage__content
+              .customer-card_mypage__content__card_logo
+                = image_tag "#{@card_src}", alt: @card_brand, id: "card_image"
+              .customer-card_mypage__content__card_info
+                .customer-card_mypage__content__card_info--number.form_space
                   %span
-                    = exp_month + " / " + exp_year
-          = link_to delete_credit_card_index_path, class: "delete-card", method: :post do
+                    = "**** **** **** " + @customer_card.last4
+                  .customer-card_mypage__content__card_info--expired.form_space
+                    - exp_month = @customer_card.exp_month.to_s
+                    - exp_year = @customer_card.exp_year.to_s.slice(2,3)
+                    %span
+                      = exp_month + " / " + exp_year
+          = link_to delete_credit_card_index_path, class: "delete-card_btn", method: :post do
             削除する
 .user-menu-footer
   = render "mypage/side.app-banner"

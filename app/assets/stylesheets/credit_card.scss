@@ -189,7 +189,7 @@
 }
 
 // クレジットカード情報（登録済みの場合）
-.customer-card{
+.customer-card_mypage{
   padding-bottom: 30px;
   &__title_box{
     font-size: 24px;
@@ -208,14 +208,14 @@
   }
   &__content{
     display: flex;
-    margin-bottom: 20px;
+    margin-top: 20px;
     &__card_logo{
       width: 70px;
       margin-right: 10px;
     }
   }
 }
-.delete-card{
+.delete-card_btn{
   text-decoration: none;
   border: 1px solid #F0F;
   color: #F0F;
