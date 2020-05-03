@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   resources :get_category_grandchildren, only: [:index]
 
   resources :signup, only: [:index]
-  resources :credit_card, only: [:new] do
+  resources :credit_card, only: [:index, :new] do
     collection do
       post 'registration'
       post 'buy'

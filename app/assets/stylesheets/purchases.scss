@@ -139,37 +139,6 @@
             }
           }
 
-          // クレジットカード情報（登録済みの場合）
-          .customer-card{
-            padding-bottom: 28px;
-            padding-top: 10px;
-            border-bottom: 1px solid #f5f5f5;
-            &__title_box{
-              font-size: 14px;
-              display: flex;
-              justify-content: space-between;
-              .delete-card{
-                text-decoration: none;
-                color: $color-furima;
-              }
-              .delete-card:hover {
-                text-decoration: underline;
-                opacity: 0.5;
-              }
-            }
-            &__content{
-              display: flex;
-              &__card_logo{
-                height: 30px;
-                width: 49px;
-                margin-right: 10px;
-              }
-              &__card_info{
-                font-size: 14px;
-              }
-            }
-          }
-  
           // 配送先
           &__destination{
             padding: 28px 0;
