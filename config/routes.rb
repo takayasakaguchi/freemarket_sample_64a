@@ -12,7 +12,8 @@ Rails.application.routes.draw do
 
   resources :mypage, only: [:index]
   resources :logout, only: [:index]
-  resources :purchases, only: [:index]
+  resources :purchases, only: [:show]
+
   resources :products, only: [:new, :create, :show, :destroy, :edit, :update] do
     # 商品出品ページでのカテゴリー選択アクション
     collection do
@@ -26,11 +27,13 @@ Rails.application.routes.draw do
   resources :get_category_grandchildren, only: [:index]
 
   resources :signup, only: [:index]
-  resources :credit_card, only: [:new] do
+  resources :credit_card, only: [:index, :new] do
     collection do
       post 'registration'
-      post 'buy'
       post 'delete'
+    end
+    member do
+      post 'buy'
     end
   end
 
@@ -38,6 +41,6 @@ Rails.application.routes.draw do
   resources :credit_card, only: [:index] do
 
   end
-  resources :address, only: [:index, :create, :edit, :update] do
+  resources :address, only: [:index, :new, :create, :edit, :update] do
   end
 end

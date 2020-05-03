@@ -49,8 +49,8 @@
             .registration
               .registration--plus-mark
                 %i.fas.fa-plus-circle
-              = link_to new_credit_card_path, class: "registration--text" do
-                登録してください
+              .registration--text
+                マイページから登録してください
           - else
             .main__center__purchase__form__pay
               .main__center__purchase__form__pay__title
@@ -60,8 +60,6 @@
               .customer-card__title_box
                 %span
                   クレジットカード情報
-                = link_to delete_credit_card_index_path, class: "delete-card", method: :post do
-                  削除する
               .customer-card__content
                 .customer-card__content__card_logo
                   = image_tag "#{@card_src}", width: '50', height: '30', alt: @card_brand, id: "card_image"
@@ -84,16 +82,14 @@
               .registration
                 .registration--plus-mark
                   %i.fas.fa-plus-circle
-                = link_to address_index_path, class: "registration--text" do
-                  登録してください
+                .registration--text
+                  マイページから登録してください
 
           - else
             .main__center__purchase__form__destination
               .main__center__purchase__form__destination__title
                 .main__center__purchase__form__destination__title--character
                   配送先
-                = link_to edit_address_path(@address.id), class: "change-text" do
-                  変更する
 
               .address-info
                 .address-info__content
@@ -106,7 +102,11 @@
 
             
     
-          = form_tag({controller: :credit_card, action: :buy},{ method: :post}) do
-            %button.main__center__purchase__form__btn 購入する
+          - if @customer_card.blank? or @address.blank?
+            .main__center__purchase__form__btn_ineffective 購入する
+
+          - else
+            = form_tag({controller: :credit_card, action: :buy},{ method: :post}) do
+              %button.main__center__purchase__form__btn 購入する
 
   = render partial: 'layouts/footer'

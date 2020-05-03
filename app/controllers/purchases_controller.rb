@@ -2,17 +2,17 @@ class PurchasesController < ApplicationController
 
   require "payjp"
 
-  def index
-    @address = User.find(1).address 
-    @product = Product.find(1)
+  def show
+    @address = current_user.address 
+    @product = Product.find(params[:id])
 
     #クレジットカード登録済みの場合、登録内容を表示する
    
-    card = User.find(1).credit_card
+    card = current_user.credit_card
       # テーブル紐付けてるのでログインユーザーのクレジットカードを引っ張ってくる（ダミーユーザーのカード）
 
     if card.blank?
-      render action: :index 
+      render action: :show
     else
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"] #payjpの秘密鍵をセット。
 

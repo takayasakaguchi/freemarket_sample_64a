@@ -187,3 +187,37 @@
     color: #F0F;
   }
 }
+
+// クレジットカード情報（登録済みの場合）
+.customer-card_mypage{
+  padding-bottom: 30px;
+  &__title_box{
+    font-size: 24px;
+    text-align: center;
+    background-color: $color-furima;
+    color: #fff;
+    border-radius: 5px;
+    .delete-card{
+      text-decoration: none;
+      color: $color-furima;
+    }
+    .delete-card:hover {
+      text-decoration: underline;
+      opacity: 0.5;
+    }
+  }
+  &__content{
+    display: flex;
+    margin-top: 20px;
+    &__card_logo{
+      width: 70px;
+      margin-right: 10px;
+    }
+  }
+}
+.delete-card_btn{
+  text-decoration: none;
+  border: 1px solid #F0F;
+  color: #F0F;
+  padding: 5px;
+}
