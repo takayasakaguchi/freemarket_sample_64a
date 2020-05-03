@@ -131,10 +131,10 @@
             font-size: 14px;
             &--text{
               text-decoration: none;
-              color: $color-furima;
+              color: #F0F;
             }
             &--plus-mark{
-              color: $color-furima;
+              color: #F0F;
               margin: 2px 5px 0 0
             }
           }
@@ -201,6 +201,16 @@
             color: #fff;
             margin: 20px auto 0;
             cursor: pointer; 
+            width: 100%;
+            border: 0; 
+          }
+          // 購入ボタン（クレジットカードと住所が登録されていない場合）
+          &__btn_ineffective{
+            @include btn;
+            background-color: #C0C0C0;
+            color: #fff;
+            margin: 20px auto 0;
+            cursor: not-allowed; 
             width: 100%;
             border: 0; 
           }

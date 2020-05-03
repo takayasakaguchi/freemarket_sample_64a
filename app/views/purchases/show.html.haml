@@ -49,8 +49,8 @@
             .registration
               .registration--plus-mark
                 %i.fas.fa-plus-circle
-              = link_to new_credit_card_path, class: "registration--text" do
-                登録してください
+              .registration--text
+                マイページから登録してください
           - else
             .main__center__purchase__form__pay
               .main__center__purchase__form__pay__title
@@ -82,8 +82,8 @@
               .registration
                 .registration--plus-mark
                   %i.fas.fa-plus-circle
-                = link_to address_index_path, class: "registration--text" do
-                  登録してください
+                .registration--text
+                  マイページから登録してください
 
           - else
             .main__center__purchase__form__destination
@@ -104,7 +104,11 @@
 
             
     
-          = form_tag({controller: :credit_card, action: :buy},{ method: :post}) do
-            %button.main__center__purchase__form__btn 購入する
+          - if @customer_card.blank? or @address.blank?
+            .main__center__purchase__form__btn_ineffective 購入する
+
+          - else
+            = form_tag({controller: :credit_card, action: :buy},{ method: :post}) do
+              %button.main__center__purchase__form__btn 購入する
 
   = render partial: 'layouts/footer'
