@@ -70,15 +70,15 @@ class CreditCardController < ApplicationController
 
   def buy #購入機能
 
-    card = current_user.credit_cards.first
+    card = current_user.credit_card
      # テーブル紐付けてるのでログインユーザーのクレジットカードを引っ張ってくる（ダミーユーザーのカード）
 
     if card.blank?
       redirect_to action: "new"
       flash[:alert] = '購入にはクレジットカード登録が必要です'
     else
-      @product = Product.find(1)
-     # 購入する商品を定義する（ダミーデータを使用します）
+      @product = Product.find(params[:id])
+     # 購入する商品を定義する
 
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
      #payjpの秘密鍵をセット。

@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :mypage, only: [:index]
   resources :logout, only: [:index]
   resources :purchases, only: [:show]
+  end
+
   resources :products, only: [:new, :create, :show, :destroy, :edit, :update] do
     # 商品出品ページでのカテゴリー選択アクション
     collection do
@@ -29,8 +31,10 @@ Rails.application.routes.draw do
   resources :credit_card, only: [:index, :new] do
     collection do
       post 'registration'
-      post 'buy'
       post 'delete'
+    end
+    member do
+      post 'buy'
     end
   end
 
