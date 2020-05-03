@@ -82,3 +82,23 @@
     margin-left: 10px;
   }
 }
+.address-info_mypage{
+  &__text{
+    margin-bottom: 30px;
+    font-size: 24px;
+    text-align: center;
+    background-color: $color-furima;
+    color: #fff;
+    border-radius: 5px;
+  }
+  &__content{
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+}
+.change-address_btn{
+  text-decoration: none;
+  border: 1px solid #F0F;
+  color: #F0F;
+  padding: 5px;
+}
