@@ -299,9 +299,9 @@
         a{
           color: $color-furima;
         }
-      }
-      a:hover{
-        @include hover;
+        a:hover{
+          @include hover;
+        }
       }
     }
   }
