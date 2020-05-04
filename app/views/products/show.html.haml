@@ -80,18 +80,14 @@
             -#### メイン画像
             .main__products_center__upper__info_box__image__img_main
               .main__products_center__upper__info_box__image__img_main--image
-                = image_tag @product.images.first.image.url
+                = image_tag @product.images.first.image.url, class: "main_img"
 
             -#### サブ画像（複数投稿時）
             .main__products_center__upper__info_box__image__img_sub
-
-              -##### サブ画像表示1段目
-                     2段に分けないとビューが崩れてしまうのでとりあえず2段に分けて表示しています。
-              .main__products_center__upper__info_box__image__img_sub__first
               - @images.each do |image|
-                .main__products_center__upper__info_box__image__img_sub__first__outer
-                  .main__products_center__upper__info_box__image__img_sub__first__outer--image
-                    = image_tag image.image.url
+                .main__products_center__upper__info_box__image__img_sub__outer
+                  .main__products_center__upper__info_box__image__img_sub__outer--image
+                    = image_tag image.image.url, class: "sub_img"
 
           -### 値段表示
           .main__products_center__upper__info_box--price_info
@@ -134,8 +130,6 @@
                 %th 商品のサイズ
                 %td
                   = @product.size
-                  %span cm
-                      
               %tr
                 %th 商品の状態
                 %td
@@ -152,8 +146,6 @@
                 %th 発送日の目安
                 %td
                   = @product.lead_time
-                  %span 日
-
      
           -### いいねボタンなど
           .main__products_center__upper__info_box__small_btns

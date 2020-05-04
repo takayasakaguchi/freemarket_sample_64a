@@ -48,62 +48,33 @@
           &__image{
             &__img_main{
               text-align: center;
-              .main_image{
-                vertical-align: bottom;
-              }
+            }
+            .main_img{
+              height: 500px;
+              width: 500px;
             }
             &__img_sub{
               display: flex;
-              padding-left: 10px;
               flex-wrap: wrap;
-              &__first{
-                display: flex;
-                justify-content: center;
-                &__outer{
-                  height: 60px;
-                  width: 90px;
-                  position: relative;
-                  &--image{
-                    position: static;
-                    width: auto;
-                    height: auto;
-                    padding: 0;
-                    display: flex;
-                    img.image{
-                      position: absolute;
-                      top: 0;
-                      left: 0;
-                      width: auto;
-                      height: 100%;
-                    }
+              width: 90%;
+              margin: 0 auto;
+              &__outer{
+                margin: 8px;
+                &--image{
+                  position: static;
+                  width: auto;
+                  height: auto;
+                  padding: 0;
+                  display: flex;
                   }
                 }
-              }
-              &__second{
-                display: flex;
-                justify-content: center;
-                &__outer{
-                  height: 60px;
-                  width: 90px;
-                  position: relative;
-                  &--image{
-                    position: static;
-                    width: auto;
-                    height: auto;
-                    padding: 0;
-                    img.image{
-                      position: absolute;
-                      top: 0;
-                      left: 0;
-                      width: auto;
-                      height: 100%;
-                    }
-                  }
-                }
-              }
               #hidden{
                 opacity: 0.4;
               }
+            }
+            .sub_img{
+              height: 90px;
+              width: 90px;
             }
           }
 
@@ -171,6 +142,10 @@
                 }
                 .bland_name a{
                   color: $color-furima;
+                }
+                a{
+                  color: $color-furima;
+                  text-decoration: none;
                 }
               }
               .category_2{
