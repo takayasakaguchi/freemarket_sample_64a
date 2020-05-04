@@ -4,6 +4,7 @@ class CreditCardController < ApplicationController
 
   def index
     @card = current_user.credit_card
+    @parents = Category.roots
 
     if @card.blank?
       render action: :index 

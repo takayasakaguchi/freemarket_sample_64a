@@ -4,6 +4,7 @@ class AddressController < ApplicationController
 
   def index
     @address = current_user.address
+    @parents = Category.roots
   end
 
   def new
