@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
 
   def show
     @images = @product.images
+    @parents = Category.roots.all
   end
 
   def new

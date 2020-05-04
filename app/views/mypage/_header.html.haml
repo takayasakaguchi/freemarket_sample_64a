@@ -3,7 +3,8 @@
     .headerInner
       .mainHeader
         %h1.icon
-          = link_to image_tag("http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg")
+          = link_to root_path do
+            = image_tag("http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg")
         .searchBox
           %form{"accept-charset": "UTF-8", action: "#", method: "get"}
             %input{name: "utf8", type: "hidden", value: "#"}/
@@ -14,12 +15,26 @@
         %ul.resultLists
       .nav
         %ul.listsLeft
-          %li.listLeft__item.listsLeft__item--first
-            #catBtn 
+
+          -# カテゴリー
+          %li.listLeft__item
             = link_to 'カテゴリー'
-            .tree.displayNone
-              .tree.displayNone
-                %ul.categoryTree
+            %ul.parent-wrap
+              - @parents.each do |parent|
+                %li.parent
+                  = link_to category_path(parent.id) do
+                    = parent.name
+                  %ul.child-wrap
+                    - parent.children.each do |child|
+                      %li.child
+                        =link_to category_path(child.id) do
+                          =  child.name
+                        %ul.grand-child-wrap
+                          - child.children.each do |grandchild|
+                            %li.grand-child
+                              = link_to category_path(grandchild.id) do
+                                = grandchild.name
+
           %li.listLeft__item
             #brandBtn
             = link_to 'ブランド'
