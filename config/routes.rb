@@ -38,9 +38,6 @@ Rails.application.routes.draw do
   end
 
   resources :complete, only: [:index]
-  resources :credit_card, only: [:index] do
-
-  end
-  resources :address, only: [:index, :new, :create, :edit, :update] do
-  end
+  resources :address, only: [:index, :new, :create, :edit, :update]
+  resources :categories, only: [:index, :show]
 end
