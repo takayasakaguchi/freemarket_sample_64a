@@ -6,11 +6,11 @@ ja:
       product:
         name: "商品名"
         description: "商品説明"
-        category: "詳細カテゴリ"
+        category: "カテゴリー"
         status: "商品の状態"
         postage: "配送料の負担"
         prefecture_id: "発送元の地域"
         lead_time: "発送までの日数"
         price: "販売価格"
         images: "商品画像"
-        category_id: "カテゴリー"
+        category_id: "詳細カテゴリー"
