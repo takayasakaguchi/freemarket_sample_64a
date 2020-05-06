@@ -25,6 +25,7 @@ $(function(){
     } else if (num == 1){
       //画像を投稿したら超えたらテキストを削除する
       $('.image-box_text').css('display', 'none')  
+      $('.fas.fa-camera').css('display', 'none')  
     } 
       //読み込みが完了すると、srcにfileのURLを格納
       fileReader.onloadend = function() {
@@ -78,7 +79,8 @@ $(function(){
     $('#image-box__container').attr('class', `item-num-${num}`)
     //画像が0枚になったらメッセージを再表示
     if (num == 0){
-      $('.image-box_text').css('display', '')   
+      $('.image-box_text').css('display', '') 
+      $('.fas.fa-camera').css('display', '')   
     }
   })
 
@@ -122,6 +124,7 @@ $(function(){
         } else if (num == 1){
           //画像を投稿したら超えたらテキストを削除する
           $('.image-box_text').css('display', 'none')  
+          $('.fas.fa-camera').css('display', 'none')   
         } 
         //image fileがロードされた時に発火するイベント
         fileReader.onload = function() {

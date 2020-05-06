@@ -301,9 +301,10 @@
     }  
     
     .fas.fa-camera{
-      width: 90%;
-      margin: 30px auto 0;
       pointer-events: none;
+      position: absolute;
+      top: 30px;
+      left: 300px;
     }
     .image-box_text{
       position: absolute;
