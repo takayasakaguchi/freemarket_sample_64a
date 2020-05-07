@@ -5,8 +5,8 @@ $(function(){
                       <input class="js-file" type="file"
                       name="product[images_attributes][${num}][image]"
                       id="product_images_attributes_${num}_image">
-                      <label for="product_images_attributes_${num}_image">画像を追加/編集</label>
-                      <span class="js-remove_new">削除</span>
+                      <label for="product_images_attributes_${num}_image">${num + 1}枚目を追加/編集</label>
+                      <span class="js-remove_new">${num + 1}枚目を削除</span>
                     </div>
                   </div>`;
     return html;
@@ -63,7 +63,6 @@ $(function(){
 
   $('#image-box_edit').on('change', '.js-file', function(e) {
     const targetIndexNew = $(this).parent().parent().data('index');
-    console.log($('.input-area_edit').length)
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
