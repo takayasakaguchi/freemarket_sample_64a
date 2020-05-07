@@ -49,8 +49,7 @@
             .registration
               .registration--plus-mark
                 %i.fas.fa-plus-circle
-              .registration--text
-                マイページから登録してください
+              = link_to 'マイページから登録してください' ,credit_card_index_path, class: "registration--text"
           - else
             .main__center__purchase__form__pay
               .main__center__purchase__form__pay__title
@@ -82,8 +81,7 @@
               .registration
                 .registration--plus-mark
                   %i.fas.fa-plus-circle
-                .registration--text
-                  マイページから登録してください
+                = link_to 'マイページから登録してください' ,address_index_path, class: "registration--text"
 
           - else
             .main__center__purchase__form__destination
