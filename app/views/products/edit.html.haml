@@ -41,8 +41,10 @@
                   .js-file_group{"data-index" => @product.images.count}
                     .input-area_edit
                       = file_field_tag :image, name: "product[images_attributes][#{@product.images.count}][image]", class: 'js-file'
-                      %label.img_edit{for: "image"}画像を追加/編集
-                      %span.js-remove_new 削除
+                      %label.img_edit{for: "image"}
+                        = "#{@product.images.count + 1}枚目を追加/編集"
+                      %span.js-remove_new 
+                        = "#{@product.images.count + 1}枚目を削除"
 
           -# 商品名・説明
         .single-main__form1

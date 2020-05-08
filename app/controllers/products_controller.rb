@@ -71,7 +71,7 @@ class ProductsController < ApplicationController
     if @product.update(product_params)
       redirect_to root_path
     else
-      redirect_to product_path(@product)
+      redirect_to edit_product_path(@product)
       flash[:alert] = '変更に失敗しました。必須項目を入力してください'
     end
   end
