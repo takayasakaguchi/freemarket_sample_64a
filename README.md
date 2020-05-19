@@ -34,12 +34,13 @@ Things you may want to cover:
 |last_name          |string  |null: false|
 |first_name_reading |string  |null: false|
 |last_name_reading  |string  |null: false|
-|birthday           |date    |null: false|
+|year               |integer |null: false|
+|month              |integer |null: false|
+|day                |integer |null: false|
 ### Association
 - has_many :products
 - has_many :comments
 - has_many :likes
-- has_many :purchases
 - has_one  :credit_card
 - has_one  :address
 
@@ -47,10 +48,8 @@ Things you may want to cover:
 ## credit_cardテーブル
 |Column         |Type    |Options                       |
 |---------------|--------|------------------------------|
-|card_number    |integer |null: false                   |
-|due_year       |integer |null: false                   |
-|due_month      |integer |null: false                   |
-|security_code  |integer |null: false                   |
+|card_id        |string  |null: false                   |
+|customer_id    |string  |null: false                   |
 |user_id        |integer |null: false, foreign_key: true|
 ### Association
 - belongs_to :user
@@ -75,25 +74,26 @@ Things you may want to cover:
 
 
 ## productsテーブル
-|Column       |Type    |Options                       |
-|-------------|--------|------------------------------|
-|name         |sting   |null: false                   |
-|description  |text    |null: false                   |
-|brand        |string  |                              |
-|status       |string  |null: false                   |
-|postage      |string  |null: false                   |
-|destination  |string  |null: false                   |
-|lead_time    |integer |null: false                   |
-|price        |integer |null: false                   | 
-|size         |string  |                              |
-|user_id      |integer |null: false, foreign_key: true|
-|category_id  |integer |null: false, foreign_key: true|
+|Column         |Type    |Options                       |
+|---------------|--------|------------------------------|
+|name           |sting   |null: false                   |
+|description    |text    |null: false                   |
+|brand          |string  |                              |
+|status         |string  |null: false                   |
+|postage        |string  |null: false                   |
+|prefecture_id  |string  |null: false                   |
+|lead_time      |string  |null: false                   |
+|price          |integer |null: false                   | 
+|size           |string  |                              |
+|purchase       |integer |                              |
+|buyer_id       |integer |                              |
+|user_id        |integer |null: false, foreign_key: true|
+|category_id    |integer |null: false, foreign_key: true|
 ### Association 
 - belongs_to :user  
 - belongs_to :category
 - has_many   :images
 - has_many   :likes
-- has_many   :purchases
 - has_many   :comments
 
 
@@ -110,7 +110,7 @@ Things you may want to cover:
 |Column       |Type           |Options                       |
 |-------------|---------------|------------------------------|
 |name         |sting          |null: false                   |
-|ancestry     |varchar(255)   |                              |
+|ancestry     |string         |                              |
 ### Association
 - has_many :product   
 
@@ -127,16 +127,6 @@ Things you may want to cover:
 
 
 ## likesテーブル
-|Column       |Type    |Options                       |
-|-------------|--------|------------------------------|
-|product_id   |integer |null: false, foreign_key: true|
-|user_id      |integer |null: false, foreign_key: true|
-### Association
-- belongs_to :user
-- belongs_to :product
-
-
-## purchaseテーブル
 |Column       |Type    |Options                       |
 |-------------|--------|------------------------------|
 |product_id   |integer |null: false, foreign_key: true|
