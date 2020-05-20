@@ -8,7 +8,6 @@ $(function() {
     }else{
       $('.single-main__form1__text4__commission__from__boder').html("ー");
     }
-    
   });
 });
 
@@ -39,9 +38,3 @@ $(function() {
       }
     });
   });
-
-  $(function() {
-
-
-  
-
