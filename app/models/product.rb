@@ -3,7 +3,6 @@ class Product < ApplicationRecord
   belongs_to :category
   has_many :images, dependent: :destroy, inverse_of: :product
   has_many :likes
-  has_many :purchases
   has_many :comments
   accepts_nested_attributes_for :images, allow_destroy: true
   extend ActiveHash::Associations::ActiveRecordExtensions
