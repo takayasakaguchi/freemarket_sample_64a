@@ -143,12 +143,12 @@
               .single-main__form1__text4__commission__from1
                 販売手数料（10%)
                 .single-main__form1__text4__commission__from__boder
-                  ー
+                  = '¥ ' + (@product.price / 10).to_s
               .single-main__form1__text4__commission__form2
                 .single-main__form1__text4__commission__form2__benefit
                   販売利益
                 .single-main__form1__text4__commission__from2__benefit__boder
-                  ー
+                  = '¥ ' + (@product.price - @product.price / 10).to_s
           -# ボタン
           .single-main__form1__text5
             %button.btn-red#submit_product{type: "submit"} 変更する
